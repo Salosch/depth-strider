@@ -10,7 +10,7 @@ Dive into the unkown and defend your submarine!
 
 # Links
 - [Designdokument](https://docs.google.com/document/d/1A-8uSrF0IEHpkhcQhKX560UWbpnNuRDRH8o64AUP_Ak/edit?usp=sharing)
-
+- [Changelog](https://docs.google.com/document/d/1lqR5nUgXg9rzvYWw112uOyoJ1pwzOjbHMqLbChRb9HI/edit?usp=sharing)
 ## Git Workflow
 
 Für ein neues Feature soll ein neuer Branch angelegt werden.
