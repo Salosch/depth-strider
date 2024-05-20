@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://5y4h7fkrrtwx"]
+
+[ext_resource type="Texture2D" uid="uid://bhbxt5p1oj5fo" path="res://assets/void-background.png" id="1_tvpjj"]
+[ext_resource type="Texture2D" uid="uid://b2384kfcdbda" path="res://assets/void-rock.png" id="2_7nk8f"]
+[ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="3_qnk6v"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(960, 540)
+texture = ExtResource("1_tvpjj")
+
+[node name="Rocks" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_mirroring = Vector2(720, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Rocks"]
+position = Vector2(453, 834)
+scale = Vector2(2.39263, 2.98908)
+texture = ExtResource("2_7nk8f")
+
+[node name="Character" parent="." instance=ExtResource("3_qnk6v")]
+position = Vector2(960, 540)
