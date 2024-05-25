@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5y4h7fkrrtwx"]
 
-[ext_resource type="Texture2D" uid="uid://bhbxt5p1oj5fo" path="res://assets/void-background.png" id="1_tvpjj"]
-[ext_resource type="Texture2D" uid="uid://b2384kfcdbda" path="res://assets/void-rock.png" id="2_7nk8f"]
+[ext_resource type="Texture2D" uid="uid://c02tegtx4kexc" path="res://assets/background_new.png" id="1_005oq"]
+[ext_resource type="Texture2D" uid="uid://k73f6hcp22gp" path="res://assets/meteor_schauer_new.png" id="2_lacpx"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="3_qnk6v"]
 
 [node name="Background" type="Node2D"]
@@ -13,17 +13,19 @@ texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
-position = Vector2(960, 540)
-texture = ExtResource("1_tvpjj")
+texture = ExtResource("1_005oq")
+centered = false
 
-[node name="Rocks" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Meteorites" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
-motion_mirroring = Vector2(720, 0)
+motion_scale = Vector2(1, 0)
+motion_mirroring = Vector2(1920, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Rocks"]
-position = Vector2(453, 834)
-scale = Vector2(2.39263, 2.98908)
-texture = ExtResource("2_7nk8f")
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Meteorites"]
+position = Vector2(932, 637)
+scale = Vector2(1.51198, 1.51198)
+texture = ExtResource("2_lacpx")
 
 [node name="Character" parent="." instance=ExtResource("3_qnk6v")]
-position = Vector2(960, 540)
+position = Vector2(640, 226)
+scale = Vector2(0.5, 0.5)

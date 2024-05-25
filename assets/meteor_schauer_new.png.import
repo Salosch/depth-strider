@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2384kfcdbda"
-path="res://.godot/imported/void-rock.png-65b8f1a7f4713e3d18d9d3ddf8c909af.ctex"
+uid="uid://k73f6hcp22gp"
+path="res://.godot/imported/meteor_schauer_new.png-7bc9cd60231056475f39d2ef6c38a456.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/void-rock.png"
-dest_files=["res://.godot/imported/void-rock.png-65b8f1a7f4713e3d18d9d3ddf8c909af.ctex"]
+source_file="res://assets/meteor_schauer_new.png"
+dest_files=["res://.godot/imported/meteor_schauer_new.png-7bc9cd60231056475f39d2ef6c38a456.ctex"]
 
 [params]
 
