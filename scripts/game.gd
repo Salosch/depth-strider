@@ -21,8 +21,9 @@ func _process(delta):
 	distance += 5
 	set_distance_label()
 	
-	if $CharacterCanvas/Ship.has_breach:
+	if $CharacterCanvas/Ship.has_breach():
 		lose_oxygen()
+	
 
 func set_oxygen_label() -> void:
 	$UI/Control/OxygenLabel.text = "Oxygen: " + str(oxygen)
