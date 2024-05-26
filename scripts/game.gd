@@ -1,11 +1,12 @@
 extends Node2D
 
-var MAX_OXYGEN = 100
-@export var distance = 0
-var oxygen = MAX_OXYGEN
-var SCROLL_SPEED = -200
-@onready var parallax_layer = $Background/ParallaxBackground
+const SCROLL_SPEED = -200
+const MAX_OXYGEN = 100
 
+var oxygen = MAX_OXYGEN
+
+@onready var parallax_layer = $Background/ParallaxBackground
+@export var distance = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_oxygen_label()

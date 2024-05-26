@@ -23,13 +23,19 @@ position = Vector2(51, 135)
 texture = ExtResource("1_amv3i")
 
 [node name="Bottom" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(70, 498)
 shape = SubResource("SegmentShape2D_f7vkt")
 
 [node name="LeftWall" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(-179, 159)
 shape = SubResource("SegmentShape2D_ctjs5")
 
 [node name="RightWall" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(215, 218)
 shape = SubResource("SegmentShape2D_mmeco")
