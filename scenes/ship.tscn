@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds2malxqanl52"]
+
+[ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
+[ext_resource type="Texture2D" uid="uid://cmtviyfb41qin" path="res://assets/ship.png" id="1_amv3i"]
+[ext_resource type="Texture2D" uid="uid://cq7yheeoi7raa" path="res://assets/damage.png" id="2_0bxfy"]
+[ext_resource type="Texture2D" uid="uid://xohqw1cd3mas" path="res://assets/breach.png" id="3_hwryy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f7vkt"]
+a = Vector2(-390, -242)
+b = Vector2(547, -243)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ctjs5"]
+a = Vector2(-143, 95)
+b = Vector2(-143, -145)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mmeco"]
+a = Vector2(401, -205)
+b = Vector2(402, 37)
+
+[node name="Ship" type="StaticBody2D"]
+script = ExtResource("1_6p7q6")
+
+[node name="ShipSprite" type="Sprite2D" parent="."]
+position = Vector2(51, 135)
+texture = ExtResource("1_amv3i")
+
+[node name="Bottom" type="CollisionShape2D" parent="."]
+position = Vector2(70, 498)
+shape = SubResource("SegmentShape2D_f7vkt")
+
+[node name="LeftWall" type="CollisionShape2D" parent="."]
+position = Vector2(-179, 159)
+shape = SubResource("SegmentShape2D_ctjs5")
+
+[node name="RightWall" type="CollisionShape2D" parent="."]
+position = Vector2(215, 218)
+shape = SubResource("SegmentShape2D_mmeco")
+
+[node name="damage1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-93, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0bxfy")
+
+[node name="breach1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-93, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hwryy")
+
+[node name="damage2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0bxfy")
+
+[node name="breach2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hwryy")
+
+[node name="damage3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(150, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0bxfy")
+
+[node name="breach3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(150, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hwryy")
+
+[node name="damage4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(300, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0bxfy")
+
+[node name="breach4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(300, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hwryy")

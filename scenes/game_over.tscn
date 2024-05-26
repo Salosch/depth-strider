@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=2 format=3 uid="uid://bnjr1k7fk1kgv"]
 
-[node name="GameOver" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
+
+[node name="GameOver" type="VBoxContainer"]
+offset_left = 560.0
+offset_top = 260.0
+offset_right = 655.0
+offset_bottom = 353.0
+script = ExtResource("1_vgoqy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "game over ):"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]
