@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq0i7suhbewpq"
-path="res://.godot/imported/breach.png-6946699d17da490f2ac5e2cdeabeafbe.ctex"
+uid="uid://crnl2gskabfnf"
+path="res://.godot/imported/spaceship_latest.png-a7ab806e7d7b513bdbab042898242aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemap/breach.png"
-dest_files=["res://.godot/imported/breach.png-6946699d17da490f2ac5e2cdeabeafbe.ctex"]
+source_file="res://assets/spaceship/spaceship_latest.png"
+dest_files=["res://.godot/imported/spaceship_latest.png-a7ab806e7d7b513bdbab042898242aa0.ctex"]
 
 [params]
 

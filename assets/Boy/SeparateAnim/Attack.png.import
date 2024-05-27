@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3el1s6fskki8"
-path="res://.godot/imported/ship.png-8f257c2007f56da741c68f6a54718f1a.ctex"
+uid="uid://bbm4louh82cpd"
+path="res://.godot/imported/Attack.png-df5e5c72da31819c73234c48d2aa0fe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemap/ship.png"
-dest_files=["res://.godot/imported/ship.png-8f257c2007f56da741c68f6a54718f1a.ctex"]
+source_file="res://assets/Boy/SeparateAnim/Attack.png"
+dest_files=["res://.godot/imported/Attack.png-df5e5c72da31819c73234c48d2aa0fe3.ctex"]
 
 [params]
 

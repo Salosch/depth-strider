@@ -1,7 +1,57 @@
-[gd_scene load_steps=16 format=3 uid="uid://ds2malxqanl52"]
+[gd_scene load_steps=22 format=3 uid="uid://ds2malxqanl52"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
-[ext_resource type="Texture2D" uid="uid://crnl2gskabfnf" path="res://assets/spaceship_latest.png" id="2_0a2hg"]
+[ext_resource type="Texture2D" uid="uid://bmov8dw74jfxu" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
+[ext_resource type="Texture2D" uid="uid://ctxov7g5mar4o" path="res://assets/spaceship/spaceship_2.png" id="3_qq72d"]
+[ext_resource type="Texture2D" uid="uid://cqhpwcxeg4is" path="res://assets/spaceship/spaceship_3.png" id="4_uymnk"]
+[ext_resource type="Texture2D" uid="uid://bdf81h12legvg" path="res://assets/spaceship/spaceship_4.png" id="5_88fy3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpo5i"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_j6h1y")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_qq72d")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_uymnk")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_88fy3")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bk4oh"]
+resource_name = "change_pos"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6, 9.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(51, 135), Vector2(51, 138), Vector2(51, 132), Vector2(51, 135)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljdsn"]
+_data = {
+"change_pos": SubResource("Animation_bk4oh")
+}
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_f7vkt"]
 a = Vector2(-115, -239)
@@ -54,9 +104,17 @@ b = Vector2(-18, 0)
 [node name="Ship" type="StaticBody2D"]
 script = ExtResource("1_6p7q6")
 
-[node name="ShipSprite" type="Sprite2D" parent="."]
+[node name="ShipSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(51, 135)
-texture = ExtResource("2_0a2hg")
+sprite_frames = SubResource("SpriteFrames_qpo5i")
+animation = &"new_animation"
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShipSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_ljdsn")
+}
 
 [node name="Bottom" type="CollisionShape2D" parent="."]
 position = Vector2(72, 522)

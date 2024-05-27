@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k73f6hcp22gp"
-path="res://.godot/imported/meteor_schauer_new.png-7bc9cd60231056475f39d2ef6c38a456.ctex"
+uid="uid://beaod1etws2sl"
+path="res://.godot/imported/Idle.png-98e912177d9e583bbe16ff91a23924ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meteor_schauer_new.png"
-dest_files=["res://.godot/imported/meteor_schauer_new.png-7bc9cd60231056475f39d2ef6c38a456.ctex"]
+source_file="res://assets/Boy/SeparateAnim/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-98e912177d9e583bbe16ff91a23924ff.ctex"]
 
 [params]
 

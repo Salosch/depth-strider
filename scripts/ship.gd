@@ -19,6 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$ShipSprite.play("new_animation")
+	$ShipSprite/AnimationPlayer.play("change_pos")
 	pass
 
 func _timer_timeout() -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crnl2gskabfnf"
-path="res://.godot/imported/spaceship_latest.png-2849182f48f3a10b547098f1c02c08da.ctex"
+uid="uid://c3w47leb2dste"
+path="res://.godot/imported/SpriteSheet.png-85c90c2f6aa237a0d74dcf20c9c9b6a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spaceship_latest.png"
-dest_files=["res://.godot/imported/spaceship_latest.png-2849182f48f3a10b547098f1c02c08da.ctex"]
+source_file="res://assets/Boy/SpriteSheet.png"
+dest_files=["res://.godot/imported/SpriteSheet.png-85c90c2f6aa237a0d74dcf20c9c9b6a3.ctex"]
 
 [params]
 
