@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nr8bajafhl5c"]
 
-[ext_resource type="Texture2D" uid="uid://xohqw1cd3mas" path="res://assets/breach.png" id="1_283xv"]
+[ext_resource type="Texture2D" uid="uid://dgj5uex51unif" path="res://assets/spaceship/breach.png" id="1_opsxq"]
 [ext_resource type="Script" path="res://scripts/breach_area.gd" id="2_ld8jp"]
 
 [sub_resource type="GDScript" id="GDScript_lsf4c"]
@@ -25,8 +25,8 @@ size = Vector2(100, 848)
 script = SubResource("GDScript_lsf4c")
 
 [node name="Breach" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_283xv")
+scale = Vector2(0.459875, 0.459875)
+texture = ExtResource("1_opsxq")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.3, 0.3)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq7yheeoi7raa"
-path="res://.godot/imported/damage.png-664ae30f6c5a7c99af240f3dcf12bcba.ctex"
+uid="uid://bttkccdtk2thu"
+path="res://.godot/imported/damage.png-24e08d9936641d571267f6a472d16a43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/damage.png"
-dest_files=["res://.godot/imported/damage.png-664ae30f6c5a7c99af240f3dcf12bcba.ctex"]
+source_file="res://assets/spaceship/damage.png"
+dest_files=["res://.godot/imported/damage.png-24e08d9936641d571267f6a472d16a43.ctex"]
 
 [params]
 

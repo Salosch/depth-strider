@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dt111mbhobl7t"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_eya3b"]
-[ext_resource type="Texture2D" uid="uid://beaod1etws2sl" path="res://assets/Boy/SeparateAnim/Idle.png" id="2_b357m"]
+[ext_resource type="Texture2D" uid="uid://beaod1etws2sl" path="res://assets/character/SeparateAnim/Idle.png" id="2_3b6g1"]
 
 [sub_resource type="Animation" id="Animation_1tpj7"]
 resource_name = "walk_right"
@@ -105,7 +105,7 @@ script = ExtResource("1_eya3b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_b357m")
+texture = ExtResource("2_3b6g1")
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]

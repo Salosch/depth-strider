@@ -1,20 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=3 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
+[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_n3bxt"]
 
 [node name="MainMenu" type="VBoxContainer"]
+texture_filter = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -33.0
-offset_right = 23.0
-offset_bottom = 33.0
+offset_left = -106.0
+offset_top = -181.0
+offset_right = 6.10352e-05
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.10208, 2.10627)
+scale = Vector2(1.83932, 1.84299)
 alignment = 1
 script = ExtResource("1_77pih")
 
@@ -30,6 +32,14 @@ text = "Start"
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 2
 text = "Quit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(631, 364)
+scale = Vector2(1.02022, 1.02225)
+texture = ExtResource("2_n3bxt")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

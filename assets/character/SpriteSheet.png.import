@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkcpho2ik7jee"
-path="res://.godot/imported/Special1.png-2f58f553c658c42424b2beb71fb256cd.ctex"
+uid="uid://c3w47leb2dste"
+path="res://.godot/imported/SpriteSheet.png-0298db6298e3f3006a3fba8cf6fb8674.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Boy/SeparateAnim/Special1.png"
-dest_files=["res://.godot/imported/Special1.png-2f58f553c658c42424b2beb71fb256cd.ctex"]
+source_file="res://assets/character/SpriteSheet.png"
+dest_files=["res://.godot/imported/SpriteSheet.png-0298db6298e3f3006a3fba8cf6fb8674.ctex"]
 
 [params]
 

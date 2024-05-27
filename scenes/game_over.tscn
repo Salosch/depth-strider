@@ -1,17 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=3 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
+[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_ri03t"]
 
 [node name="GameOver" type="VBoxContainer"]
-offset_left = 560.0
-offset_top = 260.0
-offset_right = 655.0
-offset_bottom = 353.0
+offset_left = 546.0
+offset_top = 1.99999
+offset_right = 660.0
+offset_bottom = 200.0
+scale = Vector2(1.95693, 1.95693)
 script = ExtResource("1_vgoqy")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "game over ):"
+text = "GAME OVER!!!!!"
 
 [node name="Restart" type="Button" parent="."]
 layout_mode = 2
@@ -20,6 +22,15 @@ text = "Restart"
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
 text = "Quit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(639, 361)
+rotation = 3.14159
+scale = Vector2(1.01338, 1.01338)
+texture = ExtResource("2_ri03t")
 
 [connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]

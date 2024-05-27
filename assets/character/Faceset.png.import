@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3r7tf0rhbtn2"
-path="res://.godot/imported/Attack_1.png-21feddaf5e1785c9ac177637e2c1ba5b.ctex"
+uid="uid://dwt0jxcyvfhbe"
+path="res://.godot/imported/Faceset.png-2b62fccf2cca7bed5be2bb924457afd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Homeless_3/Attack_1.png"
-dest_files=["res://.godot/imported/Attack_1.png-21feddaf5e1785c9ac177637e2c1ba5b.ctex"]
+source_file="res://assets/character/Faceset.png"
+dest_files=["res://.godot/imported/Faceset.png-2b62fccf2cca7bed5be2bb924457afd2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xohqw1cd3mas"
-path="res://.godot/imported/breach.png-9957207a99a991e519085ad2b7abace1.ctex"
+uid="uid://beaod1etws2sl"
+path="res://.godot/imported/Idle.png-71141a74a5c910710e53048e0b72f5d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breach.png"
-dest_files=["res://.godot/imported/breach.png-9957207a99a991e519085ad2b7abace1.ctex"]
+source_file="res://assets/character/SeparateAnim/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-71141a74a5c910710e53048e0b72f5d0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlrhsv7dm45cm"
-path="res://.godot/imported/Idle_2.png-a089e6f5f8c1b721d2c4acf454e71b4f.ctex"
+uid="uid://dlxhvsk24d7pv"
+path="res://.godot/imported/Dead.png-59f436e6aeddb84f80377e57528caa99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Homeless_3/Idle_2.png"
-dest_files=["res://.godot/imported/Idle_2.png-a089e6f5f8c1b721d2c4acf454e71b4f.ctex"]
+source_file="res://assets/character/SeparateAnim/Dead.png"
+dest_files=["res://.godot/imported/Dead.png-59f436e6aeddb84f80377e57528caa99.ctex"]
 
 [params]
 
