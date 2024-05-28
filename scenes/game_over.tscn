@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=4 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
 [ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_ri03t"]
+[ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
 
 [node name="GameOver" type="VBoxContainer"]
 offset_left = 546.0
@@ -32,6 +33,10 @@ rotation = 3.14159
 scale = Vector2(1.01338, 1.01338)
 texture = ExtResource("2_ri03t")
 
-[connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_svbbm")
+autoplay = true
+
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

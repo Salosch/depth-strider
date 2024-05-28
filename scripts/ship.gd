@@ -21,7 +21,11 @@ func _ready():
 func _process(delta):
 	$ShipSprite.play("new_animation")
 	$ShipSprite/AnimationPlayer.play("change_pos")
-	pass
+	
+	if self.has_breach() and not $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
+	elif not self.has_breach() and $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.stop()
 
 func _timer_timeout() -> void:
 	var position_selected = false

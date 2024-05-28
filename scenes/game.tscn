@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=7 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
+[ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
 
 [sub_resource type="Theme" id="Theme_skf8e"]
 
@@ -66,3 +67,7 @@ scale = Vector2(1.66, 1.66)
 
 [node name="Ship" parent="CharacterCanvas" instance=ExtResource("4_kd45g")]
 position = Vector2(526, 200)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qwrub")
+autoplay = true

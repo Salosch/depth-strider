@@ -19,7 +19,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfrv7"]
-size = Vector2(100, 848)
+size = Vector2(106.667, 106.667)
 
 [node name="breach" type="Node2D"]
 script = SubResource("GDScript_lsf4c")
@@ -33,5 +33,5 @@ scale = Vector2(0.3, 0.3)
 script = ExtResource("2_ld8jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 409)
+position = Vector2(1.98682e-06, 1.58946e-06)
 shape = SubResource("RectangleShape2D_pfrv7")
