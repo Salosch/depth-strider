@@ -227,3 +227,6 @@ shape = SubResource("SegmentShape2D_c3ch4")
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="."]
 position = Vector2(236, 154)
 shape = SubResource("SegmentShape2D_c3ch4")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-41, -11)

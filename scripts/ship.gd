@@ -3,7 +3,7 @@ extends StaticBody2D
 var damage_scene = preload("res://scenes/damage.tscn")
 var breach_scene = preload("res://scenes/breach.tscn")
 
-var positions = [Vector2(-93, 173), Vector2(10, 173), Vector2(150, 173), Vector2(300, 173)]
+var positions = [Vector2(0, 123), Vector2(71, 123), Vector2(-85, 123), Vector2(169, 123), Vector2(-16, 21), Vector2(41, 21), Vector2(-16, 251), Vector2(42, 251)]
 
 @onready var rand_int = 0
 @onready var rng = RandomNumberGenerator.new()
@@ -27,7 +27,7 @@ func _timer_timeout() -> void:
 	var position_selected = false
 	
 	while not position_selected:
-		rand_int = rng.randi_range(0, 3)
+		rand_int = rng.randi_range(0, len(positions)-1)
 		var position = positions[rand_int]
 		
 		var damage_name = "Damage" + str(rand_int)
@@ -68,3 +68,19 @@ func has_breach() -> bool:
 		if child.name.begins_with("Breach"):
 			return true
 	return false
+
+func respawn_damage(breach_node: Node) -> void:
+	var breach_instance_name = breach_node.get_parent().name
+	var damage_instance_name = breach_instance_name.replace("Breach", "Damage")
+	var pos_number = get_number_from_node_name(breach_instance_name)
+	var damage_instance = damage_scene.instantiate()
+	
+	damage_instance.position = positions[pos_number]
+	damage_instance.name = damage_instance_name
+	breach_node.get_parent().queue_free()
+	add_child(damage_instance)
+
+	
+func get_number_from_node_name(node_name: String) -> int:
+	var number_str = node_name[len(node_name) - 1]
+	return number_str.to_int()

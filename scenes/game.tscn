@@ -53,3 +53,6 @@ scale = Vector2(1.66, 1.66)
 
 [node name="Ship" parent="CharacterCanvas" instance=ExtResource("4_kd45g")]
 position = Vector2(526, 200)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(485, 189)
