@@ -1,12 +1,5 @@
 # depth-strider
-Dive into the unkown and defend your submarine!
-
-# Ideas
-- Man taucht ab mit einem U-Boot
-- Verteidigen des U-Boots von Seemonstern
-- Tiefe = Highscore
-- Upgrades je tiefer man taucht?
-- Lore?
+Venture through and discover space! but make sure your spaceship is healthy...
 
 # Links
 - [Designdokument](https://docs.google.com/document/d/1A-8uSrF0IEHpkhcQhKX560UWbpnNuRDRH8o64AUP_Ak/edit?usp=sharing)
