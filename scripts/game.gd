@@ -5,8 +5,14 @@ const MAX_OXYGEN = 100
 
 var oxygen = MAX_OXYGEN
 
-@onready var parallax_layer = $Background/ParallaxBackground
+@onready var parallax_background = $Background/ParallaxBackground
+@onready var ship = $CharacterCanvas/Ship
+@onready var oxygen_label = $UI/Control/OxygenLabel
+@onready var oxygen_bar = $UI/Control/Oxygen
+@onready var distance_label = $UI/Control/DistanceLabel
+
 @export var distance = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_oxygen_label()
@@ -14,26 +20,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Background/ParallaxBackground.scroll_offset.x -= SCROLL_SPEED * delta
+	parallax_background.scroll_offset.x -= SCROLL_SPEED * delta
 		
 	distance += 5
 	set_distance_label()
 	
-	if $CharacterCanvas/Ship.has_breach():
+	if ship.has_breach():
 		lose_oxygen()
-	
 
 func set_oxygen_label() -> void:
-	$UI/Control/OxygenLabel.text = "Oxygen: " + str(oxygen)
+	oxygen_label.text = "Oxygen: " + str(oxygen)
 	
 func set_oxygen_bar() -> void:
-	$UI/Control/Oxygen.value = oxygen
+	oxygen_bar.value = oxygen
 	
 func set_distance_label() -> void:
-	$UI/Control/DistanceLabel.text = str(distance) + "m"
+	distance_label.text = str(distance) + "m"
 	
 func lose_oxygen() -> void:
 	oxygen -= 0.1
+	
 	if oxygen < 0:
 		death()
 		

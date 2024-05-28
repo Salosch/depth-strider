@@ -5,12 +5,12 @@ var breach_scene = preload("res://scenes/breach.tscn")
 
 var positions = [Vector2(0, 123), Vector2(71, 123), Vector2(-85, 123), Vector2(169, 123), Vector2(-16, 21), Vector2(41, 21), Vector2(-16, 251), Vector2(42, 251)]
 
-@onready var rand_int = 0
-@onready var rng = RandomNumberGenerator.new()
+var rand_int = 0
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rng.randomize()  # Ensure the RNG is properly seeded
+	rng.randomize()
 	var timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 10
@@ -62,7 +62,8 @@ func _timer_timeout() -> void:
 			
 		else:
 			continue
-			
+	
+
 func has_breach() -> bool:
 	for child in get_children():
 		if child.name.begins_with("Breach"):
@@ -82,5 +83,5 @@ func respawn_damage(breach_node: Node) -> void:
 
 	
 func get_number_from_node_name(node_name: String) -> int:
-	var number_str = node_name[len(node_name) - 1]
+	var number_str = node_name[-1]
 	return number_str.to_int()
