@@ -1,6 +1,6 @@
 extends Node2D
 
-const SCROLL_SPEED = -200
+const SCROLL_SPEED = 200
 const MAX_OXYGEN = 100
 
 var oxygen = MAX_OXYGEN
@@ -14,10 +14,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for layer in parallax_layer.get_children():
-		if layer is ParallaxLayer:
-			layer.motion_offset.x += SCROLL_SPEED * delta
-	
+	$Background/ParallaxBackground.scroll_offset.x -= SCROLL_SPEED * delta
+		
 	distance += 5
 	set_distance_label()
 	

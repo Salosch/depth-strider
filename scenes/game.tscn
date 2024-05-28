@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=6 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
+
+[sub_resource type="Theme" id="Theme_skf8e"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8pf5")
@@ -26,6 +28,7 @@ offset_left = 17.0
 offset_top = 21.0
 offset_right = 482.0
 offset_bottom = 48.0
+theme = SubResource("Theme_skf8e")
 step = 1.0
 show_percentage = false
 
