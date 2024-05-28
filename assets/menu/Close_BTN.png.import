@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daai2wo0xsufu"
-path="res://.godot/imported/Settings_BTN.png-f8e6960abf51b6ba8d99d0fb7c7a3e79.ctex"
+uid="uid://box7f8pvliu74"
+path="res://.godot/imported/Close_BTN.png-dacd82c980307a031ff6d12de9c7edc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/Settings_BTN.png"
-dest_files=["res://.godot/imported/Settings_BTN.png-f8e6960abf51b6ba8d99d0fb7c7a3e79.ctex"]
+source_file="res://assets/menu/Close_BTN.png"
+dest_files=["res://.godot/imported/Close_BTN.png-dacd82c980307a031ff6d12de9c7edc0.ctex"]
 
 [params]
 

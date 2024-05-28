@@ -7,7 +7,6 @@ var oxygen = MAX_OXYGEN
 
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
-@onready var oxygen_label = $UI/Control/OxygenLabel
 @onready var oxygen_bar = $UI/Control/Oxygen
 @onready var distance_label = $UI/Control/DistanceLabel
 
@@ -15,7 +14,10 @@ var oxygen = MAX_OXYGEN
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_oxygen_label()
+	var sb = StyleBoxFlat.new()
+	oxygen_bar.add_theme_stylebox_override("fill", sb)
+	sb.bg_color = Color('45b0e6')
+
 	set_distance_label()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,9 +29,6 @@ func _process(delta):
 	
 	if ship.has_breach():
 		lose_oxygen()
-
-func set_oxygen_label() -> void:
-	oxygen_label.text = "Oxygen: " + str(oxygen)
 	
 func set_oxygen_bar() -> void:
 	oxygen_bar.value = oxygen
@@ -43,8 +42,9 @@ func lose_oxygen() -> void:
 	if oxygen < 0:
 		death()
 		
-	set_oxygen_label()
 	set_oxygen_bar()
 	
 func death() -> void:
+	Global.final_score = distance
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+

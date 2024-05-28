@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nr8bajafhl5c"]
 
-[ext_resource type="Texture2D" uid="uid://dgj5uex51unif" path="res://assets/spaceship/breach.png" id="1_opsxq"]
+[ext_resource type="Texture2D" uid="uid://0n5dx7jq2ine" path="res://assets/spaceship/breach.png" id="1_opsxq"]
 [ext_resource type="Script" path="res://scripts/breach_area.gd" id="2_ld8jp"]
 
 [sub_resource type="GDScript" id="GDScript_lsf4c"]

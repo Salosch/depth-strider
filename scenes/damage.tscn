@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxf2iwygohqvx"]
 
-[ext_resource type="Texture2D" uid="uid://bttkccdtk2thu" path="res://assets/spaceship/damage.png" id="1_wqx42"]
+[ext_resource type="Texture2D" uid="uid://cx3t4mig6tyir" path="res://assets/spaceship/damage.png" id="1_wqx42"]
 [ext_resource type="Script" path="res://scripts/damage_area.gd" id="2_b1676"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7mdc"]

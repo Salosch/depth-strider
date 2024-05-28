@@ -32,7 +32,7 @@ theme_override_fonts/font = ExtResource("3_ta8bn")
 theme_override_font_sizes/font_size = 20
 text = "GAME OVER"
 
-[node name="highscore" type="Label" parent="."]
+[node name="endscore" type="Label" parent="."]
 layout_mode = 0
 offset_left = -8.68708
 offset_top = 64.3866
@@ -42,13 +42,23 @@ theme_override_fonts/font = ExtResource("3_ta8bn")
 theme_override_font_sizes/font_size = 16
 text = "Endscore"
 
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -17.3741
+offset_top = 88.9148
+offset_right = 101.626
+offset_bottom = 111.915
+scale = Vector2(1.18396, 1)
+theme_override_fonts/font = ExtResource("3_ta8bn")
+horizontal_alignment = 1
+
 [node name="Restart" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = -16.3521
-offset_top = 150.235
-offset_right = 344.648
-offset_bottom = 251.235
-scale = Vector2(0.385462, 0.385462)
+offset_left = -0.51101
+offset_top = 135.927
+offset_right = 360.489
+offset_bottom = 236.927
+scale = Vector2(0.298986, 0.298986)
 texture_normal = ExtResource("4_ehoee")
 
 [node name="restart" type="Label" parent="Restart"]
@@ -63,11 +73,11 @@ text = "restart"
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = -13.7971
-offset_top = 198.27
-offset_right = 347.203
-offset_bottom = 299.27
-scale = Vector2(0.374199, 0.374199)
+offset_left = -0.511019
+offset_top = 174.253
+offset_right = 360.489
+offset_bottom = 275.253
+scale = Vector2(0.293915, 0.293915)
 texture_normal = ExtResource("4_ehoee")
 
 [node name="quit" type="Label" parent="Quit"]
@@ -79,6 +89,25 @@ offset_bottom = 71.3119
 theme_override_fonts/font = ExtResource("3_ta8bn")
 theme_override_font_sizes/font_size = 44
 text = "quit"
+
+[node name="Menu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 0.510993
+offset_top = 213.089
+offset_right = 361.511
+offset_bottom = 314.089
+scale = Vector2(0.28466, 0.309953)
+texture_normal = ExtResource("4_ehoee")
+
+[node name="menu" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 102.323
+offset_top = 28.027
+offset_right = 273.323
+offset_bottom = 72.027
+theme_override_fonts/font = ExtResource("3_ta8bn")
+theme_override_font_sizes/font_size = 42
+text = "MENU"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -95,3 +124,4 @@ autoplay = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

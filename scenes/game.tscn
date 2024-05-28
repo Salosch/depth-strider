@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=8 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
+[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="3_aq8se"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
@@ -25,36 +26,37 @@ offset_bottom = 722.0
 
 [node name="Oxygen" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 21.0
-offset_right = 482.0
-offset_bottom = 48.0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 479.0
+offset_bottom = 42.0
 theme = SubResource("Theme_skf8e")
-step = 1.0
 show_percentage = false
 
-[node name="OxygenLabel" type="Label" parent="UI/Control"]
+[node name="Label" type="Label" parent="UI/Control/Oxygen"]
 layout_mode = 0
-offset_left = 217.0
-offset_top = 21.0
-offset_right = 276.0
-offset_bottom = 44.0
+offset_left = 185.0
+offset_top = 7.0
+offset_right = 275.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("3_aq8se")
 text = "Oxygen"
 
 [node name="DistanceLabel" type="Label" parent="UI/Control"]
 layout_mode = 0
-offset_left = 1217.0
+offset_left = 1092.0
 offset_top = 21.0
-offset_right = 1257.0
+offset_right = 1132.0
 offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("3_aq8se")
 
 [node name="RepairProgress" type="ProgressBar" parent="UI/Control"]
 visible = false
 layout_mode = 0
-offset_left = 414.0
-offset_top = 387.0
-offset_right = 685.0
-offset_bottom = 414.0
+offset_left = 21.0
+offset_top = 81.0
+offset_right = 292.0
+offset_bottom = 108.0
 max_value = 2.0
 show_percentage = false
 

@@ -11,6 +11,11 @@ var current_repairing_node: Node = null
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
 @onready var repair_progress = get_tree().get_root().get_node("Game/UI/Control/RepairProgress")
 
+func _ready():
+	var sb = StyleBoxFlat.new()
+	repair_progress.add_theme_stylebox_override("fill", sb)
+	sb.bg_color = Color('582080')
+
 func _physics_process(delta):
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * SPEED
 
