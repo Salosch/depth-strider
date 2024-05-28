@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 200
 
+var total_delta = 0
 var damage_scene = preload("res://scenes/damage.tscn")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
 
@@ -21,13 +22,27 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
-func _on_damage_hitbox_area_entered(node: Node) -> void:
-	if Input.is_key_pressed(KEY_E):
-			node.get_parent().queue_free()
+func _on_damage_hitbox_area_entered(node: Node, delta) -> void:
+	if Input.is_action_pressed("ui_accept"):
+		total_delta += delta
+	
+	if Input.is_action_just_released("ui_accept"):
+		total_delta = 0
+	
+	if total_delta > 2:
+		total_delta = 0
+		node.get_parent().queue_free()
 
-func _on_breach_hitbox_area_entered(node: Node) -> void:
-	if Input.is_key_pressed(KEY_R):
-			ship_node.respawn_damage(node)
-			node.get_parent().queue_free()
-			
+func _on_breach_hitbox_area_entered(node: Node, delta) -> void:
+	if Input.is_action_pressed("ui_select"):
+		total_delta += delta
+	
+	if Input.is_action_just_released("ui_select"):
+		total_delta = 0
+	
+	if total_delta > 2:
+		total_delta = 0
+		ship_node.respawn_damage(node)
+		node.get_parent().queue_free()
+
 			

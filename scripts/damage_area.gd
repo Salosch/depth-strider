@@ -8,11 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	check_repair()
+	check_repair(delta)
 	
-func check_repair() -> void:
+func check_repair(delta) -> void:
 	var detected = get_overlapping_bodies()
 	for body in detected:
 		if body is StaticBody2D:
 			continue
-		body._on_damage_hitbox_area_entered(self)
+		body._on_damage_hitbox_area_entered(self, delta)
