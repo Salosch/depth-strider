@@ -2,16 +2,17 @@ extends StaticBody2D
 
 var damage_scene = preload("res://scenes/damage.tscn")
 var breach_scene = preload("res://scenes/breach.tscn")
+@onready var game_node = get_tree().get_root().get_node("Game")
 
 var positions = [Vector2(0, 123), Vector2(71, 123), Vector2(-85, 123), Vector2(169, 123), Vector2(-16, 21), Vector2(41, 21), Vector2(-16, 251), Vector2(42, 251)]
 
 var rand_int = 0
 var rng = RandomNumberGenerator.new()
+var timer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
-	var timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 10
 	timer.start()
@@ -29,6 +30,8 @@ func _process(delta):
 
 func _timer_timeout() -> void:
 	var position_selected = false
+	var distance = game_node.distance
+	var new_wait_time = calculate_wait_time(distance)
 	
 	while not position_selected:
 		rand_int = rng.randi_range(0, len(positions)-1)
@@ -39,7 +42,7 @@ func _timer_timeout() -> void:
 		var damage_exists = false
 		var breach_exists = false
 		var damage_node = null
-
+		
 		for child in get_children():
 			if child.name == damage_name:
 				damage_exists = true
@@ -66,7 +69,8 @@ func _timer_timeout() -> void:
 			
 		else:
 			continue
-	
+	timer.wait_time = new_wait_time
+	timer.start()
 
 func has_breach() -> bool:
 	for child in get_children():
@@ -89,3 +93,13 @@ func respawn_damage(breach_node: Node) -> void:
 func get_number_from_node_name(node_name: String) -> int:
 	var number_str = node_name[-1]
 	return number_str.to_int()
+
+func calculate_wait_time(distance: float) -> float:
+	var base_wait_time = 10 
+	var max_distance = 100000
+	var min_wait_time = 2.5
+
+	var scaled_wait_time = base_wait_time - (distance / max_distance) * (base_wait_time - min_wait_time)
+	
+	return max(scaled_wait_time, min_wait_time) 
+
