@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt111mbhobl7t"]
+[gd_scene load_steps=11 format=3 uid="uid://dt111mbhobl7t"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_eya3b"]
-[ext_resource type="Texture2D" uid="uid://beaod1etws2sl" path="res://assets/character/SeparateAnim/Idle.png" id="2_3b6g1"]
+[ext_resource type="Texture2D" uid="uid://c3w47leb2dste" path="res://assets/character/SpriteSheet.png" id="2_01s72"]
 
 [sub_resource type="Animation" id="Animation_rw084"]
 resource_name = "idle"
@@ -88,9 +88,25 @@ tracks/0/keys = {
 "values": [1, 5, 9, 13]
 }
 
+[sub_resource type="Animation" id="Animation_v5h55"]
+resource_name = "repair"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 25, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qd5ic"]
 _data = {
 "idle": SubResource("Animation_rw084"),
+"repair": SubResource("Animation_v5h55"),
 "walk_down": SubResource("Animation_hbrx0"),
 "walk_left": SubResource("Animation_jd6xv"),
 "walk_right": SubResource("Animation_1tpj7"),
@@ -105,8 +121,10 @@ script = ExtResource("1_eya3b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_3b6g1")
+texture = ExtResource("2_01s72")
 hframes = 4
+vframes = 7
+frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

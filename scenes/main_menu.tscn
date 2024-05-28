@@ -1,38 +1,112 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=6 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
+[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="2_h12ni"]
 [ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_n3bxt"]
 [ext_resource type="AudioStream" uid="uid://c0cyijeb0yksu" path="res://assets/music/menu_music.wav" id="3_mwaxi"]
+[ext_resource type="Texture2D" uid="uid://dy6qrg63t3hq5" path="res://assets/menu/Table.png" id="3_wfpk5"]
 
-[node name="MainMenu" type="VBoxContainer"]
+[node name="MainMenu" type="Control"]
 texture_filter = 2
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -106.0
-offset_top = -181.0
+offset_top = -69.0
 offset_right = 6.10352e-05
-offset_bottom = -88.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.83932, 1.84299)
-alignment = 1
 script = ExtResource("1_77pih")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-text = "Depth-Strider
-"
+[node name="titel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -189.2
+offset_top = -94.4118
+offset_right = 329.8
+offset_bottom = -46.4118
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "DEPTH STRIDER"
 
-[node name="start_button" type="Button" parent="."]
+[node name="start_button" type="TextureButton" parent="."]
 layout_mode = 2
-text = "Start"
+offset_left = -21.2035
+offset_top = -40.1521
+offset_right = 388.797
+offset_bottom = 80.8479
+scale = Vector2(0.359785, 0.359785)
+texture_normal = ExtResource("3_wfpk5")
 
-[node name="quit_button" type="Button" parent="."]
+[node name="start" type="Label" parent="start_button"]
+layout_mode = 0
+offset_left = 95.2007
+offset_top = 24.1298
+offset_right = 334.201
+offset_bottom = 88.1298
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="quit_button" type="TextureButton" parent="."]
 layout_mode = 2
-text = "Quit"
+offset_left = -21.2035
+offset_top = 83.5599
+offset_right = 388.797
+offset_bottom = 204.56
+scale = Vector2(0.359428, 0.359428)
+texture_normal = ExtResource("3_wfpk5")
+
+[node name="quit" type="Label" parent="quit_button"]
+layout_mode = 0
+offset_left = 105.884
+offset_top = 27.173
+offset_right = 300.884
+offset_bottom = 91.173
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+
+[node name="credits_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -21.7472
+offset_top = 41.7799
+offset_right = 339.253
+offset_bottom = 142.78
+scale = Vector2(0.364304, 0.364304)
+texture_normal = ExtResource("3_wfpk5")
+
+[node name="credits" type="Label" parent="credits_button"]
+layout_mode = 0
+offset_left = 40.2942
+offset_top = 26.8093
+offset_right = 415.294
+offset_bottom = 90.8093
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "CREDITS"
+
+[node name="help_button" type="TextureButton" parent="."]
+offset_left = -21.7472
+offset_top = 0.542589
+offset_right = 339.253
+offset_bottom = 101.543
+scale = Vector2(0.364304, 0.364304)
+texture_normal = ExtResource("3_wfpk5")
+
+[node name="help" type="Label" parent="help_button"]
+layout_mode = 0
+offset_left = 98.497
+offset_top = 25.3199
+offset_right = 473.497
+offset_bottom = 89.3199
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "HELP"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

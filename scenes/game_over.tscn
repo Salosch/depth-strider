@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=7 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
+[ext_resource type="Texture2D" uid="uid://b14y53husqlqg" path="res://assets/menu/Window.png" id="2_ckvfk"]
 [ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_ri03t"]
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
+[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="3_ta8bn"]
+[ext_resource type="Texture2D" uid="uid://dy6qrg63t3hq5" path="res://assets/menu/Table.png" id="4_ehoee"]
 
-[node name="GameOver" type="VBoxContainer"]
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 546.0
 offset_top = 1.99999
 offset_right = 660.0
@@ -12,17 +17,68 @@ offset_bottom = 200.0
 scale = Vector2(1.95693, 1.95693)
 script = ExtResource("1_vgoqy")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-text = "GAME OVER!!!!!"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50.5894, 138.482)
+scale = Vector2(0.226159, 0.226159)
+texture = ExtResource("2_ckvfk")
 
-[node name="Restart" type="Button" parent="."]
-layout_mode = 2
-text = "Restart"
+[node name="game_over" type="Label" parent="."]
+layout_mode = 0
+offset_left = -27.0832
+offset_top = 26.0612
+offset_right = 129.917
+offset_bottom = 49.0612
+theme_override_fonts/font = ExtResource("3_ta8bn")
+theme_override_font_sizes/font_size = 20
+text = "GAME OVER"
 
-[node name="Quit" type="Button" parent="."]
+[node name="highscore" type="Label" parent="."]
+layout_mode = 0
+offset_left = -8.68708
+offset_top = 64.3866
+offset_right = 119.313
+offset_bottom = 87.3866
+theme_override_fonts/font = ExtResource("3_ta8bn")
+theme_override_font_sizes/font_size = 16
+text = "Endscore"
+
+[node name="Restart" type="TextureButton" parent="."]
 layout_mode = 2
-text = "Quit"
+offset_left = -16.3521
+offset_top = 150.235
+offset_right = 344.648
+offset_bottom = 251.235
+scale = Vector2(0.385462, 0.385462)
+texture_normal = ExtResource("4_ehoee")
+
+[node name="restart" type="Label" parent="Restart"]
+layout_mode = 0
+offset_left = 47.725
+offset_top = 26.5139
+offset_right = 362.725
+offset_bottom = 74.5139
+theme_override_fonts/font = ExtResource("3_ta8bn")
+theme_override_font_sizes/font_size = 42
+text = "restart"
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = -13.7971
+offset_top = 198.27
+offset_right = 347.203
+offset_bottom = 299.27
+scale = Vector2(0.374199, 0.374199)
+texture_normal = ExtResource("4_ehoee")
+
+[node name="quit" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 113.345
+offset_top = 27.3119
+offset_right = 247.345
+offset_bottom = 71.3119
+theme_override_fonts/font = ExtResource("3_ta8bn")
+theme_override_font_sizes/font_size = 44
+text = "quit"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -38,5 +94,4 @@ stream = ExtResource("3_svbbm")
 autoplay = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

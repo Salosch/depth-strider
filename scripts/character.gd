@@ -37,6 +37,7 @@ func handle_repair(node: Node, delta: float, action: String) -> void:
 	
 	if Input.is_action_pressed(action):
 		play_sound_off_action(action)
+		animation_player.play("repair")
 		total_elapsed_repair_time += delta
 		self.set_physics_process(false)
 		repair_progress.visible = true
@@ -44,6 +45,7 @@ func handle_repair(node: Node, delta: float, action: String) -> void:
 	
 	if Input.is_action_just_released(action):
 		stop_sound()
+		animation_player.play("idle")
 		total_elapsed_repair_time = 0
 		self.set_physics_process(true)
 		repair_progress.visible = false
@@ -51,6 +53,7 @@ func handle_repair(node: Node, delta: float, action: String) -> void:
 	
 	if total_elapsed_repair_time > REPAIR_TIME:
 		stop_sound()
+		animation_player.play("idle")
 		total_elapsed_repair_time = 0
 		self.set_physics_process(true)
 		repair_progress.visible = false
