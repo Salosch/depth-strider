@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ds2malxqanl52"]
+[gd_scene load_steps=9 format=3 uid="uid://ds2malxqanl52"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
 [ext_resource type="Texture2D" uid="uid://bmov8dw74jfxu" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
@@ -53,54 +53,6 @@ _data = {
 "change_pos": SubResource("Animation_bk4oh")
 }
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_f7vkt"]
-a = Vector2(-115, -239)
-b = Vector2(2, -239)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ctjs5"]
-a = Vector2(-146, -30)
-b = Vector2(-146, -104)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_mmeco"]
-a = Vector2(402, -142)
-b = Vector2(402, -104)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2x30s"]
-a = Vector2(0, -3)
-b = Vector2(0, 111)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_237wo"]
-a = Vector2(70, 0)
-b = Vector2(-11, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_26n2b"]
-a = Vector2(51, 0)
-b = Vector2(-8, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_wnc6m"]
-b = Vector2(0, 5)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_eu5de"]
-a = Vector2(39, 0)
-b = Vector2(-10, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_mv535"]
-a = Vector2(0, -1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_520tf"]
-a = Vector2(13, 0)
-b = Vector2(-15, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_bbut7"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5lsd1"]
-a = Vector2(7, 0)
-b = Vector2(-9, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_c3ch4"]
-a = Vector2(9, 0)
-b = Vector2(-18, 0)
-
 [node name="Ship" type="StaticBody2D"]
 script = ExtResource("1_6p7q6")
 
@@ -116,117 +68,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ljdsn")
 }
 
-[node name="Bottom" type="CollisionShape2D" parent="."]
-position = Vector2(72, 522)
-shape = SubResource("SegmentShape2D_f7vkt")
-
-[node name="LeftWall" type="CollisionShape2D" parent="."]
-position = Vector2(21, 201)
-shape = SubResource("SegmentShape2D_ctjs5")
-
-[node name="RightWall" type="CollisionShape2D" parent="."]
-position = Vector2(-158, 257)
-shape = SubResource("SegmentShape2D_mmeco")
-
-[node name="Top" type="CollisionShape2D" parent="."]
-position = Vector2(71, 226)
-shape = SubResource("SegmentShape2D_f7vkt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-43, -12)
-shape = SubResource("SegmentShape2D_2x30s")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-42, 171)
-shape = SubResource("SegmentShape2D_2x30s")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(72, -10)
-shape = SubResource("SegmentShape2D_2x30s")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(73, 171)
-shape = SubResource("SegmentShape2D_2x30s")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2(-113, 98)
-shape = SubResource("SegmentShape2D_237wo")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
-position = Vector2(-113, 170)
-shape = SubResource("SegmentShape2D_237wo")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
-position = Vector2(79, 100)
-shape = SubResource("SegmentShape2D_26n2b")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
-position = Vector2(80, 169)
-shape = SubResource("SegmentShape2D_26n2b")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
-position = Vector2(130, 100)
-shape = SubResource("SegmentShape2D_wnc6m")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
-position = Vector2(130, 164)
-shape = SubResource("SegmentShape2D_wnc6m")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
-position = Vector2(139, 104)
-shape = SubResource("SegmentShape2D_eu5de")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
-position = Vector2(139, 165)
-shape = SubResource("SegmentShape2D_eu5de")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
-position = Vector2(177, 95)
-shape = SubResource("SegmentShape2D_mv535")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
-position = Vector2(177, 165)
-shape = SubResource("SegmentShape2D_mv535")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
-position = Vector2(191, 94)
-shape = SubResource("SegmentShape2D_520tf")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
-position = Vector2(191, 176)
-shape = SubResource("SegmentShape2D_520tf")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
-position = Vector2(219, 106)
-shape = SubResource("SegmentShape2D_bbut7")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="."]
-position = Vector2(219, 154)
-shape = SubResource("SegmentShape2D_bbut7")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="."]
-position = Vector2(204, 96)
-shape = SubResource("SegmentShape2D_mv535")
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="."]
-position = Vector2(204, 165)
-shape = SubResource("SegmentShape2D_mv535")
-
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="."]
-position = Vector2(212, 105)
-shape = SubResource("SegmentShape2D_5lsd1")
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="."]
-position = Vector2(212, 165)
-shape = SubResource("SegmentShape2D_5lsd1")
-
-[node name="CollisionShape2D23" type="CollisionShape2D" parent="."]
-position = Vector2(236, 115)
-shape = SubResource("SegmentShape2D_c3ch4")
-
-[node name="CollisionShape2D24" type="CollisionShape2D" parent="."]
-position = Vector2(236, 154)
-shape = SubResource("SegmentShape2D_c3ch4")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-41, -11)
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-43, -14)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 115, 0, 115, 114, 172, 114, 172, 119, 220, 119, 220, 109, 246, 109, 246, 120, 261, 120, 261, 130, 288, 130, 288, 167, 261, 167, 261, 178, 246, 178, 246, 189, 221, 189, 221, 178, 172, 178, 172, 183, 115, 183, 115, 298, 1, 298, 1, 184, -83, 184, -83, 112, 0, 112)

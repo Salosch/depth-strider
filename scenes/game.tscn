@@ -47,6 +47,16 @@ offset_top = 21.0
 offset_right = 1257.0
 offset_bottom = 44.0
 
+[node name="RepairProgress" type="ProgressBar" parent="UI/Control"]
+visible = false
+layout_mode = 0
+offset_left = 414.0
+offset_top = 387.0
+offset_right = 685.0
+offset_bottom = 414.0
+max_value = 2.0
+show_percentage = false
+
 [node name="CharacterCanvas" type="CanvasLayer" parent="."]
 
 [node name="Character" parent="CharacterCanvas" instance=ExtResource("4_i8277")]
@@ -56,6 +66,3 @@ scale = Vector2(1.66, 1.66)
 
 [node name="Ship" parent="CharacterCanvas" instance=ExtResource("4_kd45g")]
 position = Vector2(526, 200)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(485, 189)
