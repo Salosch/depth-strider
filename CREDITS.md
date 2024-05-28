@@ -1,4 +1,4 @@
-## Idea, Game Design##
+## Idea, Game Design ##
 - Salim Yildirim, Caner Aliji
 
 ## Assets ##
