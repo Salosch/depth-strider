@@ -1,5 +1,5 @@
 ## Idea, Game Design ##
-- Salim Yildirim, Caner Aliji
+- Salim Yildirim, Caner Aliji, Himayat Kamran
 
 ## Assets ##
 - Character: Ninja-Adventure by Pixel-Boy https://pixel-boy.itch.io/ninja-adventure-asset-pack
