@@ -28,7 +28,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_down"):
 		animation_player.play("walk_down")
 	else:
-		animation_player.play("idle")
+		animation_player.play("idle_down")
 		
 	move_and_slide()
 

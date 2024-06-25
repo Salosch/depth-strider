@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkcpho2ik7jee"
-path="res://.godot/imported/Special1.png-d6e7b9c62c35d7edb96b9e01219d0a54.ctex"
+uid="uid://jnpcekni7nrf"
+path="res://.godot/imported/spaceship_upgrades.png-dd544857ada09e38c1d97a225df30a77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/SeparateAnim/Special1.png"
-dest_files=["res://.godot/imported/Special1.png-d6e7b9c62c35d7edb96b9e01219d0a54.ctex"]
+source_file="res://assets/spaceship/spaceship_upgrades.png"
+dest_files=["res://.godot/imported/spaceship_upgrades.png-dd544857ada09e38c1d97a225df30a77.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 extends StaticBody2D
 
-var damage_scene = preload("res://scenes/damage.tscn")
-var breach_scene = preload("res://scenes/breach.tscn")
+var damage_scene = preload ("res://scenes/damage.tscn")
+var breach_scene = preload ("res://scenes/breach.tscn")
 @onready var game_node = get_tree().get_root().get_node("Game")
 
-var positions = [Vector2(0, 123), Vector2(71, 123), Vector2(-85, 123), Vector2(169, 123), Vector2(-16, 21), Vector2(41, 21), Vector2(-16, 251), Vector2(42, 251)]
+var positions = [Vector2(0, 123), Vector2(71, 123), Vector2( - 85, 123), Vector2(169, 123), Vector2( - 16, 21), Vector2(41, 21), Vector2( - 16, 251), Vector2(42, 251)]
 
 var rand_int = 0
 var rng = RandomNumberGenerator.new()
@@ -22,7 +22,7 @@ func _ready():
 func _process(delta):
 	$ShipSprite.play("new_animation")
 	$ShipSprite/AnimationPlayer.play("change_pos")
-	
+
 	if self.has_breach() and not $AudioStreamPlayer2D.playing:
 		$AudioStreamPlayer2D.play()
 	elif not self.has_breach() and $AudioStreamPlayer2D.playing:
@@ -34,7 +34,7 @@ func _timer_timeout() -> void:
 	var new_wait_time = calculate_wait_time(distance)
 	
 	while not position_selected:
-		rand_int = rng.randi_range(0, len(positions)-1)
+		rand_int = rng.randi_range(0, len(positions) - 1)
 		var position = positions[rand_int]
 		
 		var damage_name = "Damage" + str(rand_int)
@@ -88,18 +88,16 @@ func respawn_damage(breach_node: Node) -> void:
 	damage_instance.name = damage_instance_name
 	breach_node.get_parent().queue_free()
 	add_child(damage_instance)
-
 	
 func get_number_from_node_name(node_name: String) -> int:
-	var number_str = node_name[-1]
+	var number_str = node_name[- 1]
 	return number_str.to_int()
 
 func calculate_wait_time(distance: float) -> float:
-	var base_wait_time = 10 
+	var base_wait_time = 10
 	var max_distance = 100000
 	var min_wait_time = 2.5
 
 	var scaled_wait_time = base_wait_time - (distance / max_distance) * (base_wait_time - min_wait_time)
 	
-	return max(scaled_wait_time, min_wait_time) 
-
+	return max(scaled_wait_time, min_wait_time)

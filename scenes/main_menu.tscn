@@ -91,6 +91,7 @@ theme_override_font_sizes/font_size = 48
 text = "CREDITS"
 
 [node name="help_button" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -21.7472
 offset_top = 0.542589
 offset_right = 339.253
