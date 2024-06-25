@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds2malxqanl52"]
+[gd_scene load_steps=16 format=3 uid="uid://ds2malxqanl52"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
 [ext_resource type="Texture2D" uid="uid://hal54rlyyd6k" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bytctv6gltnr0" path="res://assets/spaceship/spaceship_4.png" id="5_88fy3"]
 [ext_resource type="AudioStream" uid="uid://ch2rvpik3rtdo" path="res://assets/sound_effects/oxygen_leak.wav" id="6_7bw20"]
 [ext_resource type="Script" path="res://scripts/core_area.gd" id="7_i2j6b"]
+[ext_resource type="Script" path="res://scripts/message.gd" id="8_bnm4q"]
+[ext_resource type="Texture2D" uid="uid://7o2opcwbvast" path="res://assets/misc/exclamation_mark.png" id="9_6vyik"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xlkvq"]
 animations = [{
@@ -60,6 +62,9 @@ b = Vector2(0, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdkh"]
 size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg5vb"]
+size = Vector2(20, 18)
 
 [node name="Ship" type="StaticBody2D"]
 script = ExtResource("1_6p7q6")
@@ -130,3 +135,17 @@ script = ExtResource("7_i2j6b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Core"]
 position = Vector2(-11, 2)
 shape = SubResource("RectangleShape2D_6wdkh")
+
+[node name="Message" type="Area2D" parent="."]
+position = Vector2(222, 100)
+script = ExtResource("8_bnm4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Message"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_yg5vb")
+
+[node name="exclamation_mark" type="Sprite2D" parent="Message"]
+visible = false
+position = Vector2(1.52588e-05, -28)
+scale = Vector2(0.429688, 0.492569)
+texture = ExtResource("9_6vyik")

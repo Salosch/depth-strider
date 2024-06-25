@@ -63,7 +63,7 @@ func lose_oxygen() -> void:
 		death()
 		
 	set_oxygen_bar()
-	
+
 func death() -> void:
 	Global.final_score = distance
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
