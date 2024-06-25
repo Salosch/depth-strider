@@ -8,6 +8,7 @@ var current_repairing_node: Node = null
 
 @onready var animation_player = $Sprite2D/AnimationPlayer
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var game_node = get_tree().get_root().get_node("Game")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
 @onready var repair_progress = get_tree().get_root().get_node("Game/UI/Control/RepairProgress")
 
@@ -37,6 +38,9 @@ func _on_damage_hitbox_area_entered(node_to_repair: Node, delta) -> void:
 
 func _on_breach_hitbox_area_entered(node_to_repair: Node, delta) -> void:
 	handle_repair(node_to_repair, delta, "ui_select")
+	
+func _on_core_hitbox_area_entered(core_node: Node, delta) -> void:
+	handle_recharge(core_node, delta)
 
 func handle_repair(node: Node, delta: float, action: String) -> void:
 	
@@ -82,5 +86,9 @@ func play_sound_off_action(action: String) -> void:
 			audio_player.stream = welding
 			audio_player.play()
 
+func handle_recharge(core_node: Node, delta) -> void:
+	if Input.is_action_pressed("ui_accept"):
+		game_node.set_energy_bar(500)
+	
 func stop_sound() -> void:
 	audio_player.stop()

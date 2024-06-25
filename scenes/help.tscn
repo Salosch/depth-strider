@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="1_bj5ej"]
 [ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="2_mi7fg"]
 [ext_resource type="Texture2D" uid="uid://box7f8pvliu74" path="res://assets/menu/Close_BTN.png" id="3_mhj0k"]
-[ext_resource type="Script" path="res://scenes/help.gd" id="4_uyxto"]
+[ext_resource type="Script" path="res://scripts/help.gd" id="4_uyxto"]
 
 [node name="Help" type="Node2D"]
 
