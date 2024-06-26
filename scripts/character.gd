@@ -102,14 +102,24 @@ func play_sound_off_action(action: String) -> void:
 			var welding = load("res://assets/sound_effects/welding.wav")
 			audio_player.stream = welding
 			audio_player.play()
+		
 
 func handle_recharge(core_node: Node, delta) -> void:
 	if Input.is_action_pressed("ui_accept"):
 		game_node.set_energy_bar(500)
-	
+		if not audio_player.playing:
+			var charging = load("res://assets/sound_effects/core_charge.wav")
+			audio_player.stream = charging
+			audio_player.play()
+	else:
+		stop_sound()
+			
 func spawn_message() -> void:
 	var rand_num = rng.randi_range(0,100)
 	if rand_num >= 75:
+		var message_audio = load("res://assets/sound_effects/message.wav")
+		audio_player.stream = message_audio
+		audio_player.play()
 		is_message_active = true
 		exclamation_node.visible = true
 	

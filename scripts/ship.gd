@@ -55,6 +55,7 @@ func _timer_timeout() -> void:
 			var damage_instance = damage_scene.instantiate()
 			damage_instance.position = position
 			damage_instance.name = damage_name
+			$MetalBreaking.play()
 			add_child(damage_instance)
 			position_selected = true
 			
@@ -64,6 +65,7 @@ func _timer_timeout() -> void:
 			breach_instance.name = breach_name
 			breach_instance.position = position
 			damage_node.queue_free()
+			$MetalBreaking.play()
 			add_child(breach_instance)
 			position_selected = true
 			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ds2malxqanl52"]
+[gd_scene load_steps=17 format=3 uid="uid://ds2malxqanl52"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
 [ext_resource type="Texture2D" uid="uid://hal54rlyyd6k" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/core_area.gd" id="7_i2j6b"]
 [ext_resource type="Script" path="res://scripts/message.gd" id="8_bnm4q"]
 [ext_resource type="Texture2D" uid="uid://7o2opcwbvast" path="res://assets/misc/exclamation_mark.png" id="9_6vyik"]
+[ext_resource type="AudioStream" uid="uid://dsteqk3r8hoh7" path="res://assets/sound_effects/metal_breaking.wav" id="10_1ao76"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xlkvq"]
 animations = [{
@@ -149,3 +150,6 @@ visible = false
 position = Vector2(1.52588e-05, -28)
 scale = Vector2(0.429688, 0.492569)
 texture = ExtResource("9_6vyik")
+
+[node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_1ao76")
