@@ -20,6 +20,23 @@ tracks/0/keys = {
 "values": [74, 75, 76, 77, 78, 79]
 }
 
+[sub_resource type="Animation" id="Animation_s2yso"]
+resource_name = "idle_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [68, 69, 70, 71, 72, 73]
+}
+
 [sub_resource type="Animation" id="Animation_bnqxn"]
 resource_name = "idle_right"
 length = 0.4
@@ -54,8 +71,8 @@ tracks/0/keys = {
 "values": [62, 63, 64, 65, 66, 67]
 }
 
-[sub_resource type="Animation" id="Animation_s2yso"]
-resource_name = "idle_left"
+[sub_resource type="Animation" id="Animation_me1ch"]
+resource_name = "walk_down"
 length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
@@ -68,7 +85,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [68, 69, 70, 71, 72, 73]
+"values": [130, 131, 132, 133, 134, 135]
+}
+
+[sub_resource type="Animation" id="Animation_e8bty"]
+resource_name = "walk_left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [124, 125, 126, 127, 128, 129]
 }
 
 [sub_resource type="Animation" id="Animation_8ka8a"]
@@ -103,40 +137,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [118, 119, 120, 121, 122, 123]
-}
-
-[sub_resource type="Animation" id="Animation_e8bty"]
-resource_name = "walk_left"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [124, 125, 126, 127, 128, 129]
-}
-
-[sub_resource type="Animation" id="Animation_me1ch"]
-resource_name = "walk_down"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [130, 131, 132, 133, 134, 135]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boolh"]
