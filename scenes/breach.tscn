@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://nr8bajafhl5c"]
 
 [ext_resource type="Script" path="res://scripts/breach_area.gd" id="2_ld8jp"]
-[ext_resource type="Texture2D" uid="uid://bd0ehhalaw8r3" path="res://scenes/crack.png" id="2_mn11y"]
+[ext_resource type="Texture2D" uid="uid://bd0ehhalaw8r3" path="res://assets/spaceship/crack.png" id="2_mn11y"]
 
 [sub_resource type="GDScript" id="GDScript_lsf4c"]
 script/source = "extends Node2D
