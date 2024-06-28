@@ -60,9 +60,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = -30.6603
-offset_top = 112.421
-offset_right = 330.34
-offset_bottom = 240.421
+offset_top = 78.6947
+offset_right = 225.34
+offset_bottom = 206.695
 scale = Vector2(0.65, 0.65)
 texture_normal = ExtResource("4_yc0vj")
 
@@ -131,6 +131,7 @@ texture = ExtResource("2_ri03t")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_svbbm")
 autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

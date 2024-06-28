@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=9 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
+[ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_1xkec"]
 [ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="3_aq8se"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
@@ -23,6 +24,13 @@ anchors_preset = 0
 offset_top = 1.0
 offset_right = 1279.0
 offset_bottom = 722.0
+
+[node name="Pause" parent="UI/Control" instance=ExtResource("3_1xkec")]
+visible = false
+offset_left = 504.0
+offset_top = 308.0
+offset_right = 504.0
+offset_bottom = 308.0
 
 [node name="Energy" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0
@@ -91,3 +99,4 @@ position = Vector2(526, 200)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qwrub")
 autoplay = true
+bus = &"music"

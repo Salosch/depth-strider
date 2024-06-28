@@ -7,11 +7,13 @@ const MAX_ENERGY = 100000.0
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
 
+
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
 @onready var oxygen_bar = $UI/Control/Oxygen
 @onready var distance_label = $UI/Control/DistanceLabel
 @onready var energy_bar = $UI/Control/Energy
+@onready var pause_screen = $UI/Control/Pause
 
 @export var distance = 0
 
@@ -43,6 +45,13 @@ func _process(delta):
 	if current_energy == 0:
 		death()
 	
+	if Input.is_action_just_pressed("pause"):
+		pause_menu()
+	
+func pause_menu() -> void:
+	pause_screen.show()
+	get_tree().paused = true
+	
 func set_oxygen_bar() -> void:
 	oxygen_bar.value = oxygen
 	
@@ -63,6 +72,8 @@ func lose_oxygen() -> void:
 		death()
 		
 	set_oxygen_bar()
+
+
 
 func death() -> void:
 	Global.final_score = distance

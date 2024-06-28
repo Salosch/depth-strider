@@ -91,6 +91,7 @@ polygon = PackedVector2Array(-64, -48, 78, -48, 78, 89, 147, 89, 147, 101, 256, 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7bw20")
 volume_db = -15.579
+bus = &"sfx"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 build_mode = 1
@@ -153,3 +154,4 @@ texture = ExtResource("9_6vyik")
 
 [node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_1ao76")
+bus = &"sfx"
