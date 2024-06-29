@@ -6,7 +6,6 @@
 size = Vector2(93.3333, 93.3333)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xwckm"]
-load_path = "res://.godot/imported/crack.png-edfa2cbd6358371cceaa57055dc499eb.ctex"
 
 [sub_resource type="Animation" id="Animation_dvqtf"]
 length = 0.3

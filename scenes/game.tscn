@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_mssjk"]
+[ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_uya1x"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
@@ -24,12 +25,12 @@ offset_top = 1.0
 offset_right = 1279.0
 offset_bottom = 722.0
 
-[node name="Pause" parent="UI/Control" instance=ExtResource("3_1xkec")]
+[node name="Pause" parent="UI/Control" instance=ExtResource("3_uya1x")]
 visible = false
-offset_left = 504.0
-offset_top = 308.0
-offset_right = 504.0
-offset_bottom = 308.0
+offset_left = 481.0
+offset_top = 288.0
+offset_right = 481.0
+offset_bottom = 288.0
 
 [node name="Energy" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=7 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_4n2fm"]
 [ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="3_mvcxb"]
 [ext_resource type="AudioStream" uid="uid://c0cyijeb0yksu" path="res://assets/music/menu_music.wav" id="3_mwaxi"]
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="4_ad1dn"]
+[ext_resource type="PackedScene" uid="uid://twdfjh5sc3kn" path="res://scenes/volume_controls.tscn" id="5_sr36p"]
 
 [node name="MainMenu" type="Control"]
 texture_filter = 2
@@ -38,10 +39,10 @@ text = "DEPTH STRIDER"
 [node name="start_button" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = -36.427
-offset_top = -43.641
-offset_right = 119.573
-offset_bottom = 11.359
+offset_left = -35.8828
+offset_top = -42.8651
+offset_right = 120.117
+offset_bottom = 12.1349
 scale = Vector2(1.1, 1.1)
 texture_normal = ExtResource("3_mvcxb")
 
@@ -56,50 +57,6 @@ scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 200
 text = "Play"
-
-[node name="quit_button" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = -35.883
-offset_top = 133.286
-offset_right = 120.117
-offset_bottom = 188.286
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("3_mvcxb")
-
-[node name="quit" type="Label" parent="quit_button"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 55.8508
-offset_top = 14.4797
-offset_right = 529.851
-offset_bottom = 270.48
-scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("2_4n2fm")
-theme_override_font_sizes/font_size = 200
-text = "Quit"
-
-[node name="credits_button" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = -35.883
-offset_top = 74.143
-offset_right = 120.117
-offset_bottom = 129.143
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("3_mvcxb")
-
-[node name="credits" type="Label" parent="credits_button"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 38.552
-offset_top = 15.9598
-offset_right = 850.552
-offset_bottom = 271.96
-scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("2_4n2fm")
-theme_override_font_sizes/font_size = 200
-text = "Credits"
 
 [node name="help_button" type="TextureButton" parent="."]
 texture_filter = 1
@@ -123,23 +80,49 @@ theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 200
 text = "Help"
 
-[node name="options_button" type="TextureButton" parent="."]
-offset_left = -19.5724
-offset_top = 78.6765
-offset_right = 390.428
-offset_bottom = 199.677
-scale = Vector2(0.359785, 0.359785)
-texture_normal = ExtResource("3_wfpk5")
-
-[node name="options" type="Label" parent="options_button"]
+[node name="credits_button" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 49.867
-offset_top = 22.6217
-offset_right = 331.867
-offset_bottom = 86.6217
-theme_override_fonts/font = ExtResource("2_h12ni")
-theme_override_font_sizes/font_size = 48
-text = "Options"
+offset_left = -35.883
+offset_top = 74.143
+offset_right = 120.117
+offset_bottom = 129.143
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_mvcxb")
+
+[node name="credits" type="Label" parent="credits_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 38.552
+offset_top = 15.9598
+offset_right = 850.552
+offset_bottom = 271.96
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 200
+text = "Credits"
+
+[node name="quit_button" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = -35.883
+offset_top = 133.286
+offset_right = 120.117
+offset_bottom = 188.286
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_mvcxb")
+
+[node name="quit" type="Label" parent="quit_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 55.8508
+offset_top = 14.4797
+offset_right = 529.851
+offset_bottom = 270.48
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 200
+text = "Quit"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -149,13 +132,46 @@ position = Vector2(638, 362)
 scale = Vector2(1.022, 1.022)
 texture = ExtResource("4_ad1dn")
 
+[node name="slider_container" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -280.0
+offset_top = 14.0
+offset_right = -44.0
+offset_bottom = 151.0
+
+[node name="slider_content" type="VBoxContainer" parent="slider_container"]
+layout_mode = 2
+
+[node name="master_label" type="Label" parent="slider_container/slider_content"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="master_slider" parent="slider_container/slider_content" instance=ExtResource("5_sr36p")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="slider_container/slider_content"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="music_slider" parent="slider_container/slider_content" instance=ExtResource("5_sr36p")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="sfx_label" type="Label" parent="slider_container/slider_content"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="sfx_slider" parent="slider_container/slider_content" instance=ExtResource("5_sr36p")]
+layout_mode = 2
+bus_name = "sfx"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mwaxi")
 autoplay = true
 bus = &"music"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
-[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

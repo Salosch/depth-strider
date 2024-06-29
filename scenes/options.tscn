@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://roqwngrmga2r"]
 
-[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="1_uge85"]
+[ext_resource type="Texture2D" path="res://assets/background/background_new_latest.png" id="1_uge85"]
 [ext_resource type="PackedScene" uid="uid://twdfjh5sc3kn" path="res://scenes/volume_controls.tscn" id="2_w6i17"]
-[ext_resource type="Texture2D" uid="uid://box7f8pvliu74" path="res://assets/menu/Close_BTN.png" id="3_1si56"]
-[ext_resource type="Script" path="res://scenes/back_to_menu.gd" id="4_3k2th"]
+[ext_resource type="Texture2D" path="res://assets/menu/Close_BTN.png" id="3_1si56"]
+[ext_resource type="Script" path="res://scripts/back_to_menu.gd" id="4_3k2th"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
