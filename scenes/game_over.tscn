@@ -135,6 +135,7 @@ texture = ExtResource("5_3rxub")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_svbbm")
 autoplay = true
+bus = &"music"
 
 [node name="Scoreboard" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -123,6 +123,24 @@ theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 200
 text = "Help"
 
+[node name="options_button" type="TextureButton" parent="."]
+offset_left = -19.5724
+offset_top = 78.6765
+offset_right = 390.428
+offset_bottom = 199.677
+scale = Vector2(0.359785, 0.359785)
+texture_normal = ExtResource("3_wfpk5")
+
+[node name="options" type="Label" parent="options_button"]
+layout_mode = 0
+offset_left = 49.867
+offset_top = 22.6217
+offset_right = 331.867
+offset_bottom = 86.6217
+theme_override_fonts/font = ExtResource("2_h12ni")
+theme_override_font_sizes/font_size = 48
+text = "Options"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -134,8 +152,10 @@ texture = ExtResource("4_ad1dn")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mwaxi")
 autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]

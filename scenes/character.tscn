@@ -181,3 +181,4 @@ scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ts7hv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
