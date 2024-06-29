@@ -13,3 +13,6 @@ func _ready():
 func _on_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 
+
+func _on_drag_ended(value_changed):
+	self.release_focus()
