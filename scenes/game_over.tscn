@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=8 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
-[ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/new_ui/scoreboard_v3.png" id="2_6dl4u"]
-[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_ri03t"]
+[ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard_v3.png" id="2_6dl4u"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_6by6t"]
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
-[ext_resource type="Texture2D" uid="uid://baj7epyfq3qph" path="res://assets/menu/new_ui/button_v5.png" id="4_yc0vj"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="4_3na2n"]
+[ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="5_3rxub"]
+[ext_resource type="Texture2D" uid="uid://dwx6qbkfc3hap" path="res://assets/menu/scoreboard_v4.png" id="7_v8dwl"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -18,6 +19,7 @@ scale = Vector2(1.95693, 1.95693)
 script = ExtResource("1_vgoqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(53.1445, 131.839)
 scale = Vector2(0.843767, 0.843767)
 texture = ExtResource("2_6dl4u")
@@ -47,31 +49,33 @@ text = "Endscore"
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 20.4402
-offset_top = 95.0468
-offset_right = 139.44
-offset_bottom = 326.047
-scale = Vector2(0.1, 0.084)
+offset_left = 5.812
+offset_top = 92.915
+offset_right = 463.812
+offset_bottom = 323.915
+scale = Vector2(0.2, 0.168)
 theme_override_fonts/font = ExtResource("3_6by6t")
-theme_override_font_sizes/font_size = 180
+theme_override_font_sizes/font_size = 80
+text = "5000"
 horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="Restart" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = -30.6603
-offset_top = 112.421
-offset_right = 330.34
-offset_bottom = 240.421
+offset_left = 1.02201
+offset_top = 129.795
+offset_right = 157.022
+offset_bottom = 184.795
 scale = Vector2(0.65, 0.65)
-texture_normal = ExtResource("4_yc0vj")
+texture_normal = ExtResource("4_3na2n")
 
 [node name="restart" type="Label" parent="Restart"]
 layout_mode = 0
-offset_left = 84.3912
-offset_top = 51.8798
-offset_right = 957.391
-offset_bottom = 307.88
+offset_left = 34.95
+offset_top = 14.937
+offset_right = 907.95
+offset_bottom = 270.937
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_6by6t")
 theme_override_font_sizes/font_size = 200
@@ -80,19 +84,19 @@ text = "Restart"
 [node name="Quit" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = -30.6603
-offset_top = 141.548
-offset_right = 330.34
-offset_bottom = 269.548
+offset_left = 1.0
+offset_top = 163.0
+offset_right = 157.0
+offset_bottom = 218.0
 scale = Vector2(0.65, 0.65)
-texture_normal = ExtResource("4_yc0vj")
+texture_normal = ExtResource("4_3na2n")
 
 [node name="quit" type="Label" parent="Quit"]
 layout_mode = 0
-offset_left = 103.722
-offset_top = 51.1696
-offset_right = 577.722
-offset_bottom = 307.17
+offset_left = 55.0313
+offset_top = 14.1509
+offset_right = 529.031
+offset_bottom = 270.151
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_6by6t")
 theme_override_font_sizes/font_size = 200
@@ -101,19 +105,19 @@ text = "Quit"
 [node name="Menu" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = -31.1713
-offset_top = 172.209
-offset_right = 329.829
-offset_bottom = 300.209
+offset_left = 1.022
+offset_top = 196.072
+offset_right = 157.022
+offset_bottom = 251.072
 scale = Vector2(0.65, 0.65)
-texture_normal = ExtResource("4_yc0vj")
+texture_normal = ExtResource("4_3na2n")
 
 [node name="menu" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 98.2701
-offset_top = 51.8866
-offset_right = 699.27
-offset_bottom = 307.887
+offset_left = 49.5281
+offset_top = 15.7232
+offset_right = 650.528
+offset_bottom = 271.724
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_6by6t")
 theme_override_font_sizes/font_size = 200
@@ -123,14 +127,52 @@ text = "Menu"
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(639, 361)
+position = Vector2(638, 362)
 rotation = 3.14159
-scale = Vector2(1.01338, 1.01338)
-texture = ExtResource("2_ri03t")
+scale = Vector2(1.022, 1.022)
+texture = ExtResource("5_3rxub")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_svbbm")
 autoplay = true
+
+[node name="Scoreboard" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-170.262, 256.013)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_v8dwl")
+
+[node name="leaderboard" type="Label" parent="Scoreboard"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = -309.0
+offset_right = 1378.0
+offset_bottom = -53.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 200
+text = "Leaderboard"
+
+[node name="submit_button" type="TextureButton" parent="Scoreboard"]
+texture_filter = 1
+offset_left = 18.306
+offset_top = 38.837
+offset_right = 174.306
+offset_bottom = 93.837
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_3na2n")
+
+[node name="submit" type="Label" parent="Scoreboard/submit_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.033
+offset_top = 18.072
+offset_right = 629.033
+offset_bottom = 210.072
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 150
+text = "Submit"
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

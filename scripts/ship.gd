@@ -21,7 +21,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$ShipSprite.play("new_animation")
-	$ShipSprite/AnimationPlayer.play("change_pos")
 
 	if self.has_breach() and not $AudioStreamPlayer2D.playing:
 		$AudioStreamPlayer2D.play()
@@ -57,6 +56,7 @@ func _timer_timeout() -> void:
 			damage_instance.name = damage_name
 			$MetalBreaking.play()
 			add_child(damage_instance)
+			damage_instance.get_node("AnimationPlayer").play("Crack")
 			position_selected = true
 			
 		elif damage_exists and not breach_exists:
@@ -67,6 +67,8 @@ func _timer_timeout() -> void:
 			damage_node.queue_free()
 			$MetalBreaking.play()
 			add_child(breach_instance)
+			breach_instance.get_node("AnimationPlayer").play("Opencrack")
+			breach_instance.get_node("AnimationPlayer").queue("Stars")
 			position_selected = true
 			
 		else:
