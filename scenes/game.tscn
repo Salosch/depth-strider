@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
-[ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_1xkec"]
-[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="3_aq8se"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_mssjk"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
@@ -42,13 +41,16 @@ max_value = 100000.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Control/Energy"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 185.0
 offset_top = 7.0
 offset_right = 275.0
 offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("3_aq8se")
-text = "Energy"
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_mssjk")
+theme_override_font_sizes/font_size = 200
+text = "ENERGY"
 
 [node name="Oxygen" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0
@@ -60,21 +62,27 @@ theme = SubResource("Theme_skf8e")
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Control/Oxygen"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 185.0
 offset_top = 7.0
 offset_right = 275.0
 offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("3_aq8se")
-text = "Oxygen"
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_mssjk")
+theme_override_font_sizes/font_size = 200
+text = "OXYGEN"
 
 [node name="DistanceLabel" type="Label" parent="UI/Control"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 1092.0
 offset_top = 21.0
 offset_right = 1132.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("3_aq8se")
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_mssjk")
+theme_override_font_sizes/font_size = 200
 
 [node name="RepairProgress" type="ProgressBar" parent="UI/Control"]
 visible = false

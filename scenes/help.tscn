@@ -1,54 +1,61 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckj2xrtbclyd5"]
 
-[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="1_bj5ej"]
-[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="2_mi7fg"]
-[ext_resource type="Texture2D" uid="uid://box7f8pvliu74" path="res://assets/menu/Close_BTN.png" id="3_mhj0k"]
+[ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="1_iskou"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_qlsee"]
+[ext_resource type="Texture2D" uid="uid://dc0bptbdcti1c" path="res://assets/menu/close-btn_v3.png" id="3_xuxl4"]
 [ext_resource type="Script" path="res://scripts/help.gd" id="4_uyxto"]
 
 [node name="Help" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(639, 361)
-scale = Vector2(1.01058, 1.01058)
-texture = ExtResource("1_bj5ej")
+position = Vector2(638, 362)
+scale = Vector2(1.022, 1.022)
+texture = ExtResource("1_iskou")
 
 [node name="controls" type="Label" parent="."]
-offset_left = 461.0
-offset_top = 426.0
-offset_right = 821.0
-offset_bottom = 474.0
-theme_override_fonts/font = ExtResource("2_mi7fg")
-theme_override_font_sizes/font_size = 48
-text = "Controls"
+offset_left = 507.0
+offset_top = 440.0
+offset_right = 3056.0
+offset_bottom = 951.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 400
+text = "CONTROLS"
 
 [node name="control_desc" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 496.0
-offset_right = 958.0
-offset_bottom = 586.0
-theme_override_fonts/font = ExtResource("2_mi7fg")
-theme_override_font_sizes/font_size = 28
+texture_filter = 1
+offset_left = 410.0
+offset_top = 520.0
+offset_right = 4920.0
+offset_bottom = 1486.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 250
 text = "MOVE: W,A,S,D
 
 Repair: Damage (e), Breaches (R)"
 horizontal_alignment = 1
 
 [node name="help" type="Label" parent="."]
-offset_left = 546.0
-offset_top = 108.0
-offset_right = 726.0
-offset_bottom = 156.0
-theme_override_fonts/font = ExtResource("2_mi7fg")
-theme_override_font_sizes/font_size = 48
+texture_filter = 1
+offset_left = 571.0
+offset_top = 121.0
+offset_right = 1830.0
+offset_bottom = 632.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 400
 text = "HELP"
 
 [node name="help_desc" type="Label" parent="."]
-offset_left = 208.0
-offset_top = 183.0
-offset_right = 1123.0
-offset_bottom = 335.0
-theme_override_fonts/font = ExtResource("2_mi7fg")
-theme_override_font_sizes/font_size = 28
+texture_filter = 1
+offset_left = 334.0
+offset_top = 200.0
+offset_right = 6301.0
+offset_bottom = 1812.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 250
 text = "In depth Strider, you walk 
 inside a spaceship in space, repairing
 damages to prevent breaches and maintain
@@ -57,12 +64,13 @@ reaches 0, you lose!"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 23.0
-offset_top = 24.0
-offset_right = 233.0
-offset_bottom = 234.0
-scale = Vector2(0.37582, 0.37582)
-texture_normal = ExtResource("3_mhj0k")
+texture_filter = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 85.0
+offset_bottom = 85.0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_xuxl4")
 script = ExtResource("4_uyxto")
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
