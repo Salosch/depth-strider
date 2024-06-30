@@ -1,9 +1,9 @@
 extends Node2D
 
 @onready var score_container = $ScrollContainer/MarginContainer/ScoreContainer
-@onready var submit_button = $HBoxContainer/SubmitButton
-@onready var contender_textedit = $HBoxContainer/ContenderTextEdit
-@onready var result_label = $ResultLabel
+@onready var submit_button = $SubmitButton
+@onready var contender_textedit = $ContenderTextEdit
+@onready var result_label = $score
 
 @onready var submitted = false:
 	set(value):

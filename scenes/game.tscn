@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=13 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
@@ -7,8 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
+[ext_resource type="Shader" path="res://scenes/game.gdshader" id="8_q6ap8"]
+[ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="9_r776w"]
 
 [sub_resource type="Theme" id="Theme_skf8e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60gjo"]
+shader = ExtResource("8_q6ap8")
+shader_parameter/blur = 2.5
+shader_parameter/darkness = 0.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qbuj6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8pf5")
@@ -27,10 +36,19 @@ offset_bottom = 722.0
 
 [node name="Pause" parent="UI/Control" instance=ExtResource("3_uya1x")]
 visible = false
-offset_left = 481.0
-offset_top = 288.0
-offset_right = 481.0
-offset_bottom = 288.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -125.5
+offset_right = -185.5
+offset_bottom = -125.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.89549, 1.89549)
 
 [node name="Energy" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0
@@ -38,16 +56,17 @@ offset_left = 15.0
 offset_top = 50.0
 offset_right = 478.0
 offset_bottom = 77.0
+scale = Vector2(0.9, 0.9)
 max_value = 100000.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Control/Energy"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 185.0
-offset_top = 7.0
-offset_right = 275.0
-offset_bottom = 30.0
+offset_left = 181.0
+offset_top = 1.0
+offset_right = 1138.0
+offset_bottom = 257.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_mssjk")
 theme_override_font_sizes/font_size = 200
@@ -59,16 +78,17 @@ offset_left = 14.0
 offset_top = 15.0
 offset_right = 479.0
 offset_bottom = 42.0
+scale = Vector2(0.9, 0.9)
 theme = SubResource("Theme_skf8e")
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Control/Oxygen"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 185.0
-offset_top = 7.0
-offset_right = 275.0
-offset_bottom = 30.0
+offset_left = 182.0
+offset_top = 1.0
+offset_right = 1148.0
+offset_bottom = 257.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_mssjk")
 theme_override_font_sizes/font_size = 200
@@ -77,10 +97,10 @@ text = "OXYGEN"
 [node name="DistanceLabel" type="Label" parent="UI/Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 1092.0
-offset_top = 21.0
-offset_right = 1132.0
-offset_bottom = 44.0
+offset_left = 1122.0
+offset_top = 15.0
+offset_right = 2488.0
+offset_bottom = 271.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_mssjk")
 theme_override_font_sizes/font_size = 200
@@ -109,3 +129,14 @@ position = Vector2(526, 200)
 stream = ExtResource("5_qwrub")
 autoplay = true
 bus = &"music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_60gjo")
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("ViewportTexture_qbuj6")
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("9_r776w")]

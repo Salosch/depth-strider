@@ -1,10 +1,15 @@
 extends Control
 
+@onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
+
 func _ready():
 	AudioPlayer.play_music_menu()
 	AudioPlayer.resume_music()
 
 func _on_start_button_pressed():
+	self.hide()
+	scene_transition.play("fade_in")
+	await scene_transition.animation_finished
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_button_pressed():

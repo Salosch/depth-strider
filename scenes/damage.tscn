@@ -1,11 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cxf2iwygohqvx"]
 
+[ext_resource type="Texture2D" uid="uid://bd0ehhalaw8r3" path="res://assets/spaceship/crack.png" id="2_84ixy"]
 [ext_resource type="Script" path="res://scripts/damage_area.gd" id="2_b1676"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7mdc"]
 size = Vector2(93.3333, 93.3333)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xwckm"]
 
 [sub_resource type="Animation" id="Animation_dvqtf"]
 length = 0.3
@@ -111,7 +110,7 @@ shape = SubResource("RectangleShape2D_l7mdc")
 texture_filter = 1
 position = Vector2(3, -1)
 scale = Vector2(0.8, 0.8)
-texture = SubResource("CompressedTexture2D_xwckm")
+texture = ExtResource("2_84ixy")
 hframes = 5
 vframes = 5
 metadata/_aseprite_wizard_config_ = {
