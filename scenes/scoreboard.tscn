@@ -1,16 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvwyfw88mevew"]
+[gd_scene load_steps=7 format=3 uid="uid://dvwyfw88mevew"]
 
 [ext_resource type="Script" path="res://scripts/scoreboard.gd" id="1_ce70u"]
+[ext_resource type="Texture2D" uid="uid://caufwoklencb4" path="res://assets/menu/scoreboard_v5.png" id="2_c3lal"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_ndapn"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="3_ydv5e"]
+[ext_resource type="Texture2D" uid="uid://dnh51ab76r4vs" path="res://assets/menu/leaderboard_name.png" id="5_xb51a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8efh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="Scoreboard" type="Node2D"]
 position = Vector2(208, 235)
 script = ExtResource("1_ce70u")
 
+[node name="Scoreboard" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, 259)
+scale = Vector2(1.50695, 1.50695)
+texture = ExtResource("2_c3lal")
+
+[node name="leaderboard" type="Label" parent="Scoreboard"]
+texture_filter = 1
+offset_left = -89.912
+offset_top = -312.553
+offset_right = 1711.09
+offset_bottom = 7.44699
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_ndapn")
+theme_override_font_sizes/font_size = 250
+text = "Leaderboard"
+metadata/_edit_use_anchors_ = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = -206.0
-offset_top = -160.0
-offset_right = 205.0
-offset_bottom = 119.0
+offset_left = -157.0
+offset_top = -59.0
+offset_right = 161.0
+offset_bottom = 305.0
 horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="CenterContainer" parent="ScrollContainer"]
@@ -25,36 +51,62 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 20
 columns = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -209.0
-offset_top = 127.0
-offset_right = 206.0
-offset_bottom = 173.0
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="ContenderTextEdit" type="TextEdit" parent="HBoxContainer"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
+[node name="SubmitButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 29.0
+offset_top = 309.0
+offset_right = 185.0
+offset_bottom = 364.0
+scale = Vector2(0.786898, 0.786898)
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-placeholder_text = "Enter your name"
+texture_normal = ExtResource("3_ydv5e")
 
-[node name="SubmitButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Label" type="Label" parent="SubmitButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 51.0
+offset_top = 20.0
+offset_right = 630.0
+offset_bottom = 212.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_ndapn")
+theme_override_font_sizes/font_size = 150
 text = "Submit"
+horizontal_alignment = 1
 
-[node name="ResultLabel" type="Label" parent="."]
-offset_left = -209.0
-offset_top = -234.0
-offset_right = 209.0
-offset_bottom = -153.0
-theme_override_colors/font_color = Color(0.188235, 0.494118, 1, 1)
-theme_override_font_sizes/font_size = 64
+[node name="score" type="Label" parent="."]
+offset_left = -74.0
+offset_top = -116.0
+offset_right = 1561.0
+offset_bottom = 522.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ndapn")
+theme_override_font_sizes/font_size = 400
 text = "Score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[node name="LeaderboardName" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-62, 331)
+scale = Vector2(1.5983, 1.5983)
+texture = ExtResource("5_xb51a")
+
+[node name="ContenderTextEdit" type="TextEdit" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 35)
+offset_left = -128.0
+offset_top = 320.0
+offset_right = 1212.0
+offset_bottom = 580.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/font = ExtResource("2_ndapn")
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8efh")
+placeholder_text = "Enter your name"
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

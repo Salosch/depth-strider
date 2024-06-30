@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=8 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
 [ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard_v3.png" id="2_6dl4u"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
 [ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="4_3na2n"]
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="5_3rxub"]
-[ext_resource type="Texture2D" uid="uid://dwx6qbkfc3hap" path="res://assets/menu/scoreboard_v4.png" id="7_v8dwl"]
 [ext_resource type="PackedScene" uid="uid://dvwyfw88mevew" path="res://scenes/scoreboard.tscn" id="8_7mt1t"]
 
 [node name="GameOver" type="Control"]
@@ -138,47 +137,9 @@ stream = ExtResource("3_svbbm")
 autoplay = true
 bus = &"music"
 
-[node name="Scoreboard" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-170.262, 256.013)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_v8dwl")
-
-[node name="Scoreboard2" parent="Scoreboard" instance=ExtResource("8_7mt1t")]
-position = Vector2(6.26205, -90.6178)
-scale = Vector2(0.62474, 0.62474)
-
-[node name="leaderboard" type="Label" parent="Scoreboard"]
-texture_filter = 1
-offset_left = -73.0
-offset_top = -309.0
-offset_right = 1378.0
-offset_bottom = -53.0
-scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("3_6by6t")
-theme_override_font_sizes/font_size = 200
-text = "Leaderboard"
-
-[node name="submit_button" type="TextureButton" parent="Scoreboard"]
-texture_filter = 1
-offset_left = 18.306
-offset_top = 38.837
-offset_right = 174.306
-offset_bottom = 93.837
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("4_3na2n")
-
-[node name="submit" type="Label" parent="Scoreboard/submit_button"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 50.033
-offset_top = 18.072
-offset_right = 629.033
-offset_bottom = 210.072
-scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("3_6by6t")
-theme_override_font_sizes/font_size = 150
-text = "Submit"
+[node name="Scoreboard2" parent="." instance=ExtResource("8_7mt1t")]
+position = Vector2(-181.685, 120.597)
+scale = Vector2(0.468555, 0.468555)
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]
