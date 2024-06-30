@@ -19,6 +19,7 @@ var current_energy = MAX_ENERGY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	AudioPlayer.stop_music()
 	var sb_oxygen = StyleBoxFlat.new()
 	oxygen_bar.add_theme_stylebox_override("fill", sb_oxygen)
 	sb_oxygen.bg_color = Color('45b0e6')

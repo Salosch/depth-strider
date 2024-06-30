@@ -3,6 +3,7 @@ extends Control
 var score_label: Label
 
 func _ready():
+	AudioPlayer.stop()
 	score_label = $ScoreLabel
 	score_label.text = str(Global.final_score)
 

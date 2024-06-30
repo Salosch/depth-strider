@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=17 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_4n2fm"]
 [ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="3_mvcxb"]
-[ext_resource type="AudioStream" uid="uid://c0cyijeb0yksu" path="res://assets/music/menu_music.wav" id="3_mwaxi"]
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="4_ad1dn"]
 [ext_resource type="PackedScene" uid="uid://twdfjh5sc3kn" path="res://scenes/volume_controls.tscn" id="5_sr36p"]
 [ext_resource type="Texture2D" uid="uid://cpxu35giagetk" path="res://assets/menu/volume-slider-normal_v3.png" id="6_dwgf3"]
@@ -358,11 +357,6 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_ihk03")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_oodmt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7o6yf")
 bus_name = "sfx"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_mwaxi")
-autoplay = true
-bus = &"music"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
