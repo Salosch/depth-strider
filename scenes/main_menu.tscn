@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=18 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_4n2fm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://twdfjh5sc3kn" path="res://scenes/volume_controls.tscn" id="5_sr36p"]
 [ext_resource type="Texture2D" uid="uid://cpxu35giagetk" path="res://assets/menu/volume-slider-normal_v3.png" id="6_dwgf3"]
 [ext_resource type="Texture2D" uid="uid://bwxybtnh602up" path="res://assets/menu/volume-slider-pressed_v3.png" id="7_8j26c"]
+[ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="8_bvxa5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3ypy"]
 bg_color = Color(0.129412, 0.25098, 0.282353, 1)
@@ -273,6 +274,10 @@ layer = -1
 position = Vector2(638, 362)
 scale = Vector2(1.022, 1.022)
 texture = ExtResource("4_ad1dn")
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("8_bvxa5")]
+position = Vector2(534, 291)
+scale = Vector2(1.83932, 1.84299)
 
 [node name="master_label" type="Label" parent="."]
 texture_filter = 1

@@ -27,15 +27,16 @@ text = "CONTROLS"
 [node name="control_desc" type="Label" parent="."]
 texture_filter = 1
 offset_left = 410.0
-offset_top = 520.0
+offset_top = 510.0
 offset_right = 4920.0
-offset_bottom = 1486.0
+offset_bottom = 1476.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
 text = "MOVE: W,A,S,D
 
-Repair: Damage (e), Breaches (R)"
+- Repair: Damage (e), Breaches (r)
+                              "
 horizontal_alignment = 1
 
 [node name="help" type="Label" parent="."]
@@ -52,18 +53,42 @@ text = "HELP"
 [node name="help_desc" type="Label" parent="."]
 texture_filter = 1
 offset_left = 334.0
-offset_top = 200.0
-offset_right = 6301.0
-offset_bottom = 1812.0
+offset_top = 190.0
+offset_right = 6315.0
+offset_bottom = 2448.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
-text = "In depth Strider, you walk 
-inside a spaceship in space, repairing
+text = "In Depth Strider, you walk 
+inside a spaceship in outer space, repairing
 damages to prevent breaches and maintain
-oxygen levels. if your oxygen
-reaches 0, you lose!"
+oxygen levels. Continuously charge the 
+ship's core and respond to warnings
+to keep flying. If either your oxygen or the
+core's charge hits 0, you lose!"
 horizontal_alignment = 1
+
+[node name="charge_core" type="Label" parent="."]
+texture_filter = 1
+offset_left = 410.0
+offset_top = 610.0
+offset_right = 3640.0
+offset_bottom = 930.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 250
+text = "- Charge Core (e)"
+
+[node name="respond_msg" type="Label" parent="."]
+texture_filter = 1
+offset_left = 411.0
+offset_top = 644.0
+offset_right = 2288.0
+offset_bottom = 964.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 250
+text = "- Respond (e)"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 texture_filter = 1
