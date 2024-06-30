@@ -119,11 +119,11 @@ show_percentage = false
 
 [node name="Character" parent="CharacterCanvas" instance=ExtResource("4_i8277")]
 z_index = 1
-position = Vector2(526, 316)
-scale = Vector2(1.66, 1.66)
+position = Vector2(618, 359)
+scale = Vector2(2.51563, 2.51563)
 
 [node name="Ship" parent="CharacterCanvas" instance=ExtResource("4_kd45g")]
-position = Vector2(526, 200)
+position = Vector2(625, 231)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qwrub")

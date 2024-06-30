@@ -9,6 +9,7 @@ var current_repairing_node: Node = null
 var current_message_time = 0
 
 @onready var animation_player = $Sprite2D/AnimationPlayer
+@onready var anim_player2 = $Sprite2D2/AnimationPlayer
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var game_node = get_tree().get_root().get_node("Game")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
@@ -36,9 +37,9 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		animation_player.play("walk_left")
 	elif Input.is_action_pressed("ui_up"):
-		animation_player.play("walk_up")
+		anim_player2.play("walk_up2")
 	elif Input.is_action_pressed("ui_down"):
-		animation_player.play("walk_down")
+		anim_player2.play("walk_down2")
 	else:
 		animation_player.play("idle_down")
 		
