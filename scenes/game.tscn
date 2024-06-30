@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=12 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
@@ -7,8 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
+[ext_resource type="Shader" path="res://scenes/game.gdshader" id="8_q6ap8"]
 
 [sub_resource type="Theme" id="Theme_skf8e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60gjo"]
+shader = ExtResource("8_q6ap8")
+shader_parameter/blur = 2.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qbuj6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8pf5")
@@ -118,3 +125,12 @@ position = Vector2(526, 200)
 stream = ExtResource("5_qwrub")
 autoplay = true
 bus = &"music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_60gjo")
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("ViewportTexture_qbuj6")

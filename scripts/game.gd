@@ -50,6 +50,7 @@ func _process(delta):
 		pause_menu()
 	
 func pause_menu() -> void:
+	$CanvasLayer.show()
 	pause_screen.show()
 	get_tree().paused = true
 	

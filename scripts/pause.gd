@@ -1,7 +1,10 @@
 extends Control
 
+@onready var blur = get_tree().get_root().get_node("Game/CanvasLayer")
+
 func _on_resume_pressed():
 	get_tree().paused = false
+	blur.hide()
 	self.hide()
 
 func _on_quit_pressed():
