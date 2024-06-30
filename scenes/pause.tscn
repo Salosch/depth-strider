@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1gidtlgxi7th"]
+[gd_scene load_steps=4 format=3 uid="uid://d1gidtlgxi7th"]
 
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_oj80h"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="2_3jejp"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_cxoxr"]
 
 [node name="Pause" type="Control"]
 process_mode = 2
@@ -8,26 +10,70 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_oj80h")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Resume" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_right = 156.0
+offset_bottom = 55.0
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("2_3jejp")
+
+[node name="resume_label" type="Label" parent="Resume"]
+texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 24.5455
+offset_top = 16.3636
+offset_right = 1104.55
+offset_bottom = 272.364
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_cxoxr")
+theme_override_font_sizes/font_size = 200
 text = "Resume"
+horizontal_alignment = 1
 
-[node name="back_to_menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="back_to_menu" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 2
-text = "Quit to menu"
+offset_top = 58.0
+offset_right = 156.0
+offset_bottom = 113.0
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("2_3jejp")
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="menu_label" type="Label" parent="back_to_menu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 49.364
+offset_top = 16.364
+offset_right = 650.364
+offset_bottom = 272.364
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_cxoxr")
+theme_override_font_sizes/font_size = 200
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 2
-text = "Quit Game"
+offset_top = 116.0
+offset_right = 156.0
+offset_bottom = 171.0
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("2_3jejp")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/back_to_menu" to="." method="_on_back_to_menu_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="quit_label" type="Label" parent="Quit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 54.818
+offset_top = 13.636
+offset_right = 528.818
+offset_bottom = 269.636
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_cxoxr")
+theme_override_font_sizes/font_size = 200
+text = "Quit"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

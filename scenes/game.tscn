@@ -27,10 +27,19 @@ offset_bottom = 722.0
 
 [node name="Pause" parent="UI/Control" instance=ExtResource("3_uya1x")]
 visible = false
-offset_left = 481.0
-offset_top = 288.0
-offset_right = 481.0
-offset_bottom = 288.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.5
+offset_top = -130.5
+offset_right = -168.5
+offset_bottom = -130.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.89549, 1.89549)
 
 [node name="Energy" type="ProgressBar" parent="UI/Control"]
 layout_mode = 0
