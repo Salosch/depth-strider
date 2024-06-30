@@ -10,6 +10,7 @@ func _play_music(music: AudioStream, volume = 0.0):
 
 	current_music = music
 	stream = music
+	bus = "music"
 	volume_db = volume
 	play()
 	is_playing = true
