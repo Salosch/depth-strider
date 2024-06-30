@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvwyfw88mevew"]
+
+[ext_resource type="Script" path="res://scripts/scoreboard.gd" id="1_ce70u"]
+
+[node name="Scoreboard" type="Node2D"]
+position = Vector2(208, 235)
+script = ExtResource("1_ce70u")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = -206.0
+offset_top = -160.0
+offset_right = 205.0
+offset_bottom = 119.0
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="CenterContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="ScoreContainer" type="GridContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -209.0
+offset_top = 127.0
+offset_right = 206.0
+offset_bottom = 173.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="ContenderTextEdit" type="TextEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "Enter your name"
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Submit"
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = -209.0
+offset_top = -234.0
+offset_right = 209.0
+offset_bottom = -153.0
+theme_override_colors/font_color = Color(0.188235, 0.494118, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
