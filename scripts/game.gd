@@ -7,7 +7,7 @@ const MAX_ENERGY = 100000.0
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
 
-@onready var scene_transition = $UI/SceneTransition/AnimationPlayer
+@onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
 @onready var oxygen_bar = $UI/Control/Oxygen
@@ -19,8 +19,6 @@ var current_energy = MAX_ENERGY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scene_transition.get_parent().get_node("ColorRect").color.a = 255
-	scene_transition.play("fade_out")
 	AudioPlayer.stop_music()
 	var sb_oxygen = StyleBoxFlat.new()
 	oxygen_bar.add_theme_stylebox_override("fill", sb_oxygen)
@@ -32,6 +30,10 @@ func _ready():
 
 	set_distance_label()
 	set_energy_bar(0)
+	
+	scene_transition.get_parent().get_node("ColorRect").color.a = 255
+	scene_transition.play("fade_out")
+	await scene_transition.animation_finished
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -82,4 +84,6 @@ func lose_oxygen() -> void:
 func death() -> void:
 	Global.final_score = distance
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	scene_transition.play("fade_in")
+	await scene_transition.animation_finished
 

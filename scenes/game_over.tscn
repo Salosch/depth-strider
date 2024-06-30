@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=9 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
 [ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard_v3.png" id="2_6dl4u"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
 [ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="4_3na2n"]
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="5_3rxub"]
+[ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="6_g8at0"]
 [ext_resource type="PackedScene" uid="uid://dvwyfw88mevew" path="res://scenes/scoreboard.tscn" id="8_7mt1t"]
 
 [node name="GameOver" type="Control"]
@@ -17,6 +18,19 @@ offset_right = 660.0
 offset_bottom = 200.0
 scale = Vector2(1.95693, 1.95693)
 script = ExtResource("1_vgoqy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(638, 362)
+rotation = 3.14159
+scale = Vector2(1.022, 1.022)
+texture = ExtResource("5_3rxub")
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("6_g8at0")]
+position = Vector2(546, 1.99999)
+scale = Vector2(1.95693, 1.95693)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -122,15 +136,6 @@ scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_6by6t")
 theme_override_font_sizes/font_size = 200
 text = "Menu"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(638, 362)
-rotation = 3.14159
-scale = Vector2(1.022, 1.022)
-texture = ExtResource("5_3rxub")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_svbbm")

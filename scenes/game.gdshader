@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform float blur : hint_range(0, 10) = 2.0;
+uniform float darkness : hint_range(0, 1) = 0.5;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 const float pi = 3.14159265359;
@@ -51,5 +52,6 @@ void fragment() {
     }
 
     final_color /= total;
+    final_color.rgb *= (1.0 - darkness); // Apply darkness
     COLOR = final_color;
 }

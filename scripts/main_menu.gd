@@ -9,7 +9,7 @@ func _ready():
 func _on_start_button_pressed():
 	self.hide()
 	scene_transition.play("fade_in")
-	await get_tree().create_timer(1.5).timeout
+	await scene_transition.animation_finished
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_button_pressed():
