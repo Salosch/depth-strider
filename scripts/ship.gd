@@ -4,7 +4,8 @@ var damage_scene = preload ("res://scenes/damage.tscn")
 var breach_scene = preload ("res://scenes/breach.tscn")
 @onready var game_node = get_tree().get_root().get_node("Game")
 
-var positions = [Vector2(0, 123), Vector2(71, 123), Vector2( - 85, 123), Vector2(169, 123), Vector2( - 16, 21), Vector2(41, 21), Vector2( - 16, 251), Vector2(42, 251)]
+var positions = [Vector2(0, 123), Vector2(71, 123), Vector2( - 85, 123), Vector2(169, 123), Vector2( -14, 23), Vector2(50, 3), Vector2( - 16, 251), Vector2(42, 251),
+				 Vector2(-33,-87), Vector2(310,135)]
 
 var rand_int = 0
 var rng = RandomNumberGenerator.new()
