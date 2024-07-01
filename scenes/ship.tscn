@@ -66,7 +66,7 @@ b = Vector2(0, 106)
 size = Vector2(16, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg5vb"]
-size = Vector2(45, 33)
+size = Vector2(44, 45)
 
 [node name="Ship" type="StaticBody2D"]
 script = ExtResource("1_6p7q6")
@@ -121,7 +121,7 @@ position = Vector2(308, 77)
 script = ExtResource("8_bnm4q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Message"]
-position = Vector2(0.5, -0.5)
+position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_yg5vb")
 
 [node name="exclamation_mark" type="Sprite2D" parent="Message"]
