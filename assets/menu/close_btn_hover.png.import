@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caufwoklencb4"
-path="res://.godot/imported/scoreboard_v5.png-dd94d1e92e5192373c17bee83b625ed9.ctex"
+uid="uid://c4kiakxb7p602"
+path="res://.godot/imported/close_btn_hover.png-aff654842fcebe2c0b2be13748c6131a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/scoreboard_v5.png"
-dest_files=["res://.godot/imported/scoreboard_v5.png-dd94d1e92e5192373c17bee83b625ed9.ctex"]
+source_file="res://assets/menu/close_btn_hover.png"
+dest_files=["res://.godot/imported/close_btn_hover.png-aff654842fcebe2c0b2be13748c6131a.ctex"]
 
 [params]
 

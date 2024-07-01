@@ -137,9 +137,10 @@ bus = &"music"
 
 [node name="RepairProgress" type="ProgressBar" parent="."]
 visible = false
-offset_left = -60.0
-offset_top = -12.0
-offset_right = 60.0
-offset_bottom = -5.0
+offset_left = -18.1916
+offset_top = -8.03541
+offset_right = 101.808
+offset_bottom = -1.03541
+scale = Vector2(0.3, 0.3)
 max_value = 2.0
 show_percentage = false

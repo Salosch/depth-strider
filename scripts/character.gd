@@ -27,7 +27,10 @@ func _ready():
 	message_timer.timeout.connect(spawn_message)
 	var sb = StyleBoxFlat.new()
 	repair_progress.add_theme_stylebox_override("fill", sb)
-	sb.bg_color = Color('582080')
+	sb.set_corner_radius_all(2)
+	sb.expand_margin_top = 1
+	sb.expand_margin_bottom = 1
+	sb.bg_color = Color('BF64CF')
 
 func _physics_process(delta):
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * SPEED

@@ -12,5 +12,6 @@ func show_and_write() -> void:
 	self.show()
 
 func _on_close_pressed() -> void:
+	Sound.button_click()
 	text_field.clear()
 	self.hide()

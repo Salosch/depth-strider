@@ -91,7 +91,7 @@ func respawn_damage(breach_node: Node) -> void:
 	damage_instance.position = positions[pos_number]
 	damage_instance.name = damage_instance_name
 	breach_node.get_parent().queue_free()
-	damage_instance.get_node("AnimationPlayer").play("Crack")
+	damage_instance.get_node("AnimationPlayer").play_backwards("Opencrack")
 	add_child(damage_instance)
 	
 func get_number_from_node_name(node_name: String) -> int:

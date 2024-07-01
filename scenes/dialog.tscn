@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://d34jpwogn1crw"]
+[gd_scene load_steps=7 format=3 uid="uid://d34jpwogn1crw"]
 
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="1_o3jee"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button.png" id="2_v63e3"]
+[ext_resource type="Texture2D" uid="uid://pu6daetrlkuv" path="res://assets/menu/button_pressed.png" id="3_ayxfw"]
+[ext_resource type="Texture2D" uid="uid://tptonu737i2o" path="res://assets/menu/button_hover.png" id="4_phqp1"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="5_snaeg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvquc"]
+bg_color = Color(0.129412, 0.25098, 0.282353, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.0431373, 0.0941176, 0.227451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Dialog" type="Control"]
 layout_mode = 3
@@ -17,22 +33,42 @@ script = ExtResource("1_o3jee")
 
 [node name="box" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 3.0
 offset_top = 1.0
-offset_right = 454.0
-offset_bottom = 126.0
+offset_right = 271.0
+offset_bottom = 136.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="box"]
+texture_filter = 1
 layout_mode = 0
-offset_right = 454.0
-offset_bottom = 127.0
+offset_right = 2680.0
+offset_bottom = 1350.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/normal_font = ExtResource("5_snaeg")
+theme_override_font_sizes/normal_font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_kvquc")
 
-[node name="close" type="Button" parent="box"]
+[node name="close" type="TextureButton" parent="box"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 398.0
-offset_top = 91.0
-offset_right = 448.0
-offset_bottom = 122.0
+offset_left = 169.0
+offset_top = 96.0
+offset_right = 325.0
+offset_bottom = 151.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("2_v63e3")
+texture_pressed = ExtResource("3_ayxfw")
+texture_hover = ExtResource("4_phqp1")
+
+[node name="Label" type="Label" parent="box/close"]
+layout_mode = 0
+offset_left = 51.6667
+offset_top = 16.6667
+offset_right = 590.667
+offset_bottom = 247.667
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("5_snaeg")
+theme_override_font_sizes/font_size = 180
 text = "Close"
 
 [connection signal="pressed" from="box/close" to="." method="_on_close_pressed"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvwyfw88mevew"]
+[gd_scene load_steps=9 format=3 uid="uid://dvwyfw88mevew"]
 
 [ext_resource type="Script" path="res://scripts/scoreboard.gd" id="1_ce70u"]
-[ext_resource type="Texture2D" uid="uid://caufwoklencb4" path="res://assets/menu/scoreboard_v5.png" id="2_c3lal"]
+[ext_resource type="Texture2D" uid="uid://caufwoklencb4" path="res://assets/menu/leaderboard.png" id="2_c3lal"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_ndapn"]
-[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="3_ydv5e"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button.png" id="3_ydv5e"]
+[ext_resource type="Texture2D" uid="uid://pu6daetrlkuv" path="res://assets/menu/button_pressed.png" id="5_i3qiv"]
 [ext_resource type="Texture2D" uid="uid://dnh51ab76r4vs" path="res://assets/menu/leaderboard_name.png" id="5_xb51a"]
+[ext_resource type="Texture2D" uid="uid://tptonu737i2o" path="res://assets/menu/button_hover.png" id="6_yh2k2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8efh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -60,6 +62,8 @@ offset_bottom = 364.0
 scale = Vector2(0.786898, 0.786898)
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_ydv5e")
+texture_pressed = ExtResource("5_i3qiv")
+texture_hover = ExtResource("6_yh2k2")
 
 [node name="Label" type="Label" parent="SubmitButton"]
 texture_filter = 1

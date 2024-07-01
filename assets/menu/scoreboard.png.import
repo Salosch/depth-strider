@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpxu35giagetk"
-path="res://.godot/imported/volume-slider-normal_v3.png-462bc14151b7e67d08ad98f1780a0fc6.ctex"
+uid="uid://c3biokl6ohat3"
+path="res://.godot/imported/scoreboard.png-07308533eb387fdb4c4f3303f79b0219.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/volume-slider-normal_v3.png"
-dest_files=["res://.godot/imported/volume-slider-normal_v3.png-462bc14151b7e67d08ad98f1780a0fc6.ctex"]
+source_file="res://assets/menu/scoreboard.png"
+dest_files=["res://.godot/imported/scoreboard.png-07308533eb387fdb4c4f3303f79b0219.ctex"]
 
 [params]
 

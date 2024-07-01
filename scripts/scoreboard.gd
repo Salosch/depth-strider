@@ -67,6 +67,7 @@ func generate_scoreboard():
 			entry.set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT)
 
 func _on_submit_button_pressed():
+	Sound.button_click()
 	var contender = contender_textedit.text
 	if contender != "":
 		var updated_score = max(current_score, Global.scores.get(contender, -1))
