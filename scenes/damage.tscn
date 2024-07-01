@@ -109,7 +109,6 @@ shape = SubResource("RectangleShape2D_l7mdc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(3, -1)
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_84ixy")
 hframes = 5
 vframes = 5

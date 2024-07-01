@@ -73,7 +73,7 @@ script = ExtResource("1_6p7q6")
 
 [node name="ShipSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(51, 137.807)
+position = Vector2(51, 135.3)
 scale = Vector2(1.84023, 1.84023)
 sprite_frames = SubResource("SpriteFrames_xlkvq")
 animation = &"new_animation"
