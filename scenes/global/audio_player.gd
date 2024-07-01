@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const menu_music = preload("res://assets/music/menu_music.wav")
+const menu_music = preload("res://assets/music/menu_music_reverb.wav")
 var current_music: AudioStream = null
 var is_playing = false
 

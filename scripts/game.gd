@@ -14,6 +14,7 @@ var current_energy = MAX_ENERGY
 @onready var distance_label = $UI/Control/DistanceLabel
 @onready var energy_bar = $UI/Control/Energy
 @onready var pause_screen = $UI/Control/Pause
+@onready var dialog_box = $UI/Control/Dialog
 
 @export var distance = 0
 
@@ -79,6 +80,8 @@ func lose_oxygen() -> void:
 		
 	set_oxygen_bar()
 
+func show_and_write_dialog() -> void:
+	dialog_box.show_and_write()
 
 
 func death() -> void:

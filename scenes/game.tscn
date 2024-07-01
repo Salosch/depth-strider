@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxdn7c141m7ne"]
+[gd_scene load_steps=14 format=3 uid="uid://bxdn7c141m7ne"]
 
 [ext_resource type="PackedScene" uid="uid://5y4h7fkrrtwx" path="res://scenes/background.tscn" id="1_4ftgj"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_v8pf5"]
+[ext_resource type="PackedScene" uid="uid://d34jpwogn1crw" path="res://scenes/dialog.tscn" id="3_jrtp6"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_mssjk"]
 [ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_uya1x"]
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
@@ -33,6 +34,15 @@ anchors_preset = 0
 offset_top = 1.0
 offset_right = 1279.0
 offset_bottom = 722.0
+
+[node name="Dialog" parent="UI/Control" instance=ExtResource("3_jrtp6")]
+visible = false
+layout_mode = 1
+offset_left = 507.0
+offset_top = 14.0
+offset_right = 507.0
+offset_bottom = 14.0
+scale = Vector2(1.6, 1.6)
 
 [node name="Pause" parent="UI/Control" instance=ExtResource("3_uya1x")]
 visible = false
@@ -104,16 +114,6 @@ offset_bottom = 271.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_mssjk")
 theme_override_font_sizes/font_size = 200
-
-[node name="RepairProgress" type="ProgressBar" parent="UI/Control"]
-visible = false
-layout_mode = 0
-offset_left = 798.0
-offset_top = 161.0
-offset_right = 1069.0
-offset_bottom = 188.0
-max_value = 2.0
-show_percentage = false
 
 [node name="CharacterCanvas" type="CanvasLayer" parent="."]
 

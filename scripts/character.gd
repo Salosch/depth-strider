@@ -9,12 +9,13 @@ var current_repairing_node: Node = null
 var current_message_time = 0
 
 @onready var animation_player = $Sprite2D/AnimationPlayer
-@onready var audio_player = $AudioStreamPlayer2D
+@onready var hammer_weld_audio = $hammer_and_weld
+@onready var recharge_audio = $recharge
+@onready var message_audio = $message
 @onready var game_node = get_tree().get_root().get_node("Game")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
-@onready var repair_progress = get_tree().get_root().get_node("Game/UI/Control/RepairProgress")
+@onready var repair_progress = $RepairProgress
 @onready var exclamation_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship/Message/exclamation_mark")
-
 @onready var rng = RandomNumberGenerator.new()
 @onready var is_message_active = false
 
@@ -92,34 +93,32 @@ func handle_repair(node: Node, delta: float, action: String) -> void:
 
 func play_sound_off_action(action: String) -> void:
 	if action == "ui_accept":
-		if not audio_player.playing:
+		if not hammer_weld_audio.playing:
 			var hammering = load("res://assets/sound_effects/hammering.wav")
-			audio_player.stream = hammering
-			audio_player.play()
+			hammer_weld_audio.stream = hammering
+			hammer_weld_audio.play()
 
 	elif action == "ui_select":
-		if not audio_player.playing:
+		if not hammer_weld_audio.playing:
 			var welding = load("res://assets/sound_effects/welding.wav")
-			audio_player.stream = welding
-			audio_player.play()
+			hammer_weld_audio.stream = welding
+			hammer_weld_audio.play()
 		
 
 func handle_recharge(core_node: Node, delta) -> void:
 	if Input.is_action_pressed("ui_accept"):
 		game_node.set_energy_bar(500)
-		if not audio_player.playing:
-			var charging = load("res://assets/sound_effects/core_charge.wav")
-			audio_player.stream = charging
-			audio_player.play()
+		if not recharge_audio.playing:
+			recharge_audio.play()
 	else:
-		stop_sound()
+		recharge_audio.stop()
 			
 func spawn_message() -> void:
 	var rand_num = rng.randi_range(0,100)
 	if rand_num >= 75:
-		var message_audio = load("res://assets/sound_effects/message.wav")
-		audio_player.stream = message_audio
-		audio_player.play()
+		var message = load("res://assets/sound_effects/message.wav")
+		message_audio.stream = message
+		message_audio.play()
 		is_message_active = true
 		exclamation_node.visible = true
 	
@@ -128,6 +127,7 @@ func handle_message(message_node: Node) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			is_message_active = false
 			exclamation_node.visible = false
+			game_node.show_and_write_dialog()
 			current_message_time = 0
 
 func calc_message_time(delta: float) -> void:
@@ -136,4 +136,4 @@ func calc_message_time(delta: float) -> void:
 		game_node.death()
 
 func stop_sound() -> void:
-	audio_player.stop()
+	hammer_weld_audio.stop()

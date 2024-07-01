@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_eya3b"]
 [ext_resource type="Texture2D" uid="uid://dttxbww0ay5vc" path="res://assets/character/char.png" id="2_8xquc"]
 
+
 [sub_resource type="Animation" id="Animation_heum0"]
 resource_name = "idle_down"
 length = 0.5
@@ -124,5 +125,21 @@ position = Vector2(1.07413e-07, 1.44167)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ts7hv")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="hammer_and_weld" type="AudioStreamPlayer2D" parent="."]
 bus = &"sfx"
+
+[node name="recharge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l5hvf")
+bus = &"sfx"
+
+[node name="message" type="AudioStreamPlayer2D" parent="."]
+bus = &"music"
+
+[node name="RepairProgress" type="ProgressBar" parent="."]
+visible = false
+offset_left = -60.0
+offset_top = -12.0
+offset_right = 60.0
+offset_bottom = -5.0
+max_value = 2.0
+show_percentage = false
