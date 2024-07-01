@@ -13,10 +13,12 @@ func _ready():
 	await scene_transition.animation_finished
 
 func _on_restart_button_pressed():
+	Sound.button_click()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_menu_pressed():
+	Sound.button_click()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
