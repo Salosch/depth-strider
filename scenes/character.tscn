@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dt111mbhobl7t"]
+[gd_scene load_steps=14 format=3 uid="uid://dt111mbhobl7t"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_eya3b"]
 [ext_resource type="Texture2D" uid="uid://cuxpw2fj3dqqs" path="res://assets/character/char.png" id="2_8xquc"]
+[ext_resource type="AudioStream" uid="uid://da8r7puq0t6x2" path="res://assets/sound_effects/core_charge.wav" id="3_l5hvf"]
 
 [sub_resource type="Animation" id="Animation_tnv5v"]
 resource_name = "idle_down"
@@ -180,5 +181,21 @@ position = Vector2(3.43721e-07, 2.34271)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ts7hv")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="hammer_and_weld" type="AudioStreamPlayer2D" parent="."]
 bus = &"sfx"
+
+[node name="recharge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l5hvf")
+bus = &"sfx"
+
+[node name="message" type="AudioStreamPlayer2D" parent="."]
+bus = &"music"
+
+[node name="RepairProgress" type="ProgressBar" parent="."]
+visible = false
+offset_left = -60.0
+offset_top = -12.0
+offset_right = 60.0
+offset_bottom = -5.0
+max_value = 2.0
+show_percentage = false

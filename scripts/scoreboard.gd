@@ -40,8 +40,8 @@ func generate_scoreboard():
 	var contender_title = Label.new()
 	var score_title = Label.new()
 
-	contender_title.set_text("Contender")
-	score_title.set_text("Score")
+	contender_title.set_text(" ")
+	score_title.set_text(" ")
 
 	for header in [contender_title, score_title]:
 		header.add_theme_font_size_override("font_size", 32)
