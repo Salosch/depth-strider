@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=11 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
-[ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard_v3.png" id="2_6dl4u"]
+[ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard.png" id="2_6dl4u"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_6by6t"]
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
-[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button_v6.png" id="4_3na2n"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button.png" id="4_3na2n"]
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="5_3rxub"]
 [ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="6_g8at0"]
+[ext_resource type="Texture2D" uid="uid://pu6daetrlkuv" path="res://assets/menu/button_pressed.png" id="7_4nuyr"]
 [ext_resource type="PackedScene" uid="uid://dvwyfw88mevew" path="res://scenes/scoreboard.tscn" id="8_7mt1t"]
+[ext_resource type="Texture2D" uid="uid://tptonu737i2o" path="res://assets/menu/button_hover.png" id="8_pt14y"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -83,6 +85,8 @@ offset_right = 157.022
 offset_bottom = 184.795
 scale = Vector2(0.65, 0.65)
 texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
 
 [node name="restart" type="Label" parent="Restart"]
 layout_mode = 0
@@ -99,11 +103,13 @@ text = "Restart"
 texture_filter = 1
 layout_mode = 2
 offset_left = 1.0
-offset_top = 163.0
+offset_top = 196.0
 offset_right = 157.0
-offset_bottom = 218.0
+offset_bottom = 251.0
 scale = Vector2(0.65, 0.65)
 texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
 
 [node name="quit" type="Label" parent="Quit"]
 layout_mode = 0
@@ -120,11 +126,13 @@ text = "Quit"
 texture_filter = 1
 layout_mode = 2
 offset_left = 1.022
-offset_top = 196.072
+offset_top = 163.072
 offset_right = 157.022
-offset_bottom = 251.072
+offset_bottom = 218.072
 scale = Vector2(0.65, 0.65)
 texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
 
 [node name="menu" type="Label" parent="Menu"]
 layout_mode = 0

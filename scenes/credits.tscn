@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgfr68rc56ijw"]
+[gd_scene load_steps=7 format=3 uid="uid://cgfr68rc56ijw"]
 
 [ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="1_xq4xv"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_2xh35"]
-[ext_resource type="Texture2D" uid="uid://dc0bptbdcti1c" path="res://assets/menu/close-btn_v3.png" id="3_lj8lb"]
+[ext_resource type="Texture2D" uid="uid://dc0bptbdcti1c" path="res://assets/menu/close_btn.png" id="3_lj8lb"]
 [ext_resource type="Script" path="res://scripts/credits.gd" id="4_xbslv"]
+[ext_resource type="Texture2D" uid="uid://dwbwcrbp1ucn" path="res://assets/menu/close_btn_pressed.png" id="5_reoj2"]
+[ext_resource type="Texture2D" uid="uid://c4kiakxb7p602" path="res://assets/menu/close_btn_hover.png" id="6_8opse"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("4_xbslv")
@@ -61,5 +63,7 @@ offset_right = 85.0
 offset_bottom = 85.0
 scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("3_lj8lb")
+texture_pressed = ExtResource("5_reoj2")
+texture_hover = ExtResource("6_8opse")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
