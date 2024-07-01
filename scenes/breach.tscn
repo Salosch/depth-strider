@@ -19,7 +19,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfrv7"]
-size = Vector2(106.667, 106.667)
+size = Vector2(133.333, 136.667)
 
 [sub_resource type="Animation" id="Animation_ce8ny"]
 length = 0.3
@@ -118,16 +118,16 @@ scale = Vector2(0.3, 0.3)
 script = ExtResource("2_ld8jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.98682e-06, 1.58946e-06)
+position = Vector2(-10, 5)
 shape = SubResource("RectangleShape2D_pfrv7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_mn11y")
 hframes = 5
 vframes = 5
-frame = 16
+frame = 24
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
