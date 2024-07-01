@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_o3jee")
 
 [node name="box" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 454.0

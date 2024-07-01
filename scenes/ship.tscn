@@ -125,6 +125,7 @@ position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_yg5vb")
 
 [node name="exclamation_mark" type="Sprite2D" parent="Message"]
+visible = false
 position = Vector2(-1.52588e-05, -40)
 scale = Vector2(0.609884, 0.699135)
 texture = ExtResource("9_6vyik")

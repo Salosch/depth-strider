@@ -8,15 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
-[ext_resource type="Shader" path="res://scenes/game.gdshader" id="8_q6ap8"]
+[ext_resource type="Shader" path="res://assets/shader/game.gdshader" id="8_q6ap8"]
 [ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="9_r776w"]
 
 [sub_resource type="Theme" id="Theme_skf8e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60gjo"]
 shader = ExtResource("8_q6ap8")
-shader_parameter/blur = 2.5
-shader_parameter/darkness = 0.5
+shader_parameter/blur = 1.5
+shader_parameter/darkness = 0.75
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qbuj6"]
 

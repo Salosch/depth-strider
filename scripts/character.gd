@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200
+const SPEED = 225
 const REPAIR_TIME = 2.0
 const MAX_MESSAGE_TIME = 5
 
