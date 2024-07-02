@@ -76,3 +76,11 @@ func _on_submit_button_pressed():
 
 		clear_scoreboard()
 		generate_scoreboard()
+
+
+func _on_contender_text_edit_mouse_entered():
+	$ContenderTextEdit.set_placeholder("")
+
+
+func _on_contender_text_edit_mouse_exited():
+	$ContenderTextEdit.set_placeholder("Enter your name")

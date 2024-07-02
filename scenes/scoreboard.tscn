@@ -35,9 +35,9 @@ text = "Leaderboard"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = -157.0
+offset_left = -153.0
 offset_top = -59.0
-offset_right = 161.0
+offset_right = 165.0
 offset_bottom = 305.0
 horizontal_scroll_mode = 0
 
@@ -108,9 +108,12 @@ scale = Vector2(0.1, 0.1)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ndapn")
 theme_override_font_sizes/font_size = 140
 theme_override_styles/normal = SubResource("StyleBoxFlat_g8efh")
 placeholder_text = "Enter your name"
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="mouse_entered" from="ContenderTextEdit" to="." method="_on_contender_text_edit_mouse_entered"]
+[connection signal="mouse_exited" from="ContenderTextEdit" to="." method="_on_contender_text_edit_mouse_exited"]
