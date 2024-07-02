@@ -60,7 +60,7 @@ func _process(delta):
 		ai_companion.play()
 	
 	if current_energy == 0:
-		death()
+		death("Out of energy")
 	
 	if Input.is_action_just_pressed("pause"):
 		pause_menu()
@@ -100,7 +100,7 @@ func lose_oxygen() -> void:
 		ai_companion.play()
 		
 	if oxygen < 0:
-		death()
+		death("Out of oxygen")
 		
 	set_oxygen_bar()
 
@@ -108,8 +108,9 @@ func show_and_write_dialog() -> void:
 	dialog_box.show_and_write()
 
 
-func death() -> void:
+func death(death_message: String) -> void:
 	Global.final_score = distance
+	Global.death_message = death_message
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	scene_transition.play("fade_in")
 	await scene_transition.animation_finished

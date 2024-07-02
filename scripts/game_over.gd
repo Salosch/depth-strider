@@ -1,13 +1,13 @@
 extends Control
 
-var score_label: Label
-
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
+@onready var score_label = $ScoreLabel
+@onready var death_message = $death_message
 
 func _ready():
 	AudioPlayer.stop()
-	score_label = $ScoreLabel
 	score_label.text = str(Global.final_score)
+	death_message.text = Global.death_message
 	
 	scene_transition.play("fade_out")
 	await scene_transition.animation_finished

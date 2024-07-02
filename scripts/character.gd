@@ -140,7 +140,7 @@ func handle_message(message_node: Node) -> void:
 func calc_message_time(delta: float) -> void:
 	current_message_time += delta
 	if current_message_time >= MAX_MESSAGE_TIME:
-		game_node.death()
+		game_node.death("Message not answered in time")
 
 func stop_sound() -> void:
 	hammer_weld_audio.stop()
