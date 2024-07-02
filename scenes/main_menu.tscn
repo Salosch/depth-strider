@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwej18s6m22xc"]
+[gd_scene load_steps=24 format=3 uid="uid://bwej18s6m22xc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_77pih"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="2_4n2fm"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cpxu35giagetk" path="res://assets/menu/volume_slider_pressed.png" id="6_dwgf3"]
 [ext_resource type="Texture2D" uid="uid://bwxybtnh602up" path="res://assets/menu/volume_slider_normal.png" id="7_8j26c"]
 [ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="8_bvxa5"]
+[ext_resource type="Texture2D" uid="uid://dc0bptbdcti1c" path="res://assets/menu/close_btn.png" id="11_pgekj"]
+[ext_resource type="Texture2D" uid="uid://dwbwcrbp1ucn" path="res://assets/menu/close_btn_pressed.png" id="12_kscwp"]
+[ext_resource type="Texture2D" uid="uid://c4kiakxb7p602" path="res://assets/menu/close_btn_hover.png" id="13_kjfsq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3ypy"]
 bg_color = Color(0.129412, 0.25098, 0.282353, 1)
@@ -152,6 +155,14 @@ corner_detail = 10
 expand_margin_top = 4.0
 expand_margin_bottom = 6.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uto2"]
+bg_color = Color(0.129412, 0.25098, 0.282353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0431373, 0.0941176, 0.227451, 1)
+
 [node name="MainMenu" type="Control"]
 texture_filter = 2
 layout_mode = 3
@@ -204,30 +215,6 @@ scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 200
 text = "Play"
-
-[node name="coop_button" type="TextureButton" parent="."]
-texture_filter = 1
-offset_left = -247.918
-offset_top = -42.8651
-offset_right = -91.9177
-offset_bottom = 12.1349
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("3_mvcxb")
-texture_pressed = ExtResource("4_opsyb")
-texture_hover = ExtResource("5_4tmmr")
-
-[node name="coop" type="Label" parent="coop_button"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 53.8741
-offset_top = 11.5573
-offset_right = 549.874
-offset_bottom = 267.557
-scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("2_4n2fm")
-theme_override_font_sizes/font_size = 200
-text = "coop
-"
 
 [node name="help_button" type="TextureButton" parent="."]
 texture_filter = 1
@@ -317,9 +304,9 @@ scale = Vector2(1.83932, 1.84299)
 texture_filter = 1
 layout_mode = 2
 offset_left = 227.675
-offset_top = 44.328
+offset_top = 20.4535
 offset_right = 1707.68
-offset_bottom = 275.328
+offset_bottom = 251.453
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -330,9 +317,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.763
-offset_top = 63.7169
+offset_top = 39.8427
 offset_right = 456.763
-offset_bottom = 95.7169
+offset_bottom = 71.8427
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -345,9 +332,9 @@ bus_name = "Master"
 texture_filter = 1
 layout_mode = 0
 offset_left = 227.675
-offset_top = 87.328
+offset_top = 63.4535
 offset_right = 1707.68
-offset_bottom = 318.328
+offset_bottom = 294.453
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -358,9 +345,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.734
-offset_top = 106.771
+offset_top = 82.8968
 offset_right = 456.734
-offset_bottom = 138.771
+offset_bottom = 114.897
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -373,9 +360,9 @@ bus_name = "music"
 texture_filter = 1
 layout_mode = 0
 offset_left = 227.675
-offset_top = 130.328
+offset_top = 106.453
 offset_right = 1707.68
-offset_bottom = 361.328
+offset_bottom = 337.453
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -386,9 +373,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.734
-offset_top = 149.636
+offset_top = 125.762
 offset_right = 456.734
-offset_bottom = 181.636
+offset_bottom = 157.762
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -401,9 +388,9 @@ bus_name = "sfx"
 texture_filter = 1
 layout_mode = 0
 offset_left = 229.976
-offset_top = 174.173
+offset_top = 150.299
 offset_right = 1709.98
-offset_bottom = 405.173
+offset_bottom = 381.299
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -414,9 +401,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 0
 offset_left = 220.734
-offset_top = 188.824
+offset_top = 164.95
 offset_right = 456.734
-offset_bottom = 220.824
+offset_bottom = 196.95
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -425,8 +412,77 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_y81sm")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vkdsa")
 bus_name = "voice"
 
+[node name="single_or_coop" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -103.843
+offset_top = -58.0578
+offset_right = 241.157
+offset_bottom = 228.942
+scale = Vector2(0.915634, 0.915634)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3uto2")
+
+[node name="coop_button" type="TextureButton" parent="single_or_coop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 88.285
+offset_top = 181.11
+offset_right = 244.285
+offset_bottom = 236.11
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_mvcxb")
+texture_pressed = ExtResource("4_opsyb")
+texture_hover = ExtResource("5_4tmmr")
+
+[node name="coop" type="Label" parent="single_or_coop/coop_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.1382
+offset_top = 12.3317
+offset_right = 982.138
+offset_bottom = 268.332
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 200
+text = "2 Player"
+
+[node name="single_button" type="TextureButton" parent="single_or_coop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 87.878
+offset_top = 106.888
+offset_right = 243.878
+offset_bottom = 161.888
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_mvcxb")
+texture_pressed = ExtResource("4_opsyb")
+texture_hover = ExtResource("5_4tmmr")
+
+[node name="single" type="Label" parent="single_or_coop/single_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 38.5518
+offset_top = 12.1077
+offset_right = 910.552
+offset_bottom = 268.108
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 200
+text = "1 Player"
+
+[node name="back_to_menu" type="TextureButton" parent="single_or_coop"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 80.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("11_pgekj")
+texture_pressed = ExtResource("12_kscwp")
+texture_hover = ExtResource("13_kjfsq")
+
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="coop_button" to="." method="_on_coop_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
@@ -434,3 +490,6 @@ bus_name = "voice"
 [connection signal="drag_ended" from="music_slider" to="music_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="sfx_slider" to="sfx_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="voice_slider" to="voice_slider" method="_on_drag_ended"]
+[connection signal="pressed" from="single_or_coop/coop_button" to="." method="_on_coop_button_pressed"]
+[connection signal="pressed" from="single_or_coop/single_button" to="." method="_on_single_button_pressed"]
+[connection signal="pressed" from="single_or_coop/back_to_menu" to="." method="_on_back_to_menu_pressed"]

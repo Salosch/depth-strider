@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d34jpwogn1crw" path="res://scenes/dialog.tscn" id="3_jrtp6"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_mssjk"]
 [ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_uya1x"]
-[ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="4_i8277"]
+[ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/other_character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
 [ext_resource type="Shader" path="res://assets/shader/game.gdshader" id="8_q6ap8"]

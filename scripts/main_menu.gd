@@ -8,11 +8,7 @@ func _ready():
 
 func _on_start_button_pressed():
 	Sound.button_click()
-	self.hide()
-	scene_transition.play("fade_in")
-	await scene_transition.animation_finished
-	Global.is_coop = false
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	$single_or_coop.show()
 
 func _on_quit_button_pressed():
 	get_tree().quit()
@@ -32,3 +28,17 @@ func _on_coop_button_pressed():
 	await scene_transition.animation_finished
 	Global.is_coop = true
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_single_button_pressed():
+	Sound.button_click()
+	self.hide()
+	scene_transition.play("fade_in")
+	await scene_transition.animation_finished
+	Global.is_coop = false
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_back_to_menu_pressed():
+	Sound.button_click()
+	$single_or_coop.hide()
