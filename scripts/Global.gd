@@ -3,6 +3,7 @@ extends Node
 var scores : Dictionary = {}
 var final_score: int = 0
 var death_message: String = ""
+var is_coop: bool = false
 
 const SAVE_FILE_PATH = "res://score/scores.save"
 

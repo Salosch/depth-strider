@@ -11,6 +11,7 @@ func _on_start_button_pressed():
 	self.hide()
 	scene_transition.play("fade_in")
 	await scene_transition.animation_finished
+	Global.is_coop = false
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_button_pressed():
@@ -24,3 +25,10 @@ func _on_help_button_pressed():
 	Sound.button_click()
 	get_tree().change_scene_to_file("res://scenes/help.tscn")
 
+func _on_coop_button_pressed():
+	Sound.button_click()
+	self.hide()
+	scene_transition.play("fade_in")
+	await scene_transition.animation_finished
+	Global.is_coop = true
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

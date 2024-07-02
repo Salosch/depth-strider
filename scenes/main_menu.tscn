@@ -205,6 +205,30 @@ theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 200
 text = "Play"
 
+[node name="coop_button" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = -247.918
+offset_top = -42.8651
+offset_right = -91.9177
+offset_bottom = 12.1349
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_mvcxb")
+texture_pressed = ExtResource("4_opsyb")
+texture_hover = ExtResource("5_4tmmr")
+
+[node name="coop" type="Label" parent="coop_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 53.8741
+offset_top = 11.5573
+offset_right = 549.874
+offset_bottom = 267.557
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 200
+text = "coop
+"
+
 [node name="help_button" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -402,6 +426,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vkdsa")
 bus_name = "voice"
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="coop_button" to="." method="_on_coop_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

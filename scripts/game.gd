@@ -10,6 +10,8 @@ var current_energy = MAX_ENERGY
 var energy_low_playable = true
 var oxygen_low_playable = true
 
+var second_character_instance = preload("res://scenes/other_character.tscn")
+
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
@@ -19,6 +21,7 @@ var oxygen_low_playable = true
 @onready var pause_screen = $UI/Control/Pause
 @onready var dialog_box = $UI/Control/Dialog
 @onready var ai_companion = $ai_companion
+@onready var character_canvas = $CharacterCanvas
 
 @export var distance = 0
 
@@ -36,6 +39,12 @@ func _ready():
 	set_distance_label()
 	set_energy_bar(0)
 	
+	if Global.is_coop:
+		var second_character = second_character_instance.instantiate()
+		second_character.name = "second_character"
+		second_character.position = Vector2(933,362)
+		character_canvas.add_child(second_character)
+
 	scene_transition.get_parent().get_node("ColorRect").color.a = 255
 	scene_transition.play("fade_out")
 	await scene_transition.animation_finished
