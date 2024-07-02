@@ -132,6 +132,7 @@ texture = ExtResource("9_6vyik")
 
 [node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_1ao76")
+volume_db = -4.0
 bus = &"sfx"
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]

@@ -8,8 +8,13 @@ var texts = ["you are doing good commander, this is not rocket science after all
 func show_and_write() -> void:
 	var text_begin = "Mission control here, " 
 	var text = text_begin + texts.pick_random()
-	text_field.add_text(text)
-	self.show()
+	
+	if self.visible:
+		text_field.clear()
+		text_field.add_text(text)
+	else:
+		text_field.add_text(text)
+		self.show()
 
 func _on_close_pressed() -> void:
 	Sound.button_click()
