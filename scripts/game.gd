@@ -45,8 +45,12 @@ func _process(delta):
 	
 	if ship.has_breach():
 		lose_oxygen()
-		
+
 	set_energy_bar(-100)
+	
+	if distance % 100000 == 0:
+		oxygen = MAX_OXYGEN
+		set_oxygen_bar()
 	
 	if current_energy == 0:
 		death()
