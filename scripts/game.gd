@@ -10,7 +10,7 @@ var current_energy = MAX_ENERGY
 var energy_low_playable = true
 var oxygen_low_playable = true
 
-var second_character_instance = preload("res://scenes/other_character.tscn")
+var second_character_instance = preload("res://scenes/additional_player.tscn")
 
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
