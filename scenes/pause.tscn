@@ -310,9 +310,37 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_2fiyp")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6seaw")
 bus_name = "sfx"
 
+[node name="voice_label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 222.941
+offset_top = 172.0
+offset_right = 1702.95
+offset_bottom = 403.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_cxoxr")
+theme_override_font_sizes/font_size = 150
+text = "Voice Volume
+"
+horizontal_alignment = 1
+
+[node name="voice_slider" parent="." instance=ExtResource("4_hxt75")]
+texture_filter = 1
+offset_left = 216.0
+offset_top = 189.308
+offset_right = 452.0
+offset_bottom = 221.308
+scale = Vector2(0.7, 0.7)
+theme_override_icons/grabber = ExtResource("5_tmmjd")
+theme_override_icons/grabber_highlight = ExtResource("6_ubawy")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4j0oj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_2fiyp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6seaw")
+bus_name = "voice"
+
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="drag_ended" from="master_slider" to="master_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="music_slider" to="music_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="sfx_slider" to="sfx_slider" method="_on_drag_ended"]
+[connection signal="drag_ended" from="voice_slider" to="voice_slider" method="_on_drag_ended"]

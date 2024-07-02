@@ -293,9 +293,9 @@ scale = Vector2(1.83932, 1.84299)
 texture_filter = 1
 layout_mode = 2
 offset_left = 227.675
-offset_top = 61.691
+offset_top = 44.328
 offset_right = 1707.68
-offset_bottom = 292.691
+offset_bottom = 275.328
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -306,9 +306,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.763
-offset_top = 81.08
+offset_top = 63.7169
 offset_right = 456.763
-offset_bottom = 113.08
+offset_bottom = 95.7169
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -321,9 +321,9 @@ bus_name = "Master"
 texture_filter = 1
 layout_mode = 0
 offset_left = 227.675
-offset_top = 104.691
+offset_top = 87.328
 offset_right = 1707.68
-offset_bottom = 335.691
+offset_bottom = 318.328
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -334,9 +334,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.734
-offset_top = 124.134
+offset_top = 106.771
 offset_right = 456.734
-offset_bottom = 156.134
+offset_bottom = 138.771
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -349,9 +349,9 @@ bus_name = "music"
 texture_filter = 1
 layout_mode = 0
 offset_left = 227.675
-offset_top = 147.691
+offset_top = 130.328
 offset_right = 1707.68
-offset_bottom = 378.691
+offset_bottom = 361.328
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_4n2fm")
 theme_override_font_sizes/font_size = 150
@@ -362,9 +362,9 @@ horizontal_alignment = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 220.734
-offset_top = 166.999
+offset_top = 149.636
 offset_right = 456.734
-offset_bottom = 198.999
+offset_bottom = 181.636
 scale = Vector2(0.7, 0.7)
 theme_override_icons/grabber = ExtResource("7_8j26c")
 theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
@@ -373,6 +373,32 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_oodmt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7o6yf")
 bus_name = "sfx"
 
+[node name="voice_label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 229.976
+offset_top = 174.173
+offset_right = 1709.98
+offset_bottom = 405.173
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_4n2fm")
+theme_override_font_sizes/font_size = 150
+text = "Voice Volume"
+horizontal_alignment = 1
+
+[node name="voice_slider" parent="." instance=ExtResource("5_sr36p")]
+texture_filter = 1
+offset_left = 220.734
+offset_top = 188.824
+offset_right = 456.734
+offset_bottom = 220.824
+scale = Vector2(0.7, 0.7)
+theme_override_icons/grabber = ExtResource("7_8j26c")
+theme_override_icons/grabber_highlight = ExtResource("6_dwgf3")
+theme_override_styles/slider = SubResource("StyleBoxFlat_i3ypy")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_y81sm")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vkdsa")
+bus_name = "voice"
+
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
@@ -380,3 +406,4 @@ bus_name = "sfx"
 [connection signal="drag_ended" from="master_slider" to="master_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="music_slider" to="music_slider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="sfx_slider" to="sfx_slider" method="_on_drag_ended"]
+[connection signal="drag_ended" from="voice_slider" to="voice_slider" method="_on_drag_ended"]

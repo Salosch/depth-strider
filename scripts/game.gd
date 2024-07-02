@@ -82,7 +82,7 @@ func set_energy_bar(value: int) -> void:
 		current_energy = MAX_ENERGY
 		energy_low_playable = true
 	
-	if float(current_energy) / 100000.0 < 0.33 and energy_low_playable:
+	if float(current_energy) / 100000.0 < 0.5 and energy_low_playable:
 		energy_low_playable = false
 		var energy_low = load("res://assets/voice_lines/energy_low.mp3")
 		ai_companion.stream = energy_low
@@ -93,7 +93,7 @@ func set_energy_bar(value: int) -> void:
 func lose_oxygen() -> void:
 	oxygen -= 0.1
 	
-	if float(oxygen) / 100.0 < 0.33 and oxygen_low_playable:
+	if float(oxygen) / 100.0 < 0.5 and oxygen_low_playable:
 		oxygen_low_playable = false
 		var oxygen_low = load("res://assets/voice_lines/oxygen_low.mp3")
 		ai_companion.stream = oxygen_low
