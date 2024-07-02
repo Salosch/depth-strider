@@ -54,13 +54,13 @@ text = "GAME OVER"
 
 [node name="endscore" type="Label" parent="."]
 layout_mode = 0
-offset_left = -0.510986
-offset_top = 88.4037
-offset_right = 1046.49
-offset_bottom = 344.404
+offset_left = 10.753
+offset_top = 95.558
+offset_right = 796.753
+offset_bottom = 287.558
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_6by6t")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 150
 text = "Endscore"
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -77,13 +77,14 @@ horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="death_message" type="Label" parent="."]
-offset_left = -7.15405
-offset_top = 66.9416
-offset_right = 764.846
-offset_bottom = 297.942
+layout_mode = 0
+offset_left = -19.0
+offset_top = 67.0
+offset_right = 900.0
+offset_bottom = 231.0
 scale = Vector2(0.15625, 0.165103)
 theme_override_fonts/font = ExtResource("3_6by6t")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 autowrap_mode = 1
 

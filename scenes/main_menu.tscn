@@ -156,12 +156,12 @@ expand_margin_top = 4.0
 expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uto2"]
-bg_color = Color(0.129412, 0.25098, 0.282353, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0431373, 0.0941176, 0.227451, 1)
+bg_color = Color(0.184314, 0.380392, 0.639216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.34902, 0.584314, 0.647059, 1)
 
 [node name="MainMenu" type="Control"]
 texture_filter = 2
@@ -426,9 +426,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3uto2")
 texture_filter = 1
 layout_mode = 0
 offset_left = 88.285
-offset_top = 181.11
+offset_top = 161.11
 offset_right = 244.285
-offset_bottom = 236.11
+offset_bottom = 216.11
 scale = Vector2(1.1, 1.1)
 texture_normal = ExtResource("3_mvcxb")
 texture_pressed = ExtResource("4_opsyb")
@@ -450,9 +450,9 @@ text = "2 Player"
 texture_filter = 1
 layout_mode = 0
 offset_left = 87.878
-offset_top = 106.888
+offset_top = 86.888
 offset_right = 243.878
-offset_bottom = 161.888
+offset_bottom = 141.888
 scale = Vector2(1.1, 1.1)
 texture_normal = ExtResource("3_mvcxb")
 texture_pressed = ExtResource("4_opsyb")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dt111mbhobl7t"]
 
 [ext_resource type="Script" path="res://scripts/other_character.gd" id="1_7vx5i"]
-[ext_resource type="Texture2D" uid="uid://dttxbww0ay5vc" path="res://assets/character/char.png" id="2_8xquc"]
+[ext_resource type="Texture2D" uid="uid://6fij8gkj0a0l" path="res://assets/character/char_2.png" id="2_7dj3e"]
 [ext_resource type="AudioStream" uid="uid://da8r7puq0t6x2" path="res://assets/sound_effects/core_charge.wav" id="3_l5hvf"]
 
 [sub_resource type="Animation" id="Animation_heum0"]
@@ -107,7 +107,7 @@ script = ExtResource("1_7vx5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.436735, 0.503062)
-texture = ExtResource("2_8xquc")
+texture = ExtResource("2_7dj3e")
 hframes = 56
 vframes = 19
 frame = 74

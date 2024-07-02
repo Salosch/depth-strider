@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://d34jpwogn1crw" path="res://scenes/dialog.tscn" id="3_jrtp6"]
 [ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_mssjk"]
 [ext_resource type="PackedScene" uid="uid://d1gidtlgxi7th" path="res://scenes/pause.tscn" id="3_uya1x"]
-[ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/other_character.tscn" id="4_i8277"]
 [ext_resource type="PackedScene" uid="uid://ds2malxqanl52" path="res://scenes/ship.tscn" id="4_kd45g"]
 [ext_resource type="AudioStream" uid="uid://dsjx0jbw5lamj" path="res://assets/music/game_loop.wav" id="5_qwrub"]
+[ext_resource type="PackedScene" uid="uid://dt111mbhobl7t" path="res://scenes/character.tscn" id="7_1u44q"]
 [ext_resource type="Shader" path="res://assets/shader/game.gdshader" id="8_q6ap8"]
 [ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="9_r776w"]
 
@@ -125,10 +125,8 @@ theme_override_font_sizes/font_size = 200
 [node name="Ship" parent="CharacterCanvas" instance=ExtResource("4_kd45g")]
 position = Vector2(625, 231)
 
-[node name="Character" parent="CharacterCanvas" instance=ExtResource("4_i8277")]
-z_index = 1
-position = Vector2(613, 362)
-scale = Vector2(2.76436, 2.76436)
+[node name="Character" parent="CharacterCanvas" instance=ExtResource("7_1u44q")]
+position = Vector2(613, 363)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qwrub")
