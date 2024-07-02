@@ -375,6 +375,7 @@ bus_name = "sfx"
 
 [node name="voice_label" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 229.976
 offset_top = 174.173
 offset_right = 1709.98
@@ -387,6 +388,7 @@ horizontal_alignment = 1
 
 [node name="voice_slider" parent="." instance=ExtResource("5_sr36p")]
 texture_filter = 1
+layout_mode = 0
 offset_left = 220.734
 offset_top = 188.824
 offset_right = 456.734
