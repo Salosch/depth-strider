@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnjr1k7fk1kgv"]
+[gd_scene load_steps=11 format=3 uid="uid://bnjr1k7fk1kgv"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vgoqy"]
-[ext_resource type="Texture2D" uid="uid://b14y53husqlqg" path="res://assets/menu/Window.png" id="2_ckvfk"]
-[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="2_ri03t"]
+[ext_resource type="Texture2D" uid="uid://c3biokl6ohat3" path="res://assets/menu/scoreboard.png" id="2_6dl4u"]
+[ext_resource type="FontFile" uid="uid://jewp3h62xt8c" path="res://assets/fonts/Audiowide-Regular.ttf" id="3_6by6t"]
 [ext_resource type="AudioStream" uid="uid://curgm53ncis60" path="res://assets/music/game_over.wav" id="3_svbbm"]
-[ext_resource type="FontFile" uid="uid://dq7puw6l5wn0t" path="res://assets/fonts/Stereotones.otf" id="3_ta8bn"]
-[ext_resource type="Texture2D" uid="uid://dy6qrg63t3hq5" path="res://assets/menu/Table.png" id="4_ehoee"]
+[ext_resource type="Texture2D" uid="uid://ctqe2ru4k4jjv" path="res://assets/menu/button.png" id="4_3na2n"]
+[ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="5_3rxub"]
+[ext_resource type="PackedScene" uid="uid://c5ssx2rnqdkwj" path="res://scenes/scene_transition.tscn" id="6_g8at0"]
+[ext_resource type="Texture2D" uid="uid://pu6daetrlkuv" path="res://assets/menu/button_pressed.png" id="7_4nuyr"]
+[ext_resource type="PackedScene" uid="uid://dvwyfw88mevew" path="res://scenes/scoreboard.tscn" id="8_7mt1t"]
+[ext_resource type="Texture2D" uid="uid://tptonu737i2o" path="res://assets/menu/button_hover.png" id="8_pt14y"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -17,110 +21,151 @@ offset_bottom = 200.0
 scale = Vector2(1.95693, 1.95693)
 script = ExtResource("1_vgoqy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(50.5894, 138.482)
-scale = Vector2(0.226159, 0.226159)
-texture = ExtResource("2_ckvfk")
-
-[node name="game_over" type="Label" parent="."]
-layout_mode = 0
-offset_left = -27.0832
-offset_top = 26.0612
-offset_right = 129.917
-offset_bottom = 49.0612
-theme_override_fonts/font = ExtResource("3_ta8bn")
-theme_override_font_sizes/font_size = 20
-text = "GAME OVER"
-
-[node name="endscore" type="Label" parent="."]
-layout_mode = 0
-offset_left = -8.68708
-offset_top = 64.3866
-offset_right = 119.313
-offset_bottom = 87.3866
-theme_override_fonts/font = ExtResource("3_ta8bn")
-theme_override_font_sizes/font_size = 16
-text = "Endscore"
-
-[node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = -17.3741
-offset_top = 88.9148
-offset_right = 101.626
-offset_bottom = 111.915
-scale = Vector2(1.18396, 1)
-theme_override_fonts/font = ExtResource("3_ta8bn")
-horizontal_alignment = 1
-
-[node name="Restart" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = -0.51101
-offset_top = 135.927
-offset_right = 360.489
-offset_bottom = 236.927
-scale = Vector2(0.298986, 0.298986)
-texture_normal = ExtResource("4_ehoee")
-
-[node name="restart" type="Label" parent="Restart"]
-layout_mode = 0
-offset_left = 47.725
-offset_top = 26.5139
-offset_right = 362.725
-offset_bottom = 74.5139
-theme_override_fonts/font = ExtResource("3_ta8bn")
-theme_override_font_sizes/font_size = 42
-text = "restart"
-
-[node name="Quit" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = -0.511019
-offset_top = 174.253
-offset_right = 360.489
-offset_bottom = 275.253
-scale = Vector2(0.293915, 0.293915)
-texture_normal = ExtResource("4_ehoee")
-
-[node name="quit" type="Label" parent="Quit"]
-layout_mode = 0
-offset_left = 113.345
-offset_top = 27.3119
-offset_right = 247.345
-offset_bottom = 71.3119
-theme_override_fonts/font = ExtResource("3_ta8bn")
-theme_override_font_sizes/font_size = 44
-text = "quit"
-
-[node name="Menu" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 0.510993
-offset_top = 213.089
-offset_right = 361.511
-offset_bottom = 314.089
-scale = Vector2(0.28466, 0.309953)
-texture_normal = ExtResource("4_ehoee")
-
-[node name="menu" type="Label" parent="Menu"]
-layout_mode = 0
-offset_left = 102.323
-offset_top = 28.027
-offset_right = 273.323
-offset_bottom = 72.027
-theme_override_fonts/font = ExtResource("3_ta8bn")
-theme_override_font_sizes/font_size = 42
-text = "MENU"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(639, 361)
+position = Vector2(638, 362)
 rotation = 3.14159
-scale = Vector2(1.01338, 1.01338)
-texture = ExtResource("2_ri03t")
+scale = Vector2(1.022, 1.022)
+texture = ExtResource("5_3rxub")
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("6_g8at0")]
+position = Vector2(546, 1.99999)
+scale = Vector2(1.95693, 1.95693)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(53.1445, 131.839)
+scale = Vector2(0.843767, 0.843767)
+texture = ExtResource("2_6dl4u")
+
+[node name="game_over" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -17.8852
+offset_top = 20.4402
+offset_right = 1362.11
+offset_bottom = 276.44
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+
+[node name="endscore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.753
+offset_top = 95.558
+offset_right = 796.753
+offset_bottom = 287.558
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 150
+text = "Endscore"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.62109
+offset_top = 110.888
+offset_right = 463.621
+offset_bottom = 341.888
+scale = Vector2(0.2, 0.168)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 80
+text = "5000"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="death_message" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 67.0
+offset_right = 695.0
+offset_bottom = 231.0
+scale = Vector2(0.15625, 0.165103)
+theme_override_colors/font_color = Color(0.780392, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Restart" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1.02201
+offset_top = 129.795
+offset_right = 157.022
+offset_bottom = 184.795
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
+
+[node name="restart" type="Label" parent="Restart"]
+layout_mode = 0
+offset_left = 34.95
+offset_top = 14.937
+offset_right = 907.95
+offset_bottom = 270.937
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 200
+text = "Restart"
+
+[node name="Quit" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1.0
+offset_top = 196.0
+offset_right = 157.0
+offset_bottom = 251.0
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
+
+[node name="quit" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 55.0313
+offset_top = 14.1509
+offset_right = 529.031
+offset_bottom = 270.151
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 200
+text = "Quit"
+
+[node name="Menu" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1.022
+offset_top = 163.072
+offset_right = 157.022
+offset_bottom = 218.072
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("4_3na2n")
+texture_pressed = ExtResource("7_4nuyr")
+texture_hover = ExtResource("8_pt14y")
+
+[node name="menu" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 49.5281
+offset_top = 15.7232
+offset_right = 650.528
+offset_bottom = 271.724
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_6by6t")
+theme_override_font_sizes/font_size = 200
+text = "Menu"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_svbbm")
 autoplay = true
+bus = &"music"
+
+[node name="Scoreboard2" parent="." instance=ExtResource("8_7mt1t")]
+position = Vector2(-181.685, 120.597)
+scale = Vector2(0.468555, 0.468555)
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_button_pressed"]

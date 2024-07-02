@@ -1,11 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://dt111mbhobl7t"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_eya3b"]
-[ext_resource type="Texture2D" uid="uid://c3w47leb2dste" path="res://assets/character/SpriteSheet.png" id="2_01s72"]
+[ext_resource type="Texture2D" uid="uid://dttxbww0ay5vc" path="res://assets/character/char.png" id="2_8xquc"]
+[ext_resource type="AudioStream" uid="uid://da8r7puq0t6x2" path="res://assets/sound_effects/core_charge.wav" id="3_l5hvf"]
 
-[sub_resource type="Animation" id="Animation_rw084"]
-resource_name = "idle"
-length = 0.1
+[sub_resource type="Animation" id="Animation_heum0"]
+resource_name = "idle_down"
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,15 +15,15 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0]
+"values": [74, 75, 76, 77, 78, 79]
 }
 
-[sub_resource type="Animation" id="Animation_hbrx0"]
+[sub_resource type="Animation" id="Animation_ufme0"]
 resource_name = "walk_down"
-length = 0.3
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,15 +32,15 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 4, 8, 12]
+"values": [130, 131, 132, 133, 134, 135]
 }
 
-[sub_resource type="Animation" id="Animation_jd6xv"]
+[sub_resource type="Animation" id="Animation_2287l"]
 resource_name = "walk_left"
-length = 0.3
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -48,15 +49,15 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 6, 10, 14]
+"values": [124, 125, 126, 127, 128, 129]
 }
 
-[sub_resource type="Animation" id="Animation_1tpj7"]
+[sub_resource type="Animation" id="Animation_00os5"]
 resource_name = "walk_right"
-length = 0.3
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -65,15 +66,15 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [3, 7, 11, 15]
+"values": [112, 113, 114, 115, 116, 117]
 }
 
-[sub_resource type="Animation" id="Animation_nw6qp"]
+[sub_resource type="Animation" id="Animation_ssnvp"]
 resource_name = "walk_up"
-length = 0.3
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,60 +83,67 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [1, 5, 9, 13]
+"values": [118, 119, 120, 121, 122, 123]
 }
 
-[sub_resource type="Animation" id="Animation_v5h55"]
-resource_name = "repair"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [12, 25, 4]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qd5ic"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boolh"]
 _data = {
-"idle": SubResource("Animation_rw084"),
-"repair": SubResource("Animation_v5h55"),
-"walk_down": SubResource("Animation_hbrx0"),
-"walk_left": SubResource("Animation_jd6xv"),
-"walk_right": SubResource("Animation_1tpj7"),
-"walk_up": SubResource("Animation_nw6qp")
+"idle_down": SubResource("Animation_heum0"),
+"walk_down": SubResource("Animation_ufme0"),
+"walk_left": SubResource("Animation_2287l"),
+"walk_right": SubResource("Animation_00os5"),
+"walk_up": SubResource("Animation_ssnvp")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts7hv"]
-size = Vector2(15, 15)
+size = Vector2(5.76669, 9.37086)
 
 [node name="Character" type="CharacterBody2D"]
+scale = Vector2(2.77456, 2.77456)
 script = ExtResource("1_eya3b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("2_01s72")
-hframes = 4
-vframes = 7
-frame = 12
+scale = Vector2(0.436735, 0.503062)
+texture = ExtResource("2_8xquc")
+hframes = 56
+vframes = 19
+frame = 74
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_qd5ic")
+"": SubResource("AnimationLibrary_boolh")
 }
-speed_scale = 0.7
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(0.5, 0.5)
+position = Vector2(1.07413e-07, 1.44167)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ts7hv")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="hammer_and_weld" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
+
+[node name="recharge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l5hvf")
+bus = &"sfx"
+
+[node name="message" type="AudioStreamPlayer2D" parent="."]
+bus = &"music"
+
+[node name="RepairProgress" type="ProgressBar" parent="."]
+visible = false
+offset_left = -18.1916
+offset_top = -8.03541
+offset_right = 101.808
+offset_bottom = -1.03541
+scale = Vector2(0.3, 0.3)
+max_value = 2.0
+show_percentage = false
+
+[node name="ai_companion" type="AudioStreamPlayer2D" parent="."]
+bus = &"voice"

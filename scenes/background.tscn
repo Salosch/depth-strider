@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5y4h7fkrrtwx"]
 
-[ext_resource type="Texture2D" uid="uid://canvlsgn8khb6" path="res://assets/background/background_new_latest.png" id="1_aulns"]
+[ext_resource type="Texture2D" uid="uid://cp2c1er26stqr" path="res://assets/background/backrnd_new.png" id="1_4kvv6"]
 [ext_resource type="Texture2D" uid="uid://k73f6hcp22gp" path="res://assets/background/meteor_schauer_new.png" id="2_brjos"]
 
 [node name="Background" type="Node2D"]
@@ -14,7 +14,8 @@ motion_scale = Vector2(0.2, 0)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
-texture = ExtResource("1_aulns")
+scale = Vector2(1.022, 1.022)
+texture = ExtResource("1_4kvv6")
 centered = false
 
 [node name="Meteorites" type="ParallaxLayer" parent="ParallaxBackground"]

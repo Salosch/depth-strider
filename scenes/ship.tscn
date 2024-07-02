@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds2malxqanl52"]
+[gd_scene load_steps=17 format=3 uid="uid://ds2malxqanl52"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_6p7q6"]
-[ext_resource type="Texture2D" uid="uid://bmov8dw74jfxu" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
-[ext_resource type="Texture2D" uid="uid://ctxov7g5mar4o" path="res://assets/spaceship/spaceship_2.png" id="3_qq72d"]
-[ext_resource type="Texture2D" uid="uid://cqhpwcxeg4is" path="res://assets/spaceship/spaceship_3.png" id="4_uymnk"]
-[ext_resource type="Texture2D" uid="uid://bdf81h12legvg" path="res://assets/spaceship/spaceship_4.png" id="5_88fy3"]
+[ext_resource type="Texture2D" uid="uid://hal54rlyyd6k" path="res://assets/spaceship/spaceship_1.png" id="2_j6h1y"]
+[ext_resource type="Texture2D" uid="uid://cwlwbtlucm8k8" path="res://assets/spaceship/spaceship_2.png" id="3_qq72d"]
+[ext_resource type="Texture2D" uid="uid://dxvhth8nbmla5" path="res://assets/spaceship/spaceship_3.png" id="4_uymnk"]
+[ext_resource type="Texture2D" uid="uid://bytctv6gltnr0" path="res://assets/spaceship/spaceship_4.png" id="5_88fy3"]
 [ext_resource type="AudioStream" uid="uid://ch2rvpik3rtdo" path="res://assets/sound_effects/oxygen_leak.wav" id="6_7bw20"]
+[ext_resource type="Script" path="res://scripts/core_area.gd" id="7_i2j6b"]
+[ext_resource type="Script" path="res://scripts/message.gd" id="8_bnm4q"]
+[ext_resource type="Texture2D" uid="uid://7o2opcwbvast" path="res://assets/misc/exclamation_mark.png" id="9_6vyik"]
+[ext_resource type="AudioStream" uid="uid://dsteqk3r8hoh7" path="res://assets/sound_effects/metal_breaking.wav" id="10_1ao76"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qpo5i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlkvq"]
 animations = [{
 "frames": [],
 "loop": true,
@@ -32,9 +36,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_bk4oh"]
+[sub_resource type="Animation" id="Animation_0ie6b"]
 resource_name = "change_pos"
-length = 6.0
+length = 9.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,37 +47,99 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6, 9.1),
+"times": PackedFloat32Array(0, 3, 6, 9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(51, 135), Vector2(51, 138), Vector2(51, 132), Vector2(51, 135)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljdsn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2plp"]
 _data = {
-"change_pos": SubResource("Animation_bk4oh")
+"change_pos": SubResource("Animation_0ie6b")
 }
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kh6ix"]
+a = Vector2(0, -28)
+b = Vector2(0, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdkh"]
+size = Vector2(16, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg5vb"]
+size = Vector2(44, 45)
 
 [node name="Ship" type="StaticBody2D"]
 script = ExtResource("1_6p7q6")
 
 [node name="ShipSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(51, 135)
-sprite_frames = SubResource("SpriteFrames_qpo5i")
+position = Vector2(51, 135.3)
+scale = Vector2(1.84023, 1.84023)
+sprite_frames = SubResource("SpriteFrames_xlkvq")
 animation = &"new_animation"
-frame = 2
+frame_progress = 0.277661
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ShipSprite"]
 libraries = {
-"": SubResource("AnimationLibrary_ljdsn")
+"": SubResource("AnimationLibrary_s2plp")
 }
-
-[node name="Collision" type="CollisionPolygon2D" parent="."]
-position = Vector2(-43, -14)
-build_mode = 1
-polygon = PackedVector2Array(0, 0, 115, 0, 115, 114, 172, 114, 172, 119, 220, 119, 220, 109, 246, 109, 246, 120, 261, 120, 261, 130, 288, 130, 288, 167, 261, 167, 261, 178, 246, 178, 246, 189, 221, 189, 221, 178, 172, 178, 172, 183, 115, 183, 115, 298, 1, 298, 1, 184, -83, 184, -83, 112, 0, 112)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7bw20")
 volume_db = -15.579
+bus = &"sfx"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-115, 211, -115, 271, -85, 271, -85, 375, 53, 375, 53, 270, 90, 270, 90, 412, -121, 412, -122, 211)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-37, -105, -37, -138, -67, -138, -67, -126, -86, -126, -86, -123, -107, -123, -107, -137, -112, -137, -112, -99, -93, -99, -93, -71, -55, -71, -55, -51, -37, -51, -37, -61, -30, -61, -30, 69, -123, 69, -123, -142, -30, -142, -30, -104)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(4, 6, 4, -140, 96, -140, 96, 69, 4, 69, 4, 50, 10, 50, 10, 57, 83, 57, 83, 11, 90, 11, 90, -38, 82, -41, 73, -41, 73, -43, 26, -43, 26, -41, 18, -41, 10, -37, 10, 7)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-31, 205, -124, 205, -124, 415, 94, 415, 94, 204, 4, 204, 4, 211, 90, 211, 90, 412, -122, 412, -122, 211, -31, 211)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-123, 120, -123, 63, -280, 66, -280, 208, -123, 208, -123, 155, -129, 155, -129, 204, -276, 204, -275, 69, -129, 69, -129, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-218, 99)
+shape = SubResource("SegmentShape2D_kh6ix")
+
+[node name="Core" type="Area2D" parent="."]
+position = Vector2(-201, 137)
+script = ExtResource("7_i2j6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Core"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_6wdkh")
+
+[node name="Message" type="Area2D" parent="."]
+position = Vector2(308, 77)
+script = ExtResource("8_bnm4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Message"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_yg5vb")
+
+[node name="exclamation_mark" type="Sprite2D" parent="Message"]
+visible = false
+position = Vector2(-1.52588e-05, -40)
+scale = Vector2(0.609884, 0.699135)
+texture = ExtResource("9_6vyik")
+
+[node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_1ao76")
+volume_db = -4.0
+bus = &"sfx"
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(96, 69, 195, 69, 195, 115, 209, 115, 209, 89, 236, 89, 236, 82, 282, 82, 282, 73, 333, 73, 333, 82, 360, 82, 360, 102, 403, 102, 403, 109, 389, 109, 389, 120, 396, 122, 396, 149, 388, 153, 388, 162, 402, 162, 402, 171, 359, 171, 359, 192, 331, 192, 331, 213, 283, 213, 283, 192, 240, 192, 240, 175, 219, 175, 219, 183, 202, 183, 202, 155, 195, 155, 195, 198, 182, 198, 182, 188, 175, 188, 170, 193, 116, 193, 111, 188, 104, 188, 104, 197, 33, 197, 33, 203, 113, 203, 113, 212, 196, 212, 195, 204, 217, 193, 283, 219, 359, 219, 359, 198, 416, 190, 414, 79, 327, 57, 225, 76, 202, 76, 195, 69, 195, 115, 195, 56)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, -137, -30, -142, 4, -142, 4, -136)
+
+[node name="ai_companion" type="AudioStreamPlayer2D" parent="."]
+bus = &"voice"

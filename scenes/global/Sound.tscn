@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://k4wdgt46r4vl"]
+
+[ext_resource type="Script" path="res://scenes/global/Sound.gd" id="1_dno76"]
+[ext_resource type="AudioStream" uid="uid://o6nbvje0qfvg" path="res://assets/sound_effects/btn_click_v2.wav" id="2_jrjr5"]
+
+[node name="Sound" type="Node2D"]
+script = ExtResource("1_dno76")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jrjr5")
+bus = &"sfx"
