@@ -15,6 +15,8 @@ var current_message_time = 0
 @onready var ai_companion = $ai_companion
 @onready var game_node = get_tree().get_root().get_node("Game")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
+@onready var game_voice = game_node.get_node("ai_companion")
+@onready var ship_voice = ship_node.get_node("ai_companion")
 @onready var repair_progress = $RepairProgress
 @onready var exclamation_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship/Message/exclamation_mark")
 @onready var rng = RandomNumberGenerator.new()
@@ -124,8 +126,9 @@ func spawn_message() -> void:
 		var message_spawn = load("res://assets/voice_lines/mission_control.mp3")
 		message_audio.stream = message
 		message_audio.play()
-		ai_companion.stream = message_spawn
-		ai_companion.play()
+		if not ship_voice.playing and not game_voice.playing:
+			ai_companion.stream = message_spawn
+			ai_companion.play()
 		is_message_active = true
 		exclamation_node.visible = true
 	

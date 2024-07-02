@@ -4,6 +4,8 @@ var damage_scene = preload ("res://scenes/damage.tscn")
 var breach_scene = preload ("res://scenes/breach.tscn")
 
 @onready var game_node = get_tree().get_root().get_node("Game")
+@onready var game_voice = game_node.get_node("ai_companion")
+@onready var character_voice =  get_tree().get_root().get_node("Game/CharacterCanvas/Character/ai_companion")
 @onready var ai_companion = $ai_companion
 
 
@@ -59,9 +61,11 @@ func _timer_timeout() -> void:
 			damage_instance.position = position
 			damage_instance.name = damage_name
 			$MetalBreaking.play()
-			var damage_voice_line = load("res://assets/voice_lines/ship_damages.mp3")
-			ai_companion.stream = damage_voice_line
-			ai_companion.play()
+			if not game_voice.playing and not character_voice.playing:
+				var damage_voice_line = load("res://assets/voice_lines/ship_damages.mp3")
+				ai_companion.stream = damage_voice_line
+				ai_companion.play()
+				
 			add_child(damage_instance)
 			damage_instance.get_node("AnimationPlayer").play("Crack")
 			position_selected = true
@@ -73,9 +77,10 @@ func _timer_timeout() -> void:
 			breach_instance.position = position
 			damage_node.queue_free()
 			$MetalBreaking.play()
-			var breach_voice_line = load("res://assets/voice_lines/ship_hull.mp3")
-			ai_companion.stream = breach_voice_line
-			ai_companion.play()
+			if not game_voice.playing and not character_voice.playing:
+				var breach_voice_line = load("res://assets/voice_lines/ship_hull.mp3")
+				ai_companion.stream = breach_voice_line
+				ai_companion.play()
 			add_child(breach_instance)
 			breach_instance.get_node("AnimationPlayer").play("Opencrack")
 			breach_instance.get_node("AnimationPlayer").queue("Stars")

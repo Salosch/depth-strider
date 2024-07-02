@@ -15,6 +15,8 @@ var second_character_instance = preload("res://scenes/other_character.tscn")
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
+@onready var ship_audio = ship.get_node("ai_companion")
+@onready var character_audio = $CharacterCanvas/Character.get_node("ai_companion")
 @onready var oxygen_bar = $UI/Control/Oxygen
 @onready var distance_label = $UI/Control/DistanceLabel
 @onready var energy_bar = $UI/Control/Energy
@@ -64,10 +66,11 @@ func _process(delta):
 	if distance % 100000 == 0:
 		oxygen = MAX_OXYGEN
 		set_oxygen_bar()
-		var oxygen_refill = load("res://assets/voice_lines/oxygen_refill.mp3")
-		ai_companion.stream = oxygen_refill
-		ai_companion.play()
-	
+		if not character_audio.playing and not ship_audio.playing:
+			var oxygen_refill = load("res://assets/voice_lines/oxygen_refill.mp3")
+			ai_companion.stream = oxygen_refill
+			ai_companion.play()
+		
 	if current_energy == 0:
 		death("Out of energy")
 	
@@ -93,9 +96,10 @@ func set_energy_bar(value: int) -> void:
 	
 	if float(current_energy) / 100000.0 < 0.5 and energy_low_playable:
 		energy_low_playable = false
-		var energy_low = load("res://assets/voice_lines/energy_low.mp3")
-		ai_companion.stream = energy_low
-		ai_companion.play()
+		if not character_audio.playing and not ship_audio.playing:
+			var energy_low = load("res://assets/voice_lines/energy_low.mp3")
+			ai_companion.stream = energy_low
+			ai_companion.play()
 		
 	energy_bar.value = current_energy
 	
@@ -104,10 +108,11 @@ func lose_oxygen() -> void:
 	
 	if float(oxygen) / 100.0 < 0.5 and oxygen_low_playable:
 		oxygen_low_playable = false
-		var oxygen_low = load("res://assets/voice_lines/oxygen_low.mp3")
-		ai_companion.stream = oxygen_low
-		ai_companion.play()
-		
+		if not character_audio.playing and not ship_audio.playing:
+			var oxygen_low = load("res://assets/voice_lines/oxygen_low.mp3")
+			ai_companion.stream = oxygen_low
+			ai_companion.play()
+			
 	if oxygen < 0:
 		death("Out of oxygen")
 		
