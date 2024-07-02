@@ -139,3 +139,6 @@ polygon = PackedVector2Array(96, 69, 195, 69, 195, 115, 209, 115, 209, 89, 236, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-30, -137, -30, -142, 4, -142, 4, -136)
+
+[node name="ai_companion" type="AudioStreamPlayer2D" parent="."]
+bus = &"voice"

@@ -144,3 +144,6 @@ offset_bottom = -1.03541
 scale = Vector2(0.3, 0.3)
 max_value = 2.0
 show_percentage = false
+
+[node name="ai_companion" type="AudioStreamPlayer2D" parent="."]
+bus = &"voice"

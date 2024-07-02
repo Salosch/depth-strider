@@ -2,10 +2,13 @@ extends Node2D
 
 const SCROLL_SPEED = 200
 const MAX_OXYGEN = 100
-const MAX_ENERGY = 100000.0
+const MAX_ENERGY = 100000
 
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
+
+var energy_low_playable = true
+var oxygen_low_playable = true
 
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
@@ -15,6 +18,7 @@ var current_energy = MAX_ENERGY
 @onready var energy_bar = $UI/Control/Energy
 @onready var pause_screen = $UI/Control/Pause
 @onready var dialog_box = $UI/Control/Dialog
+@onready var ai_companion = $ai_companion
 
 @export var distance = 0
 
@@ -51,6 +55,9 @@ func _process(delta):
 	if distance % 100000 == 0:
 		oxygen = MAX_OXYGEN
 		set_oxygen_bar()
+		var oxygen_refill = load("res://assets/voice_lines/oxygen_refill.mp3")
+		ai_companion.stream = oxygen_refill
+		ai_companion.play()
 	
 	if current_energy == 0:
 		death()
@@ -73,12 +80,25 @@ func set_energy_bar(value: int) -> void:
 	current_energy += value
 	if current_energy > MAX_ENERGY:
 		current_energy = MAX_ENERGY
+		energy_low_playable = true
+	
+	if float(current_energy) / 100000.0 < 0.5 and energy_low_playable:
+		energy_low_playable = false
+		var energy_low = load("res://assets/voice_lines/energy_low.mp3")
+		ai_companion.stream = energy_low
+		ai_companion.play()
 		
 	energy_bar.value = current_energy
 	
 func lose_oxygen() -> void:
 	oxygen -= 0.1
 	
+	if float(oxygen) / 100.0 < 0.5 and oxygen_low_playable:
+		oxygen_low_playable = false
+		var oxygen_low = load("res://assets/voice_lines/oxygen_low.mp3")
+		ai_companion.stream = oxygen_low
+		ai_companion.play()
+		
 	if oxygen < 0:
 		death()
 		
