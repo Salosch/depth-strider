@@ -12,6 +12,7 @@ var current_message_time = 0
 @onready var hammer_weld_audio = $hammer_and_weld
 @onready var recharge_audio = $recharge
 @onready var message_audio = $message
+@onready var ai_companion = $ai_companion
 @onready var game_node = get_tree().get_root().get_node("Game")
 @onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
 @onready var repair_progress = $RepairProgress
@@ -120,8 +121,11 @@ func spawn_message() -> void:
 	var rand_num = rng.randi_range(0,100)
 	if rand_num >= 75:
 		var message = load("res://assets/sound_effects/message.wav")
+		var message_spawn = load("res://assets/voice_lines/mission_control.mp3")
 		message_audio.stream = message
 		message_audio.play()
+		ai_companion.stream = message_spawn
+		ai_companion.play()
 		is_message_active = true
 		exclamation_node.visible = true
 	
