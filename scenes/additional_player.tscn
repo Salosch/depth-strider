@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dt111mbhobl7t"]
 
-[ext_resource type="Script" path="res://scripts/other_character.gd" id="1_7vx5i"]
-[ext_resource type="Texture2D" uid="uid://6fij8gkj0a0l" path="res://assets/character/char_2.png" id="2_7dj3e"]
-[ext_resource type="AudioStream" uid="uid://da8r7puq0t6x2" path="res://assets/sound_effects/core_charge.wav" id="3_l5hvf"]
+[ext_resource type="Script" path="res://scripts/additional_player.gd" id="1_5cm2d"]
+[ext_resource type="Texture2D" uid="uid://6fij8gkj0a0l" path="res://assets/character/char_2.png" id="2_ajux1"]
+[ext_resource type="AudioStream" uid="uid://da8r7puq0t6x2" path="res://assets/sound_effects/core_charge.wav" id="3_7ayjf"]
 
 [sub_resource type="Animation" id="Animation_heum0"]
 resource_name = "idle_down"
@@ -103,11 +103,11 @@ size = Vector2(5.76669, 9.37086)
 
 [node name="Character" type="CharacterBody2D"]
 scale = Vector2(2.77456, 2.77456)
-script = ExtResource("1_7vx5i")
+script = ExtResource("1_5cm2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.436735, 0.503062)
-texture = ExtResource("2_7dj3e")
+texture = ExtResource("2_ajux1")
 hframes = 56
 vframes = 19
 frame = 74
@@ -129,7 +129,7 @@ shape = SubResource("RectangleShape2D_ts7hv")
 bus = &"sfx"
 
 [node name="recharge" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_l5hvf")
+stream = ExtResource("3_7ayjf")
 bus = &"sfx"
 
 [node name="message" type="AudioStreamPlayer2D" parent="."]
