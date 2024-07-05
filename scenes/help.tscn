@@ -17,35 +17,35 @@ texture = ExtResource("1_iskou")
 
 [node name="controls" type="Label" parent="."]
 offset_left = 507.0
-offset_top = 440.0
-offset_right = 3056.0
-offset_bottom = 951.0
+offset_top = 400.0
+offset_right = 3184.0
+offset_bottom = 911.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 400
-text = "CONTROLS"
+text = "CONTROLS "
 
 [node name="control_desc" type="Label" parent="."]
 texture_filter = 1
-offset_left = 410.0
-offset_top = 510.0
-offset_right = 4920.0
-offset_bottom = 1476.0
+offset_left = 330.0
+offset_top = 550.0
+offset_right = 6473.0
+offset_bottom = 1839.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
-text = "MOVE: W,A,S,D
+text = "MOVE: W,A,S,D / I,J,K,L
 
-- Repair: Damage (e), Breaches (r)
+- Repair: Damage (e) / (o),  Breaches (r) / (p)
                               "
 horizontal_alignment = 1
 
 [node name="help" type="Label" parent="."]
 texture_filter = 1
 offset_left = 571.0
-offset_top = 121.0
+offset_top = 81.0
 offset_right = 1830.0
-offset_bottom = 632.0
+offset_bottom = 592.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 400
@@ -54,9 +54,9 @@ text = "HELP"
 [node name="help_desc" type="Label" parent="."]
 texture_filter = 1
 offset_left = 334.0
-offset_top = 190.0
+offset_top = 150.0
 offset_right = 6315.0
-offset_bottom = 2448.0
+offset_bottom = 2408.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
@@ -71,25 +71,25 @@ horizontal_alignment = 1
 
 [node name="charge_core" type="Label" parent="."]
 texture_filter = 1
-offset_left = 410.0
-offset_top = 610.0
-offset_right = 3640.0
-offset_bottom = 930.0
+offset_left = 330.0
+offset_top = 650.0
+offset_right = 3560.0
+offset_bottom = 970.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
-text = "- Charge Core (e)"
+text = "- Charge Core (e) / (o)"
 
 [node name="respond_msg" type="Label" parent="."]
 texture_filter = 1
-offset_left = 411.0
-offset_top = 644.0
-offset_right = 2288.0
-offset_bottom = 964.0
+offset_left = 331.0
+offset_top = 684.0
+offset_right = 2906.0
+offset_bottom = 1004.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("2_qlsee")
 theme_override_font_sizes/font_size = 250
-text = "- Respond (e)"
+text = "- Respond (e) / (o)"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 texture_filter = 1
@@ -101,5 +101,15 @@ scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("3_xuxl4")
 texture_pressed = ExtResource("5_yrscy")
 texture_hover = ExtResource("6_uugxe")
+
+[node name="player_controls" type="Label" parent="."]
+offset_left = 387.0
+offset_top = 467.0
+offset_right = 5268.0
+offset_bottom = 978.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_qlsee")
+theme_override_font_sizes/font_size = 400
+text = "PLAYER 1 /PLAYER 2"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

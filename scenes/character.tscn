@@ -98,8 +98,9 @@ _data = {
 "walk_up": SubResource("Animation_ssnvp")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts7hv"]
-size = Vector2(5.76669, 9.37086)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct7os"]
+radius = 2.52293
+height = 10.0917
 
 [node name="Character" type="CharacterBody2D"]
 scale = Vector2(2.77456, 2.77456)
@@ -123,7 +124,7 @@ light_mask = 3
 visibility_layer = 3
 position = Vector2(1.07413e-07, 1.44167)
 scale = Vector2(0.999999, 0.999999)
-shape = SubResource("RectangleShape2D_ts7hv")
+shape = SubResource("CapsuleShape2D_ct7os")
 
 [node name="hammer_and_weld" type="AudioStreamPlayer2D" parent="."]
 bus = &"sfx"
@@ -133,7 +134,7 @@ stream = ExtResource("3_l5hvf")
 bus = &"sfx"
 
 [node name="message" type="AudioStreamPlayer2D" parent="."]
-bus = &"music"
+bus = &"sfx"
 
 [node name="RepairProgress" type="ProgressBar" parent="."]
 visible = false

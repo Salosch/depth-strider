@@ -3,31 +3,43 @@ extends CharacterBody2D
 const SPEED = 225
 const REPAIR_TIME = 2.0
 const MAX_MESSAGE_TIME = 5
+const BASE_GRACE_PERIOD = 20
+const MIN_GRACE_PERIOD = 5
 
 var total_elapsed_repair_time = 0.0
 var current_repairing_node: Node = null
 var current_message_time = 0
+var message_spawn_delay_timer = Timer.new()
+var message_timer = Timer.new()
+var rng = RandomNumberGenerator.new()
+var is_message_active = false
 
 @onready var animation_player = $Sprite2D/AnimationPlayer
 @onready var hammer_weld_audio = $hammer_and_weld
 @onready var recharge_audio = $recharge
 @onready var message_audio = $message
 @onready var ai_companion = $ai_companion
-@onready var game_node = get_tree().get_root().get_node("Game")
-@onready var ship_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship")
-@onready var game_voice = game_node.get_node("ai_companion")
-@onready var ship_voice = ship_node.get_node("ai_companion")
 @onready var repair_progress = $RepairProgress
-@onready var exclamation_node = get_tree().get_root().get_node("Game/CharacterCanvas/Ship/Message/exclamation_mark")
-@onready var rng = RandomNumberGenerator.new()
-@onready var is_message_active = false
+@onready var game_node = get_tree().get_root().get_node("Game")
+@onready var ship_node = game_node.get_node("CharacterCanvas/Ship")
+@onready var exclamation_node = game_node.get_node("CharacterCanvas/Ship/Message/exclamation_mark")
+@onready var game_voice = game_node.get_node("ai_companion")
+@onready var message_countdown = game_node.get_node("UI/message_countdown")
+@onready var ship_voice = ship_node.get_node("ai_companion")
+
 
 func _ready():
-	var message_timer = Timer.new()
+	rng.randomize()
+
 	add_child(message_timer)
-	message_timer.wait_time = 5
+	message_timer.wait_time = MAX_MESSAGE_TIME
 	message_timer.start()
 	message_timer.timeout.connect(spawn_message)
+
+	add_child(message_spawn_delay_timer)
+	message_spawn_delay_timer.wait_time = BASE_GRACE_PERIOD
+	message_spawn_delay_timer.timeout.connect(unpause_spawn_message)
+
 	var sb = StyleBoxFlat.new()
 	repair_progress.add_theme_stylebox_override("fill", sb)
 	sb.set_corner_radius_all(2)
@@ -51,9 +63,6 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
-	if is_message_active:
-		calc_message_time(delta)
-
 func _on_damage_hitbox_area_entered(node_to_repair: Node, delta) -> void:
 	handle_repair(node_to_repair, delta, "ui_accept")
 
@@ -64,7 +73,7 @@ func _on_core_hitbox_area_entered(core_node: Node, delta) -> void:
 	handle_recharge(core_node, delta)
 
 func _on_message_hitbox_area_entered(message_node: Node) -> void:
-	handle_message(message_node)
+	game_node.handle_message(message_node)
 
 func handle_repair(node: Node, delta: float, action: String) -> void:
 	
@@ -109,7 +118,6 @@ func play_sound_off_action(action: String) -> void:
 			var welding = load("res://assets/sound_effects/welding.wav")
 			hammer_weld_audio.stream = welding
 			hammer_weld_audio.play()
-		
 
 func handle_recharge(core_node: Node, delta) -> void:
 	if Input.is_action_pressed("ui_accept"):
@@ -118,7 +126,7 @@ func handle_recharge(core_node: Node, delta) -> void:
 			recharge_audio.play()
 	else:
 		recharge_audio.stop()
-			
+
 func spawn_message() -> void:
 	var rand_num = rng.randi_range(0,100)
 	if rand_num >= 75:
@@ -126,24 +134,32 @@ func spawn_message() -> void:
 		var message_spawn = load("res://assets/voice_lines/mission_control.mp3")
 		message_audio.stream = message
 		message_audio.play()
+		message_timer.paused = true
+		message_spawn_delay_timer.start()
+		
 		if not ship_voice.playing and not game_voice.playing:
 			ai_companion.stream = message_spawn
 			ai_companion.play()
+			
+		message_countdown.show()
 		is_message_active = true
 		exclamation_node.visible = true
-	
-func handle_message(message_node: Node) -> void:
-	if is_message_active:
-		if Input.is_action_pressed("ui_accept"):
-			is_message_active = false
-			exclamation_node.visible = false
-			game_node.show_and_write_dialog()
-			current_message_time = 0
 
-func calc_message_time(delta: float) -> void:
-	current_message_time += delta
-	if current_message_time >= MAX_MESSAGE_TIME:
-		game_node.death("Message not answered in time")
+func unpause_spawn_message() -> void:
+	message_timer.paused = false
+	message_spawn_delay_timer.stop()
+	
+	var new_wait_time = calculate_wait_time(game_node.distance)
+	message_spawn_delay_timer.wait_time = new_wait_time
 
 func stop_sound() -> void:
 	hammer_weld_audio.stop()
+	
+func calculate_wait_time(distance: float) -> float:
+	var base_grace_period = BASE_GRACE_PERIOD
+	var min_grace_period = MIN_GRACE_PERIOD
+	var max_distance = 150000
+
+	var scaled_wait_time = base_grace_period - (distance / max_distance) * (base_grace_period - min_grace_period)
+	
+	return max(scaled_wait_time, min_grace_period)

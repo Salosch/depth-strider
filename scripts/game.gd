@@ -3,10 +3,12 @@ extends Node2D
 const SCROLL_SPEED = 200
 const MAX_OXYGEN = 100
 const MAX_ENERGY = 100000
+const MAX_MESSAGE_TIME = 5
+const ENERGY_CHANGE_RATE = 80
 
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
-
+var current_message_time = 0
 var energy_low_playable = true
 var oxygen_low_playable = true
 
@@ -15,8 +17,6 @@ var second_character_instance = preload("res://scenes/additional_player.tscn")
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
-@onready var ship_audio = ship.get_node("ai_companion")
-@onready var character_audio = $CharacterCanvas/Character.get_node("ai_companion")
 @onready var oxygen_bar = $UI/Control/Oxygen
 @onready var distance_label = $UI/Control/DistanceLabel
 @onready var energy_bar = $UI/Control/Energy
@@ -24,6 +24,11 @@ var second_character_instance = preload("res://scenes/additional_player.tscn")
 @onready var dialog_box = $UI/Control/Dialog
 @onready var ai_companion = $ai_companion
 @onready var character_canvas = $CharacterCanvas
+@onready var message_countdown = $UI/message_countdown
+@onready var character = $CharacterCanvas/Character
+@onready var exclamation_node = $CharacterCanvas/Ship/Message/exclamation_mark
+@onready var character_audio = $CharacterCanvas/Character.get_node("ai_companion")
+@onready var ship_audio = ship.get_node("ai_companion")
 
 @export var distance = 0
 
@@ -77,6 +82,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pause_menu()
 	
+	if character.is_message_active:
+		calc_message_time(delta)
+		var message_delta: int = int(MAX_MESSAGE_TIME - current_message_time) + 1
+		message_countdown.text = str(message_delta)
+	
 func pause_menu() -> void:
 	$CanvasLayer.show()
 	pause_screen.show()
@@ -89,7 +99,8 @@ func set_distance_label() -> void:
 	distance_label.text = str(distance) + "m"
 
 func set_energy_bar(value: int) -> void:
-	current_energy += value
+	var delta_change_rate = get_process_delta_time() * ENERGY_CHANGE_RATE
+	current_energy += value * delta_change_rate
 	if current_energy > MAX_ENERGY:
 		current_energy = MAX_ENERGY
 		energy_low_playable = true
@@ -120,6 +131,20 @@ func lose_oxygen() -> void:
 
 func show_and_write_dialog() -> void:
 	dialog_box.show_and_write()
+
+func calc_message_time(delta: float) -> void:
+	current_message_time += delta
+	if current_message_time >= MAX_MESSAGE_TIME:
+		death("Message not answered in time")
+
+func handle_message(message_node: Node) -> void:
+	if character.is_message_active:
+		if Input.is_action_pressed("ui_accept"):
+			character.is_message_active = false
+			exclamation_node.visible = false
+			message_countdown.hide()
+			show_and_write_dialog()
+			current_message_time = 0
 
 
 func death(death_message: String) -> void:

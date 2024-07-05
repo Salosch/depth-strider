@@ -84,11 +84,6 @@ libraries = {
 "": SubResource("AnimationLibrary_s2plp")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_7bw20")
-volume_db = -15.579
-bus = &"sfx"
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-115, 211, -115, 271, -85, 271, -85, 375, 53, 375, 53, 270, 90, 270, 90, 412, -121, 412, -122, 211)
 
@@ -102,7 +97,7 @@ polygon = PackedVector2Array(4, 6, 4, -140, 96, -140, 96, 69, 4, 69, 4, 50, 10, 
 polygon = PackedVector2Array(-31, 205, -124, 205, -124, 415, 94, 415, 94, 204, 4, 204, 4, 211, 90, 211, 90, 412, -122, 412, -122, 211, -31, 211)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-123, 120, -123, 63, -280, 66, -280, 208, -123, 208, -123, 155, -129, 155, -129, 204, -276, 204, -275, 69, -129, 69, -129, 120)
+polygon = PackedVector2Array(-122, 113, -122, 63, -280, 66, -280, 208, -122, 208, -122, 158, -129, 158, -129, 204, -276, 204, -275, 69, -129, 67, -129, 113)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-218, 99)
@@ -130,16 +125,21 @@ position = Vector2(-1.52588e-05, -40)
 scale = Vector2(0.609884, 0.699135)
 texture = ExtResource("9_6vyik")
 
-[node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_1ao76")
-volume_db = -4.0
-bus = &"sfx"
-
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(96, 69, 195, 69, 195, 115, 209, 115, 209, 89, 236, 89, 236, 82, 282, 82, 282, 73, 333, 73, 333, 82, 360, 82, 360, 102, 403, 102, 403, 109, 389, 109, 389, 120, 396, 122, 396, 149, 388, 153, 388, 162, 402, 162, 402, 171, 359, 171, 359, 192, 331, 192, 331, 213, 283, 213, 283, 192, 240, 192, 240, 175, 219, 175, 219, 183, 202, 183, 202, 155, 195, 155, 195, 198, 182, 198, 182, 188, 175, 188, 170, 193, 116, 193, 111, 188, 104, 188, 104, 197, 33, 197, 33, 203, 113, 203, 113, 212, 196, 212, 195, 204, 217, 193, 283, 219, 359, 219, 359, 198, 416, 190, 414, 79, 327, 57, 225, 76, 202, 76, 195, 69, 195, 115, 195, 56)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-30, -137, -30, -142, 4, -142, 4, -136)
 
+[node name="oxygen_leak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7bw20")
+volume_db = -15.579
+bus = &"sfx"
+
 [node name="ai_companion" type="AudioStreamPlayer2D" parent="."]
 bus = &"voice"
+
+[node name="MetalBreaking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_1ao76")
+volume_db = -4.0
+bus = &"sfx"
