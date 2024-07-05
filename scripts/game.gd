@@ -4,6 +4,7 @@ const SCROLL_SPEED = 200
 const MAX_OXYGEN = 100
 const MAX_ENERGY = 100000
 const MAX_MESSAGE_TIME = 5
+const ENERGY_CHANGE_RATE = 80
 
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
@@ -16,8 +17,6 @@ var second_character_instance = preload("res://scenes/additional_player.tscn")
 @onready var scene_transition = $CanvasLayer/SceneTransition/AnimationPlayer
 @onready var parallax_background = $Background/ParallaxBackground
 @onready var ship = $CharacterCanvas/Ship
-@onready var ship_audio = ship.get_node("ai_companion")
-@onready var character_audio = $CharacterCanvas/Character.get_node("ai_companion")
 @onready var oxygen_bar = $UI/Control/Oxygen
 @onready var distance_label = $UI/Control/DistanceLabel
 @onready var energy_bar = $UI/Control/Energy
@@ -28,6 +27,8 @@ var second_character_instance = preload("res://scenes/additional_player.tscn")
 @onready var message_countdown = $UI/message_countdown
 @onready var character = $CharacterCanvas/Character
 @onready var exclamation_node = $CharacterCanvas/Ship/Message/exclamation_mark
+@onready var character_audio = $CharacterCanvas/Character.get_node("ai_companion")
+@onready var ship_audio = ship.get_node("ai_companion")
 
 @export var distance = 0
 
@@ -98,7 +99,8 @@ func set_distance_label() -> void:
 	distance_label.text = str(distance) + "m"
 
 func set_energy_bar(value: int) -> void:
-	current_energy += value
+	var delta_change_rate = get_process_delta_time() * ENERGY_CHANGE_RATE
+	current_energy += value * delta_change_rate
 	if current_energy > MAX_ENERGY:
 		current_energy = MAX_ENERGY
 		energy_low_playable = true
