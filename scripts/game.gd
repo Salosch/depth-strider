@@ -76,7 +76,7 @@ func _process(delta):
 			ai_companion.stream = oxygen_refill
 			ai_companion.play()
 		
-	if int(current_energy) == 0:
+	if int(current_energy) <= 0:
 		death("Out of energy")
 	
 	if Input.is_action_just_pressed("pause"):
