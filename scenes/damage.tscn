@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/damage_area.gd" id="2_b1676"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_thpto"]
-radius = 50.2494
+radius = 36.7045
 
 [sub_resource type="Animation" id="Animation_dvqtf"]
 length = 0.3

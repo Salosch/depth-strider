@@ -8,7 +8,6 @@ const MAX_MESSAGE_TIME = 5
 var oxygen = MAX_OXYGEN
 var current_energy = MAX_ENERGY
 var current_message_time = 0
-
 var energy_low_playable = true
 var oxygen_low_playable = true
 

@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+const BASE_SPAWN_TIME = 10
+const MIN_SPAWN_TIME = 4
+
 var damage_scene = preload ("res://scenes/damage.tscn")
 var breach_scene = preload ("res://scenes/breach.tscn")
 
@@ -7,6 +10,9 @@ var breach_scene = preload ("res://scenes/breach.tscn")
 @onready var game_voice = game_node.get_node("ai_companion")
 @onready var character_voice =  get_tree().get_root().get_node("Game/CharacterCanvas/Character/ai_companion")
 @onready var ai_companion = $ai_companion
+@onready var ship_sprite = $ShipSprite
+@onready var oxygen_leak = $oxygen_leak
+@onready var metal_breaking = $MetalBreaking
 
 
 var positions = [Vector2(0, 123), Vector2(71, 123), Vector2( - 85, 123), Vector2(169, 123), Vector2( -14, 23), Vector2(50, 3), Vector2( - 16, 251), Vector2(42, 251),
@@ -20,23 +26,22 @@ var timer = Timer.new()
 func _ready():
 	rng.randomize()
 	add_child(timer)
-	timer.wait_time = 10
+	timer.wait_time = BASE_SPAWN_TIME
 	timer.start()
 	timer.timeout.connect(_timer_timeout)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ShipSprite.play("new_animation")
+	ship_sprite.play("new_animation")
 
-	if self.has_breach() and not $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.play()
-	elif not self.has_breach() and $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.stop()
+	if self.has_breach() and not oxygen_leak.playing:
+		oxygen_leak.play()
+	elif not self.has_breach() and oxygen_leak.playing:
+		oxygen_leak.stop()
 
 func _timer_timeout() -> void:
 	var position_selected = false
 	var distance = game_node.distance
-	var new_wait_time = calculate_wait_time(distance)
 	
 	while not position_selected:
 		rand_int = rng.randi_range(0, len(positions) - 1)
@@ -60,7 +65,8 @@ func _timer_timeout() -> void:
 			var damage_instance = damage_scene.instantiate()
 			damage_instance.position = position
 			damage_instance.name = damage_name
-			$MetalBreaking.play()
+			metal_breaking.play()
+			
 			if not game_voice.playing and not character_voice.playing:
 				var damage_voice_line = load("res://assets/voice_lines/ship_damages.mp3")
 				ai_companion.stream = damage_voice_line
@@ -76,11 +82,13 @@ func _timer_timeout() -> void:
 			breach_instance.name = breach_name
 			breach_instance.position = position
 			damage_node.queue_free()
-			$MetalBreaking.play()
+			metal_breaking.play()
+			
 			if not game_voice.playing and not character_voice.playing:
 				var breach_voice_line = load("res://assets/voice_lines/ship_hull.mp3")
 				ai_companion.stream = breach_voice_line
 				ai_companion.play()
+				
 			add_child(breach_instance)
 			breach_instance.get_node("AnimationPlayer").play("Opencrack")
 			breach_instance.get_node("AnimationPlayer").queue("Stars")
@@ -88,6 +96,8 @@ func _timer_timeout() -> void:
 			
 		else:
 			continue
+			
+	var new_wait_time = calculate_wait_time(distance)
 	timer.wait_time = new_wait_time
 	timer.start()
 
@@ -114,9 +124,9 @@ func get_number_from_node_name(node_name: String) -> int:
 	return number_str.to_int()
 
 func calculate_wait_time(distance: float) -> float:
-	var base_wait_time = 10
-	var max_distance = 100000
-	var min_wait_time = 2.5
+	var base_wait_time = BASE_SPAWN_TIME
+	var min_wait_time = MIN_SPAWN_TIME
+	var max_distance = 150000
 
 	var scaled_wait_time = base_wait_time - (distance / max_distance) * (base_wait_time - min_wait_time)
 	
