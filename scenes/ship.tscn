@@ -102,7 +102,7 @@ polygon = PackedVector2Array(4, 6, 4, -140, 96, -140, 96, 69, 4, 69, 4, 50, 10, 
 polygon = PackedVector2Array(-31, 205, -124, 205, -124, 415, 94, 415, 94, 204, 4, 204, 4, 211, 90, 211, 90, 412, -122, 412, -122, 211, -31, 211)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-123, 120, -123, 63, -280, 66, -280, 208, -123, 208, -123, 155, -129, 155, -129, 204, -276, 204, -275, 69, -129, 69, -129, 120)
+polygon = PackedVector2Array(-122, 113, -122, 63, -280, 66, -280, 208, -122, 208, -122, 158, -129, 158, -129, 204, -276, 204, -275, 69, -129, 67, -129, 113)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-218, 99)

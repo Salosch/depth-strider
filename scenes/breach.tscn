@@ -18,8 +18,8 @@ func _process(delta):
 
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfrv7"]
-size = Vector2(133.333, 136.667)
+[sub_resource type="CircleShape2D" id="CircleShape2D_pl8im"]
+radius = 73.3523
 
 [sub_resource type="Animation" id="Animation_ce8ny"]
 length = 0.3
@@ -119,7 +119,7 @@ script = ExtResource("2_ld8jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-10, 5)
-shape = SubResource("RectangleShape2D_pfrv7")
+shape = SubResource("CircleShape2D_pl8im")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
